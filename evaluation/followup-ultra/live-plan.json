@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-11-08T22:39:00.580Z",
+  "freezeDigest": "a7da0339ff7755482e3baf6ea437b1d3971afe009bcff3ec0fc6689eb696617e",
+  "concurrency": 1,
+  "providerSelection": "Jev investigator; explicit nvidia/nemotron-3-ultra-550b-a55b:free editor/reviewer. No fallback.",
+  "entries": [
+    {
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "config": {
+        "schemaVersion": 1,
+        "runId": "agent7-021",
+        "targetPath": "/home/schneider/work/ci-lab-target-workloads",
+        "manifestPath": "/home/schneider/work/ci-optimization-lab/manifests/partition-heldout.json",
+        "dataRoot": "/home/schneider/work/ci-lab-runs",
+        "strategy": "agent",
+        "provider": "jev-openrouter-free",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "runner": "github",
+        "group": "warm",
+        "maxCycles": 1,
+        "timeoutSeconds": 1200,
+        "objective": {
+          "schemaVersion": 1,
+          "primary": "elapsedSeconds",
+          "direction": "minimize",
+          "minimumImprovement": 0.1,
+          "secondaryRegressionLimit": 0.05,
+          "pairs": 5,
+          "acceptanceRule": "paired-log-t95-v1",
+          "requiredChecks": [
+            "protected-files",
+            "exact-test-inventory",
+            "expected-outputs",
+            "successful-workflow",
+            "cache-condition",
+            "single-attempt"
+          ]
+        },
+        "cumulativeBudgetUsd": 30,
+        "perCallLimitUsd": 0.02,
+        "perExperimentLimitUsd": 1,
+        "maxConcurrency": 4
+      },
+      "originalRunId": "eval-021",
+      "previousRunId": "agent6-021"
+    }
+  ],
+  "originalPlanDigest": "1f8c5ed392d7db46345d998a2c5609da506885c0983815ab458caa88c8113d67",
+  "originalPlan": "../live-plan.json",
+  "scope": "One separately identified held-out partition trial after the preserved Gemma HTTP 429. Source, role prompts, fixtures, inventory, objectives, five pairs, uncertainty rule, and shared ledger remain unchanged. All provider and malformed-output failures stay visible.",
+  "previousPlan": "../followup-gemma/live-plan.json"
+}
