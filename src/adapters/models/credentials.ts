@@ -4,6 +4,7 @@ import os from 'node:os';
 import { atomic, command, pause } from '../../util.js';
 
 const service = 'ci-optimization-lab', account = 'openrouter';
+const fromOp = () => command('op', ['item', 'get', 'OpenRouter API Key - self-host', '--fields', 'label=credential', '--reveal'], { timeout: 15000 });
 export const credentialDirectory = path.join(os.homedir(), '.local/share/ci-optimization-lab/credentials');
 async function unlockedKeyring() {
   try {
@@ -32,13 +33,12 @@ export async function persistCredential(key: string, directory = credentialDirec
   const stat = await lstat(directory); if (stat.isSymbolicLink() || !stat.isDirectory() || stat.uid !== process.getuid?.()) throw new Error('CREDENTIAL_PERMISSIONS: unsafe cache directory');
   await chmod(directory, 0o700);
   if (useKeyring && await unlockedKeyring()) {
-    try { await command('secret-tool', ['store', '--label=CI optimization lab OpenRouter', 'service', service, 'account', account], { input: key.trim(), timeout: 2000 }); return 'keyring'; } catch {}
+    try { await command('secret-tool', ['store', '--label=CI optimization lab OpenRouter', 'service', service, 'account', account], { input: key.trim(), timeout: 2000 }); await rm(path.join(directory, 'openrouter'), { force: true }); return 'keyring'; } catch {}
   }
   await atomic(path.join(directory, 'openrouter'), key.trim() + '\n'); await chmod(path.join(directory, 'openrouter'), 0o600);
   return 'file';
 }
-export async function openRouterCredential(directory = credentialDirectory, useKeyring = true, fetchFromOp: () => Promise<string> = async () => command('op', ['item', 'get', 'OpenRouter API Key - self-host', '--fields', 'label=credential', '--reveal'], { timeout: 15000 })) {
-  const cached = await cachedCredential(directory, useKeyring); if (cached) return cached;
+async function credentialLock<T>(directory: string, action: () => Promise<T>) {
   await mkdir(directory, { recursive: true, mode: 0o700 }); await chmod(directory, 0o700);
   const lock = path.join(directory, '.lock');
   for (let tries = 0; ; tries++) {
@@ -50,19 +50,26 @@ export async function openRouterCredential(directory = credentialDirectory, useK
       await pause(50);
     }
   }
-  try {
+  try { return await action(); } finally { await rm(lock, { recursive: true, force: true }); }
+}
+export async function openRouterCredential(directory = credentialDirectory, useKeyring = true, fetchFromOp: () => Promise<string> = fromOp) {
+  const cached = await cachedCredential(directory, useKeyring); if (cached) return cached;
+  return credentialLock(directory, async () => {
     const again = await cachedCredential(directory, useKeyring); if (again) return again;
     try { await lstat(path.join(directory, 'op-failed')); throw new Error('AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in'); }
     catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
     try { const key = (await fetchFromOp()).trim(); await persistCredential(key, directory, useKeyring); return key; }
     catch { await atomic(path.join(directory, 'op-failed'), 'Credential lookup failed; no secret retained.\n'); throw new Error('AUTH_BLOCKED: 1Password credential unavailable; no repeated automatic lookup'); }
-  } finally { await rm(lock, { recursive: true, force: true }); }
+  });
 }
-export async function refreshCredential() {
-  await rm(path.join(credentialDirectory, 'op-failed'), { force: true });
-  await rm(path.join(credentialDirectory, 'openrouter'), { force: true });
-  if (await unlockedKeyring()) await command('secret-tool', ['clear', 'service', service, 'account', account], { timeout: 2000 }).catch(() => {});
-  await openRouterCredential();
+export async function refreshCredential(directory = credentialDirectory, useKeyring = true, fetchFromOp: () => Promise<string> = fromOp) {
+  return credentialLock(directory, async () => {
+    let replacement: string;
+    try { replacement = (await fetchFromOp()).trim(); if (!replacement || /\s/.test(replacement)) throw new Error('invalid replacement'); }
+    catch { throw new Error('AUTH_BLOCKED: replacement capture failed; previous cached key retained'); }
+    await persistCredential(replacement, directory, useKeyring);
+    await rm(path.join(directory, 'op-failed'), { force: true });
+  });
 }
 export async function removeCredential() {
   await rm(path.join(credentialDirectory, 'openrouter'), { force: true }); await rm(path.join(credentialDirectory, 'op-failed'), { force: true });

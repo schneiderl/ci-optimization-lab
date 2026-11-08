@@ -51,3 +51,11 @@ npm run docs:check
 ## Extension
 
 Replace this block behind the same runtime interface and explicit dependencies. Preserve envelope identity, immutable requirements, permitted effects, fail-closed behavior, replay, and evidence provenance. Add interface tests before live use. See [extensions](../extensions.md) for registries, versioning, and tradeoffs. The controlled CI-plan format supports caching and test partitioning; it does not claim arbitrary workflow editing or a proof against every malicious runner.
+
+## Independent execution validation
+
+```sh
+npm run lab -- block validator examples/validator-execution.input.json execution
+```
+
+The complete input contains a manifest, plan, and observation. This checks actual test inventory, outputs, partition coverage, cache state, and workflow identity without running an agent or dispatching CI. Substitute a saved live observation to audit a real run.

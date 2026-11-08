@@ -40,9 +40,9 @@
       "url": "recorded://219615340037",
       "attempt": 1,
       "conclusion": "success",
-      "createdAt": "2026-11-08T20:35:39.558Z",
-      "startedAt": "2026-11-08T20:35:39.558Z",
-      "completedAt": "2026-11-08T20:37:19.558Z",
+      "createdAt": "2026-11-08T20:57:20.396Z",
+      "startedAt": "2026-11-08T20:57:20.396Z",
+      "completedAt": "2026-11-08T20:59:00.396Z",
       "elapsedSeconds": 100,
       "jobSeconds": 100,
       "queueSeconds": 0,
@@ -50,8 +50,8 @@
         {
           "id": 1,
           "name": "recorded",
-          "startedAt": "2026-11-08T20:35:39.558Z",
-          "completedAt": "2026-11-08T20:35:39.558Z",
+          "startedAt": "2026-11-08T20:57:20.396Z",
+          "completedAt": "2026-11-08T20:57:20.396Z",
           "conclusion": "success",
           "runner": "ubuntu-24.04"
         }

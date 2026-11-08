@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { BlockRequest } from '../src/cli/block.js';
 import { InvestigatorInput, EditorInput, ReviewerInput, ValidatorInput, Manifest, Plan, Dispatch, Hypothesis, Edit, Review } from '../src/contracts/index.js';
 import { readJson } from '../src/util.js';
+import { Observation } from '../src/contracts/index.js';
 
 const inputs = { investigator: InvestigatorInput, editor: EditorInput, reviewer: ReviewerInput, validator: ValidatorInput, runner: z.object({ manifest: Manifest, plan: Plan, request: Dispatch }).strict(), reporter: z.object({ runDirectory: z.string() }).strict() };
 for (const [name, schema] of Object.entries(inputs)) {
@@ -14,4 +15,6 @@ for (const [name, schema] of Object.entries(inputs)) {
   for (const heading of ['Purpose', 'Contracts', 'Invariants', 'Access', 'Failures', 'Persistence', 'Run', 'Extension']) if (!doc.includes(`## ${heading}`)) throw new Error(`${name}: missing ${heading}`);
 }
 if (Plan.safeParse(await readJson('examples/invalid-plan.json')).success) throw new Error('Invalid example was accepted');
+const executionExample = BlockRequest.parse(await readJson('examples/validator-execution.input.json'));
+z.object({ manifest: Manifest, plan: Plan, observation: Observation }).strict().parse(executionExample.context);
 console.log('Six complete block examples, outputs, documentation sections, and invalid-input rejection checked.');

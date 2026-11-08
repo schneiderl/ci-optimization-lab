@@ -48,9 +48,10 @@ export class Store {
   }
 }
 
-const LedgerSchema = z.object({ schemaVersion: z.literal(1), ceilingUsd: z.number().max(30), entries: z.record(z.string(), z.object({ reservedUsd: z.number().nonnegative(), chargedUpperBoundUsd: z.number().nonnegative().nullable(), reason: z.string() })) });
+const LedgerSchema = z.object({ schemaVersion: z.literal(1), ceilingUsd: z.number().max(30), experiments: z.record(z.string(), z.number().positive()).default({}), entries: z.record(z.string(), z.object({ reservedUsd: z.number().nonnegative(), chargedUpperBoundUsd: z.number().nonnegative().nullable(), reason: z.string(), experimentId: z.string().optional() })) });
 export class Budget {
-  constructor(readonly root: string, readonly ceiling = 30) {}
+  constructor(readonly root: string, readonly ceiling = 30, readonly experiment?: { id: string; limit: number }) {}
+  scoped(id: string, limit: number) { return new Budget(this.root, this.ceiling, { id, limit }); }
   private async transaction<T>(action: (ledger: z.infer<typeof LedgerSchema>) => T) {
     await mkdir(this.root, { recursive: true }); const lock = path.join(this.root, '.budget-lock');
     let acquired = false;
@@ -59,8 +60,13 @@ export class Budget {
     try {
       let ledger: z.infer<typeof LedgerSchema>;
       try { ledger = LedgerSchema.parse(JSON.parse(await readFile(path.join(this.root, 'budget.json'), 'utf8'))); }
-      catch (e) { if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e; ledger = { schemaVersion: 1, ceilingUsd: this.ceiling, entries: {} }; }
+      catch (e) { if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e; ledger = { schemaVersion: 1, ceilingUsd: this.ceiling, experiments: {}, entries: {} }; }
       ledger.ceilingUsd = Math.min(ledger.ceilingUsd, this.ceiling);
+      if (this.experiment) {
+        const { id, limit } = this.experiment;
+        ledger.experiments[id] = Math.min(ledger.experiments[id] ?? limit, limit);
+        for (const [key, entry] of Object.entries(ledger.entries)) if (!entry.experimentId && (key.startsWith(`${id}-`) || key.startsWith(`github-${id}-`))) entry.experimentId = id;
+      }
       const result = action(ledger); await atomic(path.join(this.root, 'budget.json'), json(ledger)); return result;
     } finally { await rm(lock, { recursive: true }); }
   }
@@ -69,10 +75,18 @@ export class Budget {
     const existing = ledger.entries[key]; if (existing) { if (existing.reservedUsd !== amount) throw new Error('BUDGET: reservation changed'); return; }
     const used = Object.values(ledger.entries).reduce((sum, entry) => sum + (entry.chargedUpperBoundUsd ?? entry.reservedUsd), 0);
     if (used + amount > ledger.ceilingUsd + 1e-9) throw new Error('BUDGET_EXHAUSTED');
-    ledger.entries[key] = { reservedUsd: amount, chargedUpperBoundUsd: null, reason };
+    if (this.experiment) {
+      const usedInExperiment = Object.values(ledger.entries).filter(entry => entry.experimentId === this.experiment!.id).reduce((sum, entry) => sum + (entry.chargedUpperBoundUsd ?? entry.reservedUsd), 0);
+      if (usedInExperiment + amount > ledger.experiments[this.experiment.id]! + 1e-9) throw new Error('EXPERIMENT_BUDGET_EXHAUSTED: models and CI share the same allowance');
+    }
+    ledger.entries[key] = { reservedUsd: amount, chargedUpperBoundUsd: null, reason, ...(this.experiment ? { experimentId: this.experiment.id } : {}) };
   }); }
-  settle(key: string, actualUpperBound: number) { return this.transaction(ledger => {
-    const entry = ledger.entries[key]; if (!entry || actualUpperBound < 0 || !Number.isFinite(actualUpperBound) || actualUpperBound > entry.reservedUsd) throw new Error('BUDGET: actual exceeds reservation'); entry.chargedUpperBoundUsd = actualUpperBound;
-  }); }
+  async settle(key: string, actualUpperBound: number) {
+    const overrun = await this.transaction(ledger => {
+      const entry = ledger.entries[key]; if (!entry || actualUpperBound < 0 || !Number.isFinite(actualUpperBound)) throw new Error('BUDGET: invalid reconciliation');
+      entry.chargedUpperBoundUsd = actualUpperBound; return actualUpperBound > entry.reservedUsd;
+    });
+    if (overrun) throw new Error('BUDGET: actual exceeds reservation; known charge retained and further work must stop');
+  }
   snapshot() { return this.transaction(ledger => structuredClone(ledger)); }
 }

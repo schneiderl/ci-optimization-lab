@@ -9,3 +9,7 @@ Rule v1 first enables cache if disabled. Otherwise it divides at least eight tes
 `evaluation/live-plan.json` records provider selection, limits, four-way concurrency, immutable generic run IDs, and the full matrix before collection. `npm run evaluate -- --live` executes or resumes it. `npm run evaluate` rebuilds the result table and public evidence copies from durable runs. Failed attempts remain explicit and cannot turn into accepted results through a reviewer recommendation.
 
 Read [RESULTS.md](../evaluation/RESULTS.md) for measured outcomes. Real API availability, malformed provider responses, blocked authentication, and inconclusive or rejected measurements are part of the evaluation. The report separates live CI, live models, and recorded agent responses. The first smoke used recorded roles with live CI and is labeled accordingly.
+
+## Source provenance and revalidation
+
+The original matrix was collected during implementation through the first source freeze `48b4fd5`. Exact per-dispatch controller source was not recorded; all target workflows, protected files, tests, and target commits were pinned. An independent review found seven boundary/recovery defects. Original failures and measurements remain unchanged. `scripts/revalidate.ts` checks the saved artifact digests, target protection, execution evidence, and stricter acceptance rule without dispatching or calling a model. Its separate audit records the corrected source and whether each original outcome remains valid. Original CI/model smoke results are not relabeled as execution of newer source.

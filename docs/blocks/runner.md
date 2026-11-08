@@ -51,3 +51,13 @@ npm run docs:check
 ## Extension
 
 Replace this block behind the same runtime interface and explicit dependencies. Preserve envelope identity, immutable requirements, permitted effects, fail-closed behavior, replay, and evidence provenance. Add interface tests before live use. See [extensions](../extensions.md) for registries, versioning, and tradeoffs. The controlled CI-plan format supports caching and test partitioning; it does not claim arbitrary workflow editing or a proof against every malicious runner.
+
+## Independent live runner
+
+The CLI defaults to recorded execution. To dispatch independently, supply an input envelope with a fresh correlation and an already-published `lab/` branch pinned to its declared commit, then run:
+
+```sh
+npm run lab -- block runner examples/runner.input.json github
+```
+
+The live option uses the same repository policy, request binding, shared budget, cancellation, and reconciliation as the coordinator. Prepare the example branch first or create a new input matching your experimental branch. Never reuse an ID for a different request.

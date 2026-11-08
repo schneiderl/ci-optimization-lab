@@ -21,6 +21,7 @@ const examples: Record<string, { context: unknown; recordedOutput?: unknown }> =
   reporter: { context: { runDirectory: '../ci-lab-runs/demo' } },
 };
 for (const [name, example] of Object.entries(examples)) await atomic(`examples/${name}.input.json`, json({ envelope: { schemaVersion: 1, runId: `example-${name}`, stepId: name, attemptId: 'one', inputs: [], outputs: [] }, ...example }));
+await atomic('examples/validator-execution.input.json', json({ envelope: { schemaVersion: 1, runId: 'example-execution', stepId: 'validator', attemptId: 'one', inputs: [], outputs: [] }, context: { manifest, plan, observation } }));
 await atomic('examples/invalid-plan.json', json({ schemaVersion: 1, cache: true, partitions: [['missing-test']], command: 'skip' }));
 const schemas: Record<string, unknown> = {};
 for (const [name, schema] of Object.entries(contracts)) if (schema instanceof z.ZodType) schemas[name] = z.toJSONSchema(schema);

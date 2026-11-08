@@ -6,7 +6,7 @@ import { z } from 'zod';
 import { Acceptance, Config, Edit, Hypothesis, InvestigatorInput, Manifest, Observation, Patch, Plan, Review, State, Validation, type ModelUsage, type Outcome, type RunConfig, type RunState } from '../contracts/index.js';
 import { Store, Budget } from '../adapters/records/store.js';
 import { RecordedModel, OpenCodeModel, OpenRouterFreeModel, JevModel, type ModelAdapter } from '../adapters/models/index.js';
-import { GhTransport, GitHubRunner } from '../adapters/github/index.js';
+import { GhTransport, GitHubRunner, type GitHubTransport } from '../adapters/github/index.js';
 import { investigate, rulesHypothesis } from '../blocks/investigator/index.js';
 import { edit } from '../blocks/editor/index.js';
 import { ScopedFiles } from '../blocks/editor/tools.js';
@@ -21,14 +21,14 @@ const terminal = new Set<Outcome>(['accepted', 'no-change', 'rejected', 'inconcl
 export const steps = ['baselining', 'investigating', 'editing', 'validating', 'measuring', 'reviewing'] as const;
 export type ExtensionStep = (context: { config: RunConfig; state: RunState; store: Store }) => Promise<void>;
 export const extensions = new Map<string, ExtensionStep>();
-export interface Dependencies { model?: (role: 'investigator' | 'editor' | 'reviewer', defaults: Record<string, unknown>) => ModelAdapter; runner?: Runner; afterSave?: (state: RunState) => void }
+export interface Dependencies { model?: (role: 'investigator' | 'editor' | 'reviewer', defaults: Record<string, unknown>) => ModelAdapter; runner?: Runner; github?: GitHubTransport; afterSave?: (state: RunState) => void }
 export async function run(rawConfig: unknown, dependencies: Dependencies = {}, signal?: AbortSignal): Promise<string> {
   const config = Config.parse(rawConfig), lab = fileURLToPath(new URL('../../', import.meta.url));
   await separate(lab, config.targetPath, config.dataRoot);
   const manifest = Manifest.parse(await readJson(config.manifestPath));
   if (digest(json({ baselineCommit: manifest.baselineCommit, protectedFiles: manifest.protectedFiles, tests: manifest.tests })) !== manifest.fixtureDigest) throw new Error('MANIFEST: frozen fixture digest mismatch');
   const rule = acceptanceRules.get(config.objective.acceptanceRule); if (!rule) throw new Error('OBJECTIVE: unknown acceptance rule');
-  const store = new Store(path.join(config.dataRoot, config.runId)), budget = new Budget(config.dataRoot, config.cumulativeBudgetUsd), unlock = await store.lock();
+  const store = new Store(path.join(config.dataRoot, config.runId)), budget = new Budget(config.dataRoot, config.cumulativeBudgetUsd).scoped(config.runId, config.perExperimentLimitUsd), unlock = await store.lock();
   const cancellation = new AbortController();
   const watcher = watch(store.root, (_event, file) => { if (String(file) === 'cancel') cancellation.abort(); });
   signal = signal ? AbortSignal.any([signal, cancellation.signal]) : cancellation.signal;
@@ -41,6 +41,12 @@ export async function run(rawConfig: unknown, dependencies: Dependencies = {}, s
       await atomic(path.join(store.root, 'config.json'), json(config)); await atomic(path.join(store.root, 'manifest.json'), json(manifest)); await store.save(state);
     }
     if (state.configDigest !== configDigest || state.manifestDigest !== manifestDigest) throw new Error('VERSION_OR_INPUT_MISMATCH: resume requires the exact saved configuration and protected manifest');
+    const cancellationRequested = await access(path.join(store.root, 'cancel')).then(() => true, () => false);
+    if (state.status === 'cancelling' || state.status === 'cancelled' || cancellationRequested && !terminal.has(state.status)) {
+      await store.save(state, 'cancelling');
+      if (config.runner === 'github') await new GitHubRunner(dependencies.github ?? new GhTransport(), store, budget, manifest, config.timeoutSeconds).reconcileCancellations();
+      await store.save(state, 'cancelled'); return report(store, state, config, budget);
+    }
     if (terminal.has(state.status)) return report(store, state, config, budget);
     const save = async (status: Outcome) => { await access(path.join(store.root, 'cancel')).then(() => { throw new Error('CANCELLED'); }, () => {}); if (signal?.aborted) throw new Error('CANCELLED'); await store.save(state!, status); dependencies.afterSave?.(state!); };
     state.error = null;
@@ -48,12 +54,12 @@ export async function run(rawConfig: unknown, dependencies: Dependencies = {}, s
     await checkout(config.targetPath, baselineCheckout, manifest.baselineCommit);
     const baselineValidation = await validateCheckout(baselineCheckout, manifest); if (baselineValidation.status !== 'pass') throw new Error(`BASELINE_INVALID: ${JSON.stringify(baselineValidation.checks.filter(check => !check.pass))}`);
     const baseline = Plan.parse(await readJson(path.join(baselineCheckout, 'ci/plan.json')));
-    const runner = dependencies.runner ?? (config.runner === 'github' ? new GitHubRunner(new GhTransport(), store, budget, manifest, config.timeoutSeconds, 10000, config.maxConcurrency) : new RecordedRunner(manifest));
+    const runner = dependencies.runner ?? (config.runner === 'github' ? new GitHubRunner(dependencies.github ?? new GhTransport(), store, budget, manifest, config.timeoutSeconds, 10000, config.maxConcurrency) : new RecordedRunner(manifest));
     if (config.runner === 'github') {
-      const worstRuns = config.maxCycles * 13;
-      if (worstRuns * .001 > config.perExperimentLimitUsd) throw new Error('EXPERIMENT_BUDGET: bounded batch exceeds per-experiment limit');
+      const worstRuns = config.maxCycles * 13, modelAllowance = config.provider === 'jev-openrouter-free' ? config.maxCycles * .02 : 0;
+      if (worstRuns * .001 + modelAllowance > config.perExperimentLimitUsd) throw new Error('EXPERIMENT_BUDGET: bounded model and CI batch exceeds per-experiment limit');
       const ledger = await budget.snapshot(), used = Object.values(ledger.entries).reduce((sum, entry) => sum + (entry.chargedUpperBoundUsd ?? entry.reservedUsd), 0);
-      if (used + worstRuns * .001 > ledger.ceilingUsd) throw new Error('BUDGET_EXHAUSTED: remaining budget cannot cover the bounded batch');
+      if (used + worstRuns * .001 + modelAllowance > ledger.ceilingUsd) throw new Error('BUDGET_EXHAUSTED: remaining budget cannot cover the bounded model and CI batch');
     }
     const previous: z.infer<typeof InvestigatorInput>['previousAttempts'] = [];
     for (let earlier = 1; earlier < state.cycle; earlier++) {
@@ -150,7 +156,11 @@ export async function run(rawConfig: unknown, dependencies: Dependencies = {}, s
     }
     return await report(store, state, config, budget);
   } catch (error) {
-    if (state) { state.error = redact(String(error)); await store.save(state, signal?.aborted || String(error).includes('CANCELLED') ? 'cancelled' : 'failed'); await report(store, state, config, budget); }
+    if (state) {
+      state.error = redact(String(error));
+      const pending = config.runner === 'github' && await new GitHubRunner(dependencies.github ?? new GhTransport(), store, budget, manifest, config.timeoutSeconds).hasPendingCancellation();
+      await store.save(state, pending ? 'cancelling' : signal?.aborted || String(error).includes('CANCELLED') ? 'cancelled' : 'failed'); await report(store, state, config, budget);
+    }
     throw error;
   } finally { watcher.close(); await unlock(); }
 }

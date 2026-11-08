@@ -10,6 +10,9 @@ const bounds = (ratios: number[]) => {
 export const pairedLogT95: AcceptanceRule = (samples, objective, correctness) => {
   const result: z.infer<typeof Acceptance> = { status: 'inconclusive', rule: 'paired-log-t95-v1', pairs: 0, primaryRatio: null, primaryUpper95: null, secondaryRatio: null, secondaryUpper95: null, reason: 'Five complete, valid pairs are required.' };
   if (correctness.some(check => check.status === 'fail')) return { ...result, status: 'rejected', reason: 'A deterministic correctness check failed.' };
+  const baselinePins = new Set(samples.filter(sample => sample.side === 'baseline').map(sample => sample.commit));
+  const candidatePins = new Set(samples.filter(sample => sample.side === 'candidate').map(sample => sample.commit));
+  if (new Set(samples.map(sample => sample.group)).size !== 1 || new Set(samples.map(sample => sample.patchDigest)).size !== 1 || new Set(samples.map(sample => sample.source)).size !== 1 || baselinePins.size !== 1 || candidatePins.size !== 1 || new Set(samples.map(sample => sample.correlation)).size !== samples.length || new Set(samples.map(sample => sample.runId)).size !== samples.length) return { ...result, reason: 'One cache group, common pinned baseline/candidate/patch identities, and unique workflow runs are required across the entire experiment.' };
   const pairs = [];
   for (let pair = 0; pair < 5; pair++) {
     const baseline = samples.filter(sample => sample.pair === pair && sample.side === 'baseline');

@@ -19,7 +19,7 @@ flowchart LR
 
 A run pins the manifest and target commit, validates the baseline, and creates disposable Git worktrees beneath the run directory. The baseline and each candidate have independent indexes. Failed candidates never modify the target's main checkout or become the next baseline. Only the controller publishes `lab/<run-id>/...` branches; no merge or deployment occurs.
 
-Artifacts are immutable content-addressed JSON. Their envelopes include schema version, run, step, attempt, inputs, and outputs. References bind evidence to commits and patch digests. The state file points to verified artifacts; numbered event snapshots preserve each committed transition. A completed block reuses its artifact. A completed model call reuses its response receipt. A submitted workflow reconciles its exact correlation, branch, and commit before any further action.
+Artifacts are immutable content-addressed JSON. Their envelopes include schema version, run, step, attempt, inputs, and outputs. References bind evidence to commits and patch digests. The state file points to verified artifacts; numbered event snapshots preserve each committed transition. A completed block reuses its artifact. A completed model call reuses its response receipt. Cached observations bind the complete dispatch request, frozen manifest, CI plan, and observation digests. Legacy receipts require the saved manifest, matching durable intent, and fresh protected execution validation before a separate binding record is added; original observations remain unchanged. A submitted workflow reconciles its exact correlation, branch, and commit before any further action.
 
 ## Trust boundary
 
