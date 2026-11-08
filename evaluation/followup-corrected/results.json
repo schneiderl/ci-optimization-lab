@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T22:32:09.651Z",
+  "planDigest": "707e38ea37e9a0e7ec612db2bda16ea1f8b4961e3be56fc2f31c29eafdb40986",
+  "results": [
+    {
+      "runId": "agent3-003",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "cold",
+      "strategy": "agent",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "449e7b265302018fe38433e65818f646da2dcdfca91ea9f5011d5b25f2f453ee",
+          "responseDigest": "e5fc7419180bd2e6bd88f1f74b8fd1224b9f4ba84b8352150db19a20fe72674a",
+          "inputTokens": 3561,
+          "outputTokens": 38,
+          "costUsd": 0.000149562,
+          "live": true,
+          "timestamp": "2026-11-08T22:24:36.416Z"
+        },
+        {
+          "provider": "openrouter-free",
+          "role": "reviewer",
+          "model": "cohere/north-mini-code:free",
+          "requestDigest": "14fa5f7c4b3882f629c673b80d98f3cf5885e67146db4bbfdea1ce827d2b66a0",
+          "responseDigest": "7a4f597b0fa8dd5ac1d3fe91bafd3ccc0d88afe684e51d674b15757325810e9c",
+          "inputTokens": 5461,
+          "outputTokens": 2249,
+          "costUsd": 0,
+          "live": true,
+          "timestamp": "2026-11-08T22:27:41.512Z"
+        }
+      ],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530051247",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530099078",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530143706",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530189050",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530233999",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530276770"
+      ],
+      "error": null
+    },
+    {
+      "runId": "agent3-006",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "8edee46bbb46b83a91c4e147bf4335990222fbbef9e11635252941eb0907a81f",
+          "responseDigest": "841161488411bdb8e9ba7047e7fe21f6296ef7b73dfad256a8017519713575d7",
+          "inputTokens": 3561,
+          "outputTokens": 38,
+          "costUsd": 0.000149562,
+          "live": true,
+          "timestamp": "2026-11-08T22:24:35.100Z"
+        },
+        {
+          "provider": "openrouter-free",
+          "role": "reviewer",
+          "model": "cohere/north-mini-code:free",
+          "requestDigest": "11f77d80d840628163b82620ad3ac3672281f58c0fb308fbffcd549b64da18f4",
+          "responseDigest": "aebe0c4530f25bc913857f04dee1a50737e8ecc3bff733956e4b10c70977b629",
+          "inputTokens": 5451,
+          "outputTokens": 2750,
+          "costUsd": 0,
+          "live": true,
+          "timestamp": "2026-11-08T22:27:30.945Z"
+        }
+      ],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530050811",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530097695",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530140379",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530185746",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530229073",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530270686"
+      ],
+      "error": null
+    },
+    {
+      "runId": "agent3-009",
+      "fixture": "partition",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 1.035300940130717,
+        "primaryUpper95": 1.2575257289669417,
+        "secondaryRatio": 1.5359239123327366,
+        "secondaryUpper95": 1.7690964361506285,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "f2bab6fccd88f27ec0fbd0ccfb5bcf740388a1b0131802c9d39b685528897ed6",
+          "responseDigest": "8d6d29ccf34d9bcadfa5cf1f0836639ef29c972b4bb0ccbfc738f0f75d9d588e",
+          "inputTokens": 6356,
+          "outputTokens": 38,
+          "costUsd": 0.000266952,
+          "live": true,
+          "timestamp": "2026-11-08T22:24:34.058Z"
+        },
+        {
+          "provider": "openrouter-free",
+          "role": "editor",
+          "model": "cohere/north-mini-code:free",
+          "requestDigest": "e0dacfae94be155e2af66449449bba1468ccff6d82d7d3a06093c7aebf4ab518",
+          "responseDigest": "df437bee04fc98a362a20c9adedeb65a40e92e5f04aaa0c52d9f317eb2bccf54",
+          "inputTokens": 539,
+          "outputTokens": 1721,
+          "costUsd": 0,
+          "live": true,
+          "timestamp": "2026-11-08T22:24:40.856Z"
+        },
+        {
+          "provider": "openrouter-free",
+          "role": "reviewer",
+          "model": "cohere/north-mini-code:free",
+          "requestDigest": "1c577f377143e9bb3bed42b87956bb3146d7e53193eb25396ab772a69712d184",
+          "responseDigest": "5be8578b8dd2615e8b57591c8177cff3c78aac4fcd1afa3ad8522b409daa39d7",
+          "inputTokens": 18438,
+          "outputTokens": 2901,
+          "costUsd": 0,
+          "live": true,
+          "timestamp": "2026-11-08T22:32:09.425Z"
+        }
+      ],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530050566",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530210099",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530253297",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530296666",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530355207",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530400703",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530444832",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530489014",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530536499",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530607008",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530653720"
+      ],
+      "error": null
+    },
+    {
+      "runId": "agent3-012",
+      "fixture": "no-change",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "e635fd41bfcab84bc70f8eb9e584945b3ea096373863cdf8d3f4132e24d0c399",
+          "responseDigest": "207f488d8e849cd18d5cf097c8de0134ad4569189c2443b9754355042a27ca94",
+          "inputTokens": 2337,
+          "outputTokens": 38,
+          "costUsd": 0.000098154,
+          "live": true,
+          "timestamp": "2026-11-08T22:24:34.387Z"
+        }
+      ],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530050696",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530140986",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530188049",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530231902",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530274972",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530317366"
+      ],
+      "error": "[\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"approve\",\n      \"reject\",\n      \"more-evidence\"\n    ],\n    \"path\": [\n      \"recommendation\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"approve\\\"|\\\"reject\\\"|\\\"more-evidence\\\"\"\n  },\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"concerns\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"explanation\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"evidence\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"requestExperiment\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"invalidProviderOutput\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized key: \\\"invalidProviderOutput\\\"\"\n  }\n]"
+    },
+    {
+      "runId": "agent3-015",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "cold",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "b7f5c99657104f65c6be48c0807c2663b35b73ceb8b331b889a7cd06aa842bb0",
+          "responseDigest": "c07fe8a404fcf88fae9d96d3981abb27209d04e7c9cd2e39b4d84e85a9cc59c5",
+          "inputTokens": 4415,
+          "outputTokens": 38,
+          "costUsd": 0.00018543,
+          "live": true,
+          "timestamp": "2026-11-08T22:28:08.698Z"
+        }
+      ],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530334154",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530380407",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530427335",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530472171",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530516339",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530568787"
+      ],
+      "error": "[\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"$schema\",\n      \"type\",\n      \"properties\",\n      \"required\",\n      \"additionalProperties\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized keys: \\\"$schema\\\", \\\"type\\\", \\\"properties\\\", \\\"required\\\", \\\"additionalProperties\\\"\"\n  }\n]"
+    },
+    {
+      "runId": "agent3-018",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "3d41cdf6c81ca6cfdd7a303b53f67bfbb5fe7b13bea78249d0db0501a6f86d5c",
+          "responseDigest": "884a651e857bb3e7d938d60ed63ac49417f043652e0d7bbf222e14cef2bc6c29",
+          "inputTokens": 4415,
+          "outputTokens": 38,
+          "costUsd": 0.00018543,
+          "live": true,
+          "timestamp": "2026-11-08T22:28:18.504Z"
+        }
+      ],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530348053",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530394114",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530440197",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530485409",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530529812",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530582850"
+      ],
+      "error": "[\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"approve\",\n      \"reject\",\n      \"more-evidence\"\n    ],\n    \"path\": [\n      \"recommendation\"\n    ],\n    \"message\": \"Invalid option: expected one of \\\"approve\\\"|\\\"reject\\\"|\\\"more-evidence\\\"\"\n  },\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"concerns\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"explanation\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"evidence\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"requestExperiment\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"invalidProviderOutput\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized key: \\\"invalidProviderOutput\\\"\"\n  }\n]"
+    },
+    {
+      "runId": "agent3-021",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "5ed0ea80a52526b464a4bcacc5dcd93166f4a45a0f12a1b8b3be893bd250c162",
+          "responseDigest": "a9c67fdc632d049e70e76bbb26593688749597a48ef5b97d8b41b4171bea889a",
+          "inputTokens": 7590,
+          "outputTokens": 38,
+          "costUsd": 0.00031878,
+          "live": true,
+          "timestamp": "2026-11-08T22:28:42.605Z"
+        }
+      ],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530379578"
+      ],
+      "error": "[\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"files\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"explanation\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"invalidProviderOutput\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized key: \\\"invalidProviderOutput\\\"\"\n  }\n]"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+rejected: agent3-009
+Primary ratio 1.035; secondary 1.536; 5/5 pairs.
+Correctness and evidence: /home/schneider/work/ci-lab-runs/agent3-009/report.md
+Patch: /home/schneider/work/ci-lab-runs/agent3-009/candidate.patch

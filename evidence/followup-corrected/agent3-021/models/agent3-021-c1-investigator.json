@@ -1,0 +1,65 @@
+{
+  "status": "completed",
+  "requestDigest": "5ed0ea80a52526b464a4bcacc5dcd93166f4a45a0f12a1b8b3be893bd250c162",
+  "output": {
+    "decision": "change",
+    "family": "partition",
+    "explanation": "Jev selected partition with confidence 0.42; this is a hypothesis, not correctness evidence.",
+    "plan": {
+      "schemaVersion": 1,
+      "cache": true,
+      "partitions": [
+        [
+          "case-000",
+          "case-002",
+          "case-004",
+          "case-006",
+          "case-008",
+          "case-010",
+          "case-012",
+          "case-014",
+          "case-016",
+          "case-018",
+          "case-020",
+          "case-022",
+          "case-024",
+          "case-026",
+          "case-028",
+          "case-030"
+        ],
+        [
+          "case-001",
+          "case-003",
+          "case-005",
+          "case-007",
+          "case-009",
+          "case-011",
+          "case-013",
+          "case-015",
+          "case-017",
+          "case-019",
+          "case-021",
+          "case-023",
+          "case-025",
+          "case-027",
+          "case-029"
+        ]
+      ]
+    },
+    "evidence": [
+      "pipeline-snapshot"
+    ]
+  },
+  "usage": {
+    "provider": "jev",
+    "role": "investigator",
+    "model": "typesafe/jev-1.14-20261014",
+    "requestDigest": "5ed0ea80a52526b464a4bcacc5dcd93166f4a45a0f12a1b8b3be893bd250c162",
+    "responseDigest": "a9c67fdc632d049e70e76bbb26593688749597a48ef5b97d8b41b4171bea889a",
+    "inputTokens": 7590,
+    "outputTokens": 38,
+    "costUsd": 0.00031878,
+    "live": true,
+    "timestamp": "2026-11-08T22:28:42.605Z"
+  }
+}

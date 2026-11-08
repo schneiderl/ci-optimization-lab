@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { JevModel, OpenRouterFreeModel } from '../src/adapters/models/index.js';
+import { JevModel, OpenRouterFreeModel, invokeModel } from '../src/adapters/models/index.js';
+import { mkdtemp } from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import { Store, Budget } from '../src/adapters/records/store.js';
+import { readJson } from '../src/util.js';
 import { Hypothesis } from '../src/contracts/index.js';
 
 const input = { role: 'investigator' as const, context: { plan: { schemaVersion: 1, cache: false, partitions: [['one']] } }, schema: Hypothesis, instruction: 'Choose a bounded experiment.' };
@@ -32,4 +37,22 @@ test('Jev bounds each provider endpoint independently and refuses missing or exc
     await assert.rejects(new JevModel(fetcher, async () => { credentials++; return 'synthetic'; }).call(input));
     assert.equal(credentials, 0);
   }
+});
+
+test('free generation disables optional reasoning and requests advertised strict schema without accepting truncation', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'ci-free-structured-')), store = new Store(path.join(root, 'run')), budget = new Budget(root);
+  let request: any;
+  const fetcher: typeof fetch = async (url, options) => {
+    if (String(url).endsWith('/models')) return new Response(JSON.stringify({ data: [{ id: 'fixture/structured:free', pricing: { prompt: '0', completion: '0' }, supported_parameters: ['reasoning', 'structured_outputs'], reasoning: { mandatory: false } }] }));
+    request = JSON.parse(String(options?.body));
+    return new Response(JSON.stringify({ model: 'fixture/structured', usage: { prompt_tokens: 20, completion_tokens: 3000, cost: 0 }, choices: [{ message: { content: null, reasoning: 'Synthetic reasoning only' }, finish_reason: 'length' }] }));
+  };
+  await assert.rejects(invokeModel(store, budget, 'truncated', new OpenRouterFreeModel('fixture/structured:free', fetcher, async () => 'synthetic'), input));
+  assert.deepEqual(request.reasoning, { enabled: false });
+  assert.equal(request.response_format.type, 'json_schema'); assert.equal(request.response_format.json_schema.strict, true);
+  assert.equal(request.response_format.json_schema.schema.additionalProperties, false);
+  assert.equal(request.provider.allow_fallbacks, false);
+  const receipt = await readJson(path.join(store.root, 'models/truncated.json')) as any;
+  assert.equal(receipt.status, 'invalid-output'); assert.equal(receipt.usage.outputTokens, 3000); assert.equal(receipt.usage.costUsd, 0);
+  assert.equal(receipt.output.invalidProviderOutput.choices[0].finish_reason, 'length');
 });

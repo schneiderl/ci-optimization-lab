@@ -1,0 +1,31 @@
+{
+  "status": "completed",
+  "requestDigest": "11f77d80d840628163b82620ad3ac3672281f58c0fb308fbffcd549b64da18f4",
+  "output": {
+    "recommendation": "more-evidence",
+    "concerns": [
+      "PatchDigest mismatch between baseline (5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e) and observations (aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c), indicating inconsistent patch application.",
+      "Hypothesis decision is 'no-change' with low confidence (0.16) and evidence limited to pipeline-snapshot, which is not correctness evidence.",
+      "Deterministic validation not confirmed; correlation strings differ (agent3-006-c1-profile vs agent3-006-c1-unchanged-0, -1, -2, -3, -4), suggesting different cache keys and potential non‑deterministic behavior.",
+      "Observations are labeled 'unchanged-warm' but patchDigest differs, raising question of actual patch applied.",
+      "Missing direct measurement of improvement; only pipeline snapshot and test passes, which may be simulated."
+    ],
+    "explanation": "The hypothesis indicates a no‑change decision with low confidence (0.16) and only pipeline‑snapshot evidence, which does not provide correctness validation. BaselineEvidence and observations have different patchDigests, and correlation strings differ, suggesting inconsistent patch application. All tests pass, but deterministic validation of the patch is not confirmed. The evidence is insufficient to prove a live improvement, so more evidence is required.",
+    "evidence": [
+      "pipeline-snapshot"
+    ],
+    "requestExperiment": true
+  },
+  "usage": {
+    "provider": "openrouter-free",
+    "role": "reviewer",
+    "model": "cohere/north-mini-code:free",
+    "requestDigest": "11f77d80d840628163b82620ad3ac3672281f58c0fb308fbffcd549b64da18f4",
+    "responseDigest": "aebe0c4530f25bc913857f04dee1a50737e8ecc3bff733956e4b10c70977b629",
+    "inputTokens": 5451,
+    "outputTokens": 2750,
+    "costUsd": 0,
+    "live": true,
+    "timestamp": "2026-11-08T22:27:30.945Z"
+  }
+}

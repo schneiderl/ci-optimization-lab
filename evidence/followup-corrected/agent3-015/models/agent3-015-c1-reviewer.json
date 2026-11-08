@@ -1,0 +1,77 @@
+{
+  "status": "invalid-output",
+  "requestDigest": "204cec459630f91c484c6077c09969c3499cc83a15d3674c51e615458838faf6",
+  "provider": "openrouter-free",
+  "model": "cohere/north-mini-code:free",
+  "role": "reviewer",
+  "output": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "recommendation": {
+        "type": "string",
+        "enum": [
+          "approve",
+          "reject",
+          "more-evidence"
+        ]
+      },
+      "concerns": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "explanation": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4000
+      },
+      "evidence": {
+        "minItems": 1,
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "requestExperiment": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "recommendation",
+      "concerns",
+      "explanation",
+      "evidence",
+      "requestExperiment"
+    ],
+    "additionalProperties": false,
+    "recommendation": "more-evidence",
+    "concerns": [
+      "Missing patch content (cannot review exact changes)",
+      "Hypothesis is a low‑confidence no‑change selection (confidence 0.25) and is not correctness evidence",
+      "Need deterministic validation of the patch to confirm it is truly no‑change",
+      "Paired measurements appear consistent but require verification of patch impact"
+    ],
+    "explanation": "The hypothesis indicates a no‑change decision with low confidence (0.25) and is not correctness evidence. While baselineEvidence shows successful test runs for the unchanged scenario, we cannot review the exact patch content to confirm it is truly no‑change, verify deterministic behavior, or assess impact. Additional evidence such as the patch diff, deterministic validation results, and confirmation of no‑change is required before approval.",
+    "evidence": [
+      "pipeline-snapshot",
+      "baselineEvidence"
+    ],
+    "requestExperiment": false
+  },
+  "usage": {
+    "provider": "openrouter-free",
+    "role": "reviewer",
+    "model": "cohere/north-mini-code:free",
+    "requestDigest": "204cec459630f91c484c6077c09969c3499cc83a15d3674c51e615458838faf6",
+    "responseDigest": "5ef57f9bfbab0a480cc017f783a9c062e05b058a26e21b013b232225d600eaaf",
+    "inputTokens": 6859,
+    "outputTokens": 2663,
+    "costUsd": 0,
+    "live": true,
+    "timestamp": "2026-11-08T22:31:23.933Z"
+  },
+  "error": "[\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"$schema\",\n      \"type\",\n      \"properties\",\n      \"required\",\n      \"additionalProperties\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized keys: \\\"$schema\\\", \\\"type\\\", \\\"properties\\\", \\\"required\\\", \\\"additionalProperties\\\"\"\n  }\n]",
+  "timestamp": "2026-11-08T22:31:24.049Z"
+}

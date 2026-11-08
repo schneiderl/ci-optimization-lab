@@ -1,0 +1,9 @@
+{
+  "decision": "no-change",
+  "family": "none",
+  "explanation": "Jev selected none with confidence 0.2; this is a hypothesis, not correctness evidence.",
+  "plan": null,
+  "evidence": [
+    "pipeline-snapshot"
+  ]
+}

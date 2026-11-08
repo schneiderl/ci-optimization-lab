@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "requestDigest": "1c577f377143e9bb3bed42b87956bb3146d7e53193eb25396ab772a69712d184",
+  "output": {
+    "recommendation": "more-evidence",
+    "concerns": [
+      "Acceptance test rejected: paired-log-t95-v1 thresholds not met (primaryRatio 1.035, secondaryRatio 1.536).",
+      "Limited statistical power: only 5 paired runs; may not be sufficient to reliably detect improvement.",
+      "Hypothesis is a partition selection without correctness evidence; need performance/efficiency evidence beyond test pass/fail."
+    ],
+    "explanation": "The patch modifies ci/plan.json to split the single partition into two partitions (even/odd). Deterministic validation passes all checks, including partition-limit. However, the paired acceptance test (paired-log-t95-v1) fails because the observed mean ratios (primary 1.035, secondary 1.536) miss at least one configured threshold. All individual test cases pass, but the statistical significance criteria are not satisfied. To determine if the partition change yields a meaningful improvement, additional paired experiments are needed to increase statistical power and verify that the ratios meet the required thresholds.",
+    "evidence": [
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530210099",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530253297",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530355207",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530296666",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530400703",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530444832",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530536499",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530489014",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530607008",
+      "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530653720"
+    ],
+    "requestExperiment": true
+  },
+  "usage": {
+    "provider": "openrouter-free",
+    "role": "reviewer",
+    "model": "cohere/north-mini-code:free",
+    "requestDigest": "1c577f377143e9bb3bed42b87956bb3146d7e53193eb25396ab772a69712d184",
+    "responseDigest": "5be8578b8dd2615e8b57591c8177cff3c78aac4fcd1afa3ad8522b409daa39d7",
+    "inputTokens": 18438,
+    "outputTokens": 2901,
+    "costUsd": 0,
+    "live": true,
+    "timestamp": "2026-11-08T22:32:09.425Z"
+  }
+}

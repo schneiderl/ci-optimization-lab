@@ -1,0 +1,4 @@
+no-change: agent3-003
+No measured candidate accepted.
+Correctness and evidence: /home/schneider/work/ci-lab-runs/agent3-003/report.md
+Patch: none

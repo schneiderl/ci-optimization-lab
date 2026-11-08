@@ -1,0 +1,17 @@
+{
+  "recommendation": "more-evidence",
+  "concerns": [
+    "Low confidence (0.18) in the 'no-change' hypothesis indicates weak support.",
+    "Evidence consists only of a 'pipeline-snapshot', which is not correctness evidence.",
+    "Baseline patchDigest (5b74...) does not match the patchDigest used in observations (aaa8...), suggesting misaligned patches and invalid paired measurements.",
+    "Different correlation IDs between baseline and observations indicate runs are not properly paired.",
+    "Lack of deterministic validation; hypothesis is not proven with measurable outcomes."
+  ],
+  "explanation": "The hypothesis asserts no change with low confidence and insufficient evidence. The baseline patch differs from the observed runs, compromising the validity of paired measurements. Additional experiments are needed to validate the hypothesis with higher confidence and proper patch alignment.",
+  "evidence": [
+    "pipeline-snapshot",
+    "baselineEvidence patchDigest mismatch",
+    "low confidence hypothesis"
+  ],
+  "requestExperiment": true
+}

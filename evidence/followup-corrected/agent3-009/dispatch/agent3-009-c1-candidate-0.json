@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "2d2dda530a58da69f8f16bd5fb3486bb9406e6faf170fbfa2ed7626f609459b3",
+  "correlation": "agent3-009-c1-candidate-0",
+  "commit": "b2e7d100d338b90bde22b23342d39bc9b89599af",
+  "ref": "lab/agent3-009/c1/candidate",
+  "status": "completed",
+  "createdAt": "2026-11-08T22:26:31.681Z",
+  "runId": 42530253297,
+  "cancelRequested": false
+}

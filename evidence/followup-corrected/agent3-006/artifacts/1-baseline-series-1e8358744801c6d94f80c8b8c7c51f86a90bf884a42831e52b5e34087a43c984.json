@@ -1,0 +1,480 @@
+{
+  "observations": [
+    {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent3-006-c1-unchanged-0",
+      "runId": 42530097695,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530097695",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:24:37Z",
+      "startedAt": "2026-11-08T22:24:40.000Z",
+      "completedAt": "2026-11-08T22:24:59.000Z",
+      "elapsedSeconds": 19,
+      "jobSeconds": 17,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128882169957,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:24:40Z",
+          "completedAt": "2026-11-08T22:24:48Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128882208816,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:24:50Z",
+          "completedAt": "2026-11-08T22:24:59Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530097695",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "agent3-006-c1-unchanged-warm",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent3-006-c1-unchanged-warm",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 1,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent3-006-c1-unchanged-1",
+      "runId": 42530140379,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530140379",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:25:09Z",
+      "startedAt": "2026-11-08T22:25:12.000Z",
+      "completedAt": "2026-11-08T22:25:31.000Z",
+      "elapsedSeconds": 19,
+      "jobSeconds": 17,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128882303515,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:25:12Z",
+          "completedAt": "2026-11-08T22:25:21Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128882347631,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:25:23Z",
+          "completedAt": "2026-11-08T22:25:31Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530140379",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "agent3-006-c1-unchanged-warm",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent3-006-c1-unchanged-warm",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 2,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent3-006-c1-unchanged-2",
+      "runId": 42530185746,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530185746",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:25:42Z",
+      "startedAt": "2026-11-08T22:25:45.000Z",
+      "completedAt": "2026-11-08T22:26:04.000Z",
+      "elapsedSeconds": 19,
+      "jobSeconds": 18,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128882442384,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:25:45Z",
+          "completedAt": "2026-11-08T22:25:55Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128882491812,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:25:56Z",
+          "completedAt": "2026-11-08T22:26:04Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530185746",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "agent3-006-c1-unchanged-warm",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent3-006-c1-unchanged-warm",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 3,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent3-006-c1-unchanged-3",
+      "runId": 42530229073,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530229073",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:26:14Z",
+      "startedAt": "2026-11-08T22:26:17.000Z",
+      "completedAt": "2026-11-08T22:26:38.000Z",
+      "elapsedSeconds": 21,
+      "jobSeconds": 19,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128882578481,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:26:17Z",
+          "completedAt": "2026-11-08T22:26:29Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128882637204,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:26:31Z",
+          "completedAt": "2026-11-08T22:26:38Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530229073",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "agent3-006-c1-unchanged-warm",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent3-006-c1-unchanged-warm",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 4,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent3-006-c1-unchanged-4",
+      "runId": 42530270686,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530270686",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:26:46Z",
+      "startedAt": "2026-11-08T22:26:50.000Z",
+      "completedAt": "2026-11-08T22:27:10.000Z",
+      "elapsedSeconds": 20,
+      "jobSeconds": 18,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128882711838,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:26:50Z",
+          "completedAt": "2026-11-08T22:26:58Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128882755125,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:27:00Z",
+          "completedAt": "2026-11-08T22:27:10Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530270686",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "agent3-006-c1-unchanged-warm",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent3-006-c1-unchanged-warm",
+      "expectedCacheHit": false,
+      "source": "github"
+    }
+  ],
+  "primes": []
+}

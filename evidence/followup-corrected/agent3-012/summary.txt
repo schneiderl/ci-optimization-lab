@@ -1,0 +1,4 @@
+failed: agent3-012
+No measured candidate accepted.
+Correctness and evidence: /home/schneider/work/ci-lab-runs/agent3-012/report.md
+Patch: none

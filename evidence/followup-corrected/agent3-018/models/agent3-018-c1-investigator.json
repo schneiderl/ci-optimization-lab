@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "requestDigest": "3d41cdf6c81ca6cfdd7a303b53f67bfbb5fe7b13bea78249d0db0501a6f86d5c",
+  "output": {
+    "decision": "no-change",
+    "family": "none",
+    "explanation": "Jev selected none with confidence 0.2; this is a hypothesis, not correctness evidence.",
+    "plan": null,
+    "evidence": [
+      "pipeline-snapshot"
+    ]
+  },
+  "usage": {
+    "provider": "jev",
+    "role": "investigator",
+    "model": "typesafe/jev-1.14-20261014",
+    "requestDigest": "3d41cdf6c81ca6cfdd7a303b53f67bfbb5fe7b13bea78249d0db0501a6f86d5c",
+    "responseDigest": "884a651e857bb3e7d938d60ed63ac49417f043652e0d7bbf222e14cef2bc6c29",
+    "inputTokens": 4415,
+    "outputTokens": 38,
+    "costUsd": 0.00018543,
+    "live": true,
+    "timestamp": "2026-11-08T22:28:18.504Z"
+  }
+}

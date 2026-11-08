@@ -1,0 +1,95 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "name": "full-file-inventory",
+      "pass": true,
+      "reason": "Tracked files must match the frozen inventory; untracked files are denied."
+    },
+    {
+      "name": "protected-files:.github/workflows/experiment.yml",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:.github/workflows/verify.yml",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:.gitignore",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:README.md",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:ci/case.json",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:ci/execute.ts",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:ci/local.ts",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:ci/matrix.ts",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:ci/requirements.ts",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:package-lock.json",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:package.json",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:src/derive.ts",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "protected-files:tests/inventory.ts",
+      "pass": true,
+      "reason": "Protected content and file type must match the pinned baseline."
+    },
+    {
+      "name": "edit-allowlist",
+      "pass": true,
+      "reason": "Only content edits to ci/plan.json are allowed; mode changes are denied."
+    },
+    {
+      "name": "regular-plan",
+      "pass": true,
+      "reason": "CI plan must be a regular file."
+    },
+    {
+      "name": "exact-test-inventory",
+      "pass": true,
+      "reason": "Every required test must appear exactly once."
+    },
+    {
+      "name": "partition-limit",
+      "pass": true,
+      "reason": "At most 2 partitions are permitted."
+    }
+  ]
+}

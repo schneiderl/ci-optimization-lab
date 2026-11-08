@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "requestDigest": "14fa5f7c4b3882f629c673b80d98f3cf5885e67146db4bbfdea1ce827d2b66a0",
+  "output": {
+    "recommendation": "more-evidence",
+    "concerns": [
+      "Low confidence (0.18) in the 'no-change' hypothesis indicates weak support.",
+      "Evidence consists only of a 'pipeline-snapshot', which is not correctness evidence.",
+      "Baseline patchDigest (5b74...) does not match the patchDigest used in observations (aaa8...), suggesting misaligned patches and invalid paired measurements.",
+      "Different correlation IDs between baseline and observations indicate runs are not properly paired.",
+      "Lack of deterministic validation; hypothesis is not proven with measurable outcomes."
+    ],
+    "explanation": "The hypothesis asserts no change with low confidence and insufficient evidence. The baseline patch differs from the observed runs, compromising the validity of paired measurements. Additional experiments are needed to validate the hypothesis with higher confidence and proper patch alignment.",
+    "evidence": [
+      "pipeline-snapshot",
+      "baselineEvidence patchDigest mismatch",
+      "low confidence hypothesis"
+    ],
+    "requestExperiment": true
+  },
+  "usage": {
+    "provider": "openrouter-free",
+    "role": "reviewer",
+    "model": "cohere/north-mini-code:free",
+    "requestDigest": "14fa5f7c4b3882f629c673b80d98f3cf5885e67146db4bbfdea1ce827d2b66a0",
+    "responseDigest": "7a4f597b0fa8dd5ac1d3fe91bafd3ccc0d88afe684e51d674b15757325810e9c",
+    "inputTokens": 5461,
+    "outputTokens": 2249,
+    "costUsd": 0,
+    "live": true,
+    "timestamp": "2026-11-08T22:27:41.512Z"
+  }
+}

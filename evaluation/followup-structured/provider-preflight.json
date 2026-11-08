@@ -1,0 +1,116 @@
+{
+  "checkedAt": "2026-11-08T22:33:06.268Z",
+  "url": "https://openrouter.ai/api/v1/models",
+  "model": {
+    "id": "nvidia/nemotron-3.5-super-vl:free",
+    "canonical_slug": "nvidia/nemotron-3.5-super-vl-20261015",
+    "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+    "name": "NVIDIA: Nemotron 3.5 Super VL (free)",
+    "created": 1792076662,
+    "description": "NVIDIA Nemotron 3.5 Super VL is an open multimodal mixture-of-experts model from NVIDIA, with 12B active parameters out of 120B total. It takes text, images, documents, GUI screenshots, and video...",
+    "context_length": 1000000,
+    "architecture": {
+      "modality": "text+image+video->text",
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "Other",
+      "instruct_type": null
+    },
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    },
+    "top_provider": {
+      "context_length": 1000000,
+      "max_completion_tokens": 131072,
+      "is_moderated": false
+    },
+    "per_request_limits": null,
+    "supported_parameters": [
+      "include_reasoning",
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "seed",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_p"
+    ],
+    "default_parameters": {},
+    "supported_voices": null,
+    "knowledge_cutoff": null,
+    "expiration_date": null,
+    "links": {
+      "details": "/api/v1/models/nvidia/nemotron-3.5-super-vl-20261015/endpoints"
+    },
+    "endpoints": [
+      "/api/v1/chat/completions",
+      "/api/v1/completions",
+      "/api/v1/messages",
+      "/api/v1/responses"
+    ],
+    "benchmarks": {
+      "design_arena": [
+        {
+          "arena": "models",
+          "category": "3d",
+          "elo": 1128,
+          "win_rate": 31.4,
+          "rank": 80
+        },
+        {
+          "arena": "models",
+          "category": "codecategories",
+          "elo": 1150,
+          "win_rate": 33.3,
+          "rank": 89
+        },
+        {
+          "arena": "models",
+          "category": "dataviz",
+          "elo": 1097,
+          "win_rate": 26.7,
+          "rank": 104
+        },
+        {
+          "arena": "models",
+          "category": "gamedev",
+          "elo": 1107,
+          "win_rate": 29.8,
+          "rank": 95
+        },
+        {
+          "arena": "models",
+          "category": "uicomponent",
+          "elo": 1144,
+          "win_rate": 32.1,
+          "rank": 83
+        },
+        {
+          "arena": "models",
+          "category": "website",
+          "elo": 1165,
+          "win_rate": 35.1,
+          "rank": 86
+        }
+      ],
+      "artificial_analysis": {
+        "intelligence_index": 13.6,
+        "coding_index": null,
+        "agentic_index": null
+      }
+    },
+    "reasoning": {
+      "mandatory": false
+    }
+  },
+  "selection": "Explicit zero-price structured-output generative editor/reviewer; optional reasoning disabled; no provider/model fallback. Original Jev investigator and role prompts unchanged."
+}
