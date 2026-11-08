@@ -1,0 +1,9 @@
+{
+  "decision": "no-change",
+  "family": "none",
+  "explanation": "Unchanged comparator does not propose patches.",
+  "plan": null,
+  "evidence": [
+    "baseline"
+  ]
+}

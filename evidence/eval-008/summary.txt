@@ -1,0 +1,4 @@
+rejected: eval-008
+Primary ratio 0.938; secondary 1.426; 5/5 pairs.
+Correctness and evidence: /home/schneider/work/ci-lab-runs/eval-008/report.md
+Patch: /home/schneider/work/ci-lab-runs/eval-008/candidate.patch

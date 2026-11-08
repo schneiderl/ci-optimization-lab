@@ -1,0 +1,4 @@
+failed: eval-018
+No measured candidate accepted.
+Correctness and evidence: /home/schneider/work/ci-lab-runs/eval-018/report.md
+Patch: none

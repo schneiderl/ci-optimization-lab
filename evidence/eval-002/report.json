@@ -1,0 +1,2876 @@
+{
+  "schemaVersion": 1,
+  "runId": "eval-002",
+  "outcome": "rejected",
+  "config": {
+    "schemaVersion": 1,
+    "runId": "eval-002",
+    "targetPath": "/home/schneider/work/ci-lab-target-workloads",
+    "manifestPath": "/home/schneider/work/ci-optimization-lab/manifests/cache.json",
+    "dataRoot": "/home/schneider/work/ci-lab-runs",
+    "strategy": "rules",
+    "provider": "recorded",
+    "model": "cohere/north-mini-code:free",
+    "runner": "github",
+    "group": "cold",
+    "maxCycles": 1,
+    "timeoutSeconds": 1200,
+    "objective": {
+      "schemaVersion": 1,
+      "primary": "elapsedSeconds",
+      "direction": "minimize",
+      "minimumImprovement": 0.1,
+      "secondaryRegressionLimit": 0.05,
+      "pairs": 5,
+      "acceptanceRule": "paired-log-t95-v1",
+      "requiredChecks": [
+        "protected-files",
+        "exact-test-inventory",
+        "expected-outputs",
+        "successful-workflow",
+        "cache-condition",
+        "single-attempt"
+      ]
+    },
+    "cumulativeBudgetUsd": 30,
+    "perCallLimitUsd": 0.02,
+    "perExperimentLimitUsd": 1,
+    "maxConcurrency": 4
+  },
+  "models": [],
+  "ledger": {
+    "schemaVersion": 1,
+    "ceilingUsd": 30,
+    "entries": {
+      "smoke-1794169348524": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "opencode opencode/deepseek-v4.1-flash-free; no fallback"
+      },
+      "smoke-1794169348529": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": 0.00001722,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "smoke-1794169373227": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "opencode opencode/deepseek-v4.1-flash-free; no fallback"
+      },
+      "github-smoke-cache-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "smoke-1794169389759": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "opencode opencode/inkling-2-small-free; no fallback"
+      },
+      "smoke-cache-c1-investigator": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "recorded fixture-v1; no fallback"
+      },
+      "smoke-cache-c1-editor": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "recorded fixture-v1; no fallback"
+      },
+      "github-smoke-cache-c1-candidate-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "smoke-1794169494058": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "openrouter-free cohere/north-mini-code:free; no fallback"
+      },
+      "github-smoke-cache-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-006-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-006-c1-investigator": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": null,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "github-eval-002-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-003-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-003-c1-investigator": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": 0.000149436,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "github-eval-001-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-003-c1-editor": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "openrouter-free cohere/north-mini-code:free; no fallback"
+      },
+      "github-eval-004-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "smoke-cache-c1-reviewer": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "recorded fixture-v1; no fallback"
+      },
+      "github-eval-004-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-baseline-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-baseline-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-baseline-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-baseline-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-009-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-009-c1-investigator": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": null,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "github-eval-002-c1-baseline-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": null,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": null,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-unchanged-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": null,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      }
+    }
+  },
+  "artifactReferences": {
+    "1-baseline": {
+      "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+      "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-baseline-envelope": {
+      "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+      "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-hypothesis": {
+      "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+      "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-hypothesis-envelope": {
+      "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+      "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-patch": {
+      "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+      "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-patch-envelope": {
+      "path": "artifacts/1-patch-envelope-28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee.json",
+      "sha256": "28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-validation": {
+      "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+      "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-validation-envelope": {
+      "path": "artifacts/1-validation-envelope-6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd.json",
+      "sha256": "6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-investigator-input": {
+      "path": "artifacts/1-investigator-input-f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898.json",
+      "sha256": "f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-investigator-input-envelope": {
+      "path": "artifacts/1-investigator-input-envelope-5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818.json",
+      "sha256": "5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    "1-measurements": {
+      "path": "artifacts/1-measurements-920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775.json",
+      "sha256": "920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-measurements-envelope": {
+      "path": "artifacts/1-measurements-envelope-7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e.json",
+      "sha256": "7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-execution-validation": {
+      "path": "artifacts/1-execution-validation-2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37.json",
+      "sha256": "2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-execution-validation-envelope": {
+      "path": "artifacts/1-execution-validation-envelope-3539e348f99064d007b2311d66dc900d6a92572e553a6bc846ae938db8e5a104.json",
+      "sha256": "3539e348f99064d007b2311d66dc900d6a92572e553a6bc846ae938db8e5a104",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-acceptance": {
+      "path": "artifacts/1-acceptance-ea76d53912905e2aef922887173aff478aba9483af57683c942e4296fc465e94.json",
+      "sha256": "ea76d53912905e2aef922887173aff478aba9483af57683c942e4296fc465e94",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-acceptance-envelope": {
+      "path": "artifacts/1-acceptance-envelope-c579d8e79ee3b55c73971547d1c35c4b473d35512d5638801347beae937730ee.json",
+      "sha256": "c579d8e79ee3b55c73971547d1c35c4b473d35512d5638801347beae937730ee",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-review": {
+      "path": "artifacts/1-review-949a4d50a3976d51ba1fb13e98a2bb48a8c173101423fa8b4c8895235ae4c16b.json",
+      "sha256": "949a4d50a3976d51ba1fb13e98a2bb48a8c173101423fa8b4c8895235ae4c16b",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    "1-review-envelope": {
+      "path": "artifacts/1-review-envelope-e54f9f2b178071082425dbad6088b78e2fe042cc476fd84dccb77e6fa656bba8.json",
+      "sha256": "e54f9f2b178071082425dbad6088b78e2fe042cc476fd84dccb77e6fa656bba8",
+      "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    }
+  },
+  "artifacts": {
+    "1-baseline": {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "baseline",
+      "group": "cold",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+      "correlation": "eval-002-c1-profile",
+      "runId": 42520273747,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520273747",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:28:16Z",
+      "startedAt": "2026-11-08T20:28:19.000Z",
+      "completedAt": "2026-11-08T20:28:32.000Z",
+      "elapsedSeconds": 13,
+      "jobSeconds": 11,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128852054717,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:28:19Z",
+          "completedAt": "2026-11-08T20:28:24Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128852087033,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:28:26Z",
+          "completedAt": "2026-11-08T20:28:32Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520273747",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "eval-002-c1-profile",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "eval-002-c1-profile",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    "1-baseline-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "baseline",
+      "attemptId": "cycle-1",
+      "inputs": [],
+      "outputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-hypothesis": {
+      "decision": "change",
+      "family": "cache",
+      "explanation": "Rule v1 enables lock-keyed dependency reuse when disabled.",
+      "plan": {
+        "schemaVersion": 1,
+        "cache": true,
+        "partitions": [
+          [
+            "case-000",
+            "case-001",
+            "case-002",
+            "case-003",
+            "case-004",
+            "case-005",
+            "case-006",
+            "case-007"
+          ]
+        ]
+      },
+      "evidence": [
+        "pipeline-snapshot"
+      ]
+    },
+    "1-hypothesis-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "hypothesis",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-patch": {
+      "schemaVersion": 1,
+      "baselineCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "candidateCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+      "digest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "changedFiles": [
+        "ci/plan.json"
+      ],
+      "text": "diff --git c/ci/plan.json w/ci/plan.json\nindex da8788f..5a7239a 100644\n--- c/ci/plan.json\n+++ w/ci/plan.json\n@@ -1 +1 @@\n-{\"schemaVersion\":1,\"cache\":false,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\"]]}\n+{\"schemaVersion\":1,\"cache\":true,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\"]]}\n"
+    },
+    "1-patch-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "patch",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+          "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+          "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-validation": {
+      "status": "pass",
+      "checks": [
+        {
+          "name": "full-file-inventory",
+          "pass": true,
+          "reason": "Tracked files must match the frozen inventory; untracked files are denied."
+        },
+        {
+          "name": "protected-files:.github/workflows/experiment.yml",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:.github/workflows/verify.yml",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:.gitignore",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:README.md",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:ci/case.json",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:ci/execute.ts",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:ci/local.ts",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:ci/matrix.ts",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:ci/requirements.ts",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:package-lock.json",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:package.json",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:src/derive.ts",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "protected-files:tests/inventory.ts",
+          "pass": true,
+          "reason": "Protected content and file type must match the pinned baseline."
+        },
+        {
+          "name": "edit-allowlist",
+          "pass": true,
+          "reason": "Only content edits to ci/plan.json are allowed; mode changes are denied."
+        },
+        {
+          "name": "regular-plan",
+          "pass": true,
+          "reason": "CI plan must be a regular file."
+        },
+        {
+          "name": "exact-test-inventory",
+          "pass": true,
+          "reason": "Every required test must appear exactly once."
+        },
+        {
+          "name": "partition-limit",
+          "pass": true,
+          "reason": "At most 1 partitions are permitted."
+        }
+      ]
+    },
+    "1-validation-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "validation",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+          "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+          "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-envelope-28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee.json",
+          "sha256": "28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+          "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ]
+    },
+    "1-investigator-input": {
+      "snapshot": {
+        "ci/plan.json": "{\"schemaVersion\":1,\"cache\":false,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\"]]}\n",
+        ".github/workflows/experiment.yml": "name: Controlled experiment\nrun-name: ${{ inputs.correlation }}\non:\n  workflow_dispatch:\n    inputs:\n      correlation:\n        required: true\n        type: string\n      cache_key:\n        required: true\n        type: string\npermissions:\n  contents: read\njobs:\n  plan:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    outputs:\n      matrix: ${{ steps.plan.outputs.matrix }}\n      cache: ${{ steps.plan.outputs.cache }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - run: npm ci --ignore-scripts\n      - id: plan\n        run: node ci/matrix.ts\n  tests:\n    needs: plan\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    strategy:\n      fail-fast: false\n      max-parallel: 4\n      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - id: dependencies\n        if: needs.plan.outputs.cache == 'true'\n        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830\n        with:\n          path: node_modules\n          key: deps-${{ inputs.cache_key }}-${{ matrix.partition }}-${{ hashFiles('package-lock.json') }}\n      - if: steps.dependencies.outputs.cache-hit != 'true'\n        run: npm ci --ignore-scripts\n      - run: node ci/execute.ts\n        env:\n          PARTITION: ${{ matrix.partition }}\n          CACHE_KEY: ${{ inputs.cache_key }}\n          CACHE_HIT: ${{ steps.dependencies.outputs.cache-hit }}\n      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n        with:\n          name: execution-${{ matrix.partition }}\n          path: execution.json\n          retention-days: 1\n          if-no-files-found: error\n",
+        "ci/case.json": "{\n  \"id\": \"cache\",\n  \"iterations\": 50000,\n  \"tests\": {\n    \"case-000\": \"c914eb26b1fb72f47dd5f2704be37ba59ae461166860d7e7b570fedc042b913b\",\n    \"case-001\": \"55c5a0fc678e5d90db61097bbdb67d4ee561d3e6be7f2428c9cd2785b448c7ff\",\n    \"case-002\": \"4c4c08f4e948c7f267eff30c0ccd0d4e86ab623c8a4bfd502c1fb25124bc0a79\",\n    \"case-003\": \"c9832d5c03ab71dae92d4327b52d24fba9bec5cfa997384699bc81836dfdd7ca\",\n    \"case-004\": \"6ed0458eecd206cb7386847738119886255ff794354d35ef05206e5a186fcb76\",\n    \"case-005\": \"f0d7e583901b7d881c3cb88d74a1c5455ff04252246ce976c064fdaf8ea5b9af\",\n    \"case-006\": \"d98f259156a05424a9c7b6601d991b49a1bfcfc5091e20d6aeff6251c15277fd\",\n    \"case-007\": \"5d1767a420b13627ea60ec8e8905b43b6b985495208819670078652bd0574cdd\"\n  },\n  \"maxPartitions\": 1\n}\n"
+      },
+      "plan": {
+        "schemaVersion": 1,
+        "cache": false,
+        "partitions": [
+          [
+            "case-000",
+            "case-001",
+            "case-002",
+            "case-003",
+            "case-004",
+            "case-005",
+            "case-006",
+            "case-007"
+          ]
+        ]
+      },
+      "baselineEvidence": {
+        "schemaVersion": 1,
+        "pair": 0,
+        "side": "baseline",
+        "group": "cold",
+        "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+        "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+        "correlation": "eval-002-c1-profile",
+        "runId": 42520273747,
+        "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520273747",
+        "attempt": 1,
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:28:16Z",
+        "startedAt": "2026-11-08T20:28:19.000Z",
+        "completedAt": "2026-11-08T20:28:32.000Z",
+        "elapsedSeconds": 13,
+        "jobSeconds": 11,
+        "queueSeconds": 3,
+        "jobs": [
+          {
+            "id": 128852054717,
+            "name": "plan",
+            "startedAt": "2026-11-08T20:28:19Z",
+            "completedAt": "2026-11-08T20:28:24Z",
+            "conclusion": "success",
+            "runner": "ubuntu-24.04"
+          },
+          {
+            "id": 128852087033,
+            "name": "tests (0)",
+            "startedAt": "2026-11-08T20:28:26Z",
+            "completedAt": "2026-11-08T20:28:32Z",
+            "conclusion": "success",
+            "runner": "ubuntu-24.04"
+          }
+        ],
+        "execution": [
+          {
+            "schemaVersion": 1,
+            "runId": "42520273747",
+            "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+            "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+            "cacheKey": "eval-002-c1-profile",
+            "cacheHit": false,
+            "partition": 0,
+            "node": "v24.22.2",
+            "tests": [
+              {
+                "id": "case-000",
+                "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                "status": "pass"
+              },
+              {
+                "id": "case-001",
+                "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                "status": "pass"
+              },
+              {
+                "id": "case-002",
+                "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                "status": "pass"
+              },
+              {
+                "id": "case-003",
+                "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                "status": "pass"
+              },
+              {
+                "id": "case-004",
+                "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                "status": "pass"
+              },
+              {
+                "id": "case-005",
+                "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                "status": "pass"
+              },
+              {
+                "id": "case-006",
+                "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                "status": "pass"
+              },
+              {
+                "id": "case-007",
+                "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                "status": "pass"
+              }
+            ],
+            "dependencyCheck": true
+          }
+        ],
+        "cacheKey": "eval-002-c1-profile",
+        "expectedCacheHit": false,
+        "source": "github"
+      },
+      "allowedFiles": [
+        "ci/plan.json"
+      ],
+      "requiredTests": [
+        "case-000",
+        "case-001",
+        "case-002",
+        "case-003",
+        "case-004",
+        "case-005",
+        "case-006",
+        "case-007"
+      ],
+      "maxPartitions": 1,
+      "objective": {
+        "schemaVersion": 1,
+        "primary": "elapsedSeconds",
+        "direction": "minimize",
+        "minimumImprovement": 0.1,
+        "secondaryRegressionLimit": 0.05,
+        "pairs": 5,
+        "acceptanceRule": "paired-log-t95-v1",
+        "requiredChecks": [
+          "protected-files",
+          "exact-test-inventory",
+          "expected-outputs",
+          "successful-workflow",
+          "cache-condition",
+          "single-attempt"
+        ]
+      },
+      "previousAttempts": []
+    },
+    "1-investigator-input-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "investigator-input",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+          "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+          "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-envelope-28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee.json",
+          "sha256": "28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+          "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-validation-envelope-6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd.json",
+          "sha256": "6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-investigator-input-f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898.json",
+          "sha256": "f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-measurements": {
+      "observations": [
+        {
+          "schemaVersion": 1,
+          "pair": 0,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-baseline-0",
+          "runId": 42520313111,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520313111",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:28:44Z",
+          "startedAt": "2026-11-08T20:28:48.000Z",
+          "completedAt": "2026-11-08T20:29:07.000Z",
+          "elapsedSeconds": 19,
+          "jobSeconds": 17,
+          "queueSeconds": 4,
+          "jobs": [
+            {
+              "id": 128852177723,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:28:48Z",
+              "completedAt": "2026-11-08T20:28:55Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128852214314,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:28:57Z",
+              "completedAt": "2026-11-08T20:29:07Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520313111",
+              "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+              "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+              "cacheKey": "eval-002-c1-baseline-cold-0",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-baseline-cold-0",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 0,
+          "side": "candidate",
+          "group": "cold",
+          "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-candidate-0",
+          "runId": 42520361666,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520361666",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:29:22Z",
+          "startedAt": "2026-11-08T20:29:24.000Z",
+          "completedAt": "2026-11-08T20:29:41.000Z",
+          "elapsedSeconds": 17,
+          "jobSeconds": 15,
+          "queueSeconds": 2,
+          "jobs": [
+            {
+              "id": 128852329189,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:29:24Z",
+              "completedAt": "2026-11-08T20:29:31Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128852364765,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:29:33Z",
+              "completedAt": "2026-11-08T20:29:41Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520361666",
+              "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+              "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+              "cacheKey": "eval-002-c1-candidate-cold-0",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-candidate-cold-0",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 1,
+          "side": "candidate",
+          "group": "cold",
+          "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-candidate-1",
+          "runId": 42520397246,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520397246",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:29:49Z",
+          "startedAt": "2026-11-08T20:29:51.000Z",
+          "completedAt": "2026-11-08T20:30:22.000Z",
+          "elapsedSeconds": 31,
+          "jobSeconds": 27,
+          "queueSeconds": 2,
+          "jobs": [
+            {
+              "id": 128852438515,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:29:51Z",
+              "completedAt": "2026-11-08T20:30:00Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128852482540,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:30:04Z",
+              "completedAt": "2026-11-08T20:30:22Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520397246",
+              "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+              "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+              "cacheKey": "eval-002-c1-candidate-cold-1",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-candidate-cold-1",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 1,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-baseline-1",
+          "runId": 42520472402,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520472402",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:30:37Z",
+          "startedAt": "2026-11-08T20:30:40.000Z",
+          "completedAt": "2026-11-08T20:31:01.000Z",
+          "elapsedSeconds": 21,
+          "jobSeconds": 19,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128852657683,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:30:40Z",
+              "completedAt": "2026-11-08T20:30:49Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128852706525,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:30:51Z",
+              "completedAt": "2026-11-08T20:31:01Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520472402",
+              "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+              "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+              "cacheKey": "eval-002-c1-baseline-cold-1",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-baseline-cold-1",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 2,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-baseline-2",
+          "runId": 42520532069,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520532069",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:31:15Z",
+          "startedAt": "2026-11-08T20:31:18.000Z",
+          "completedAt": "2026-11-08T20:31:39.000Z",
+          "elapsedSeconds": 21,
+          "jobSeconds": 18,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128852828183,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:31:18Z",
+              "completedAt": "2026-11-08T20:31:26Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128852874303,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:31:29Z",
+              "completedAt": "2026-11-08T20:31:39Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520532069",
+              "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+              "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+              "cacheKey": "eval-002-c1-baseline-cold-2",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-baseline-cold-2",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 2,
+          "side": "candidate",
+          "group": "cold",
+          "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-candidate-2",
+          "runId": 42520588035,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520588035",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:31:53Z",
+          "startedAt": "2026-11-08T20:31:56.000Z",
+          "completedAt": "2026-11-08T20:32:13.000Z",
+          "elapsedSeconds": 17,
+          "jobSeconds": 15,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128852996520,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:31:56Z",
+              "completedAt": "2026-11-08T20:32:02Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128853033625,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:32:04Z",
+              "completedAt": "2026-11-08T20:32:13Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520588035",
+              "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+              "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+              "cacheKey": "eval-002-c1-candidate-cold-2",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-candidate-cold-2",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 3,
+          "side": "candidate",
+          "group": "cold",
+          "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-candidate-3",
+          "runId": 42520629762,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520629762",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:32:21Z",
+          "startedAt": "2026-11-08T20:32:24.000Z",
+          "completedAt": "2026-11-08T20:32:49.000Z",
+          "elapsedSeconds": 25,
+          "jobSeconds": 23,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128853120056,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:32:24Z",
+              "completedAt": "2026-11-08T20:32:34Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128853172089,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:32:36Z",
+              "completedAt": "2026-11-08T20:32:49Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520629762",
+              "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+              "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+              "cacheKey": "eval-002-c1-candidate-cold-3",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-candidate-cold-3",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 3,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-baseline-3",
+          "runId": 42520686316,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520686316",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:32:59Z",
+          "startedAt": "2026-11-08T20:33:02.000Z",
+          "completedAt": "2026-11-08T20:33:23.000Z",
+          "elapsedSeconds": 21,
+          "jobSeconds": 19,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128853286212,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:33:02Z",
+              "completedAt": "2026-11-08T20:33:11Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128853334402,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:33:13Z",
+              "completedAt": "2026-11-08T20:33:23Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520686316",
+              "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+              "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+              "cacheKey": "eval-002-c1-baseline-cold-3",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-baseline-cold-3",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 4,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-baseline-4",
+          "runId": 42520804021,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520804021",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:34:19Z",
+          "startedAt": "2026-11-08T20:34:22.000Z",
+          "completedAt": "2026-11-08T20:34:40.000Z",
+          "elapsedSeconds": 18,
+          "jobSeconds": 16,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128853636435,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:34:22Z",
+              "completedAt": "2026-11-08T20:34:29Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128853675399,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:34:31Z",
+              "completedAt": "2026-11-08T20:34:40Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520804021",
+              "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+              "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+              "cacheKey": "eval-002-c1-baseline-cold-4",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-baseline-cold-4",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 4,
+          "side": "candidate",
+          "group": "cold",
+          "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+          "correlation": "eval-002-c1-candidate-4",
+          "runId": 42520845190,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520845190",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:34:48Z",
+          "startedAt": "2026-11-08T20:34:51.000Z",
+          "completedAt": "2026-11-08T20:35:11.000Z",
+          "elapsedSeconds": 20,
+          "jobSeconds": 17,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128853758656,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:34:51Z",
+              "completedAt": "2026-11-08T20:34:58Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128853804077,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:35:01Z",
+              "completedAt": "2026-11-08T20:35:11Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42520845190",
+              "commit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+              "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+              "cacheKey": "eval-002-c1-candidate-cold-4",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-002-c1-candidate-cold-4",
+          "expectedCacheHit": false,
+          "source": "github"
+        }
+      ],
+      "primes": []
+    },
+    "1-measurements-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "measurements",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+          "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+          "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-envelope-28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee.json",
+          "sha256": "28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+          "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-validation-envelope-6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd.json",
+          "sha256": "6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-investigator-input-f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898.json",
+          "sha256": "f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-envelope-5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818.json",
+          "sha256": "5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-measurements-920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775.json",
+          "sha256": "920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ]
+    },
+    "1-execution-validation": [
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      }
+    ],
+    "1-execution-validation-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "execution-validation",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+          "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+          "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-envelope-28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee.json",
+          "sha256": "28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+          "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-validation-envelope-6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd.json",
+          "sha256": "6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-investigator-input-f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898.json",
+          "sha256": "f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-envelope-5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818.json",
+          "sha256": "5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-measurements-920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775.json",
+          "sha256": "920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-measurements-envelope-7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e.json",
+          "sha256": "7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-execution-validation-2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37.json",
+          "sha256": "2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ]
+    },
+    "1-acceptance": {
+      "status": "rejected",
+      "rule": "paired-log-t95-v1",
+      "pairs": 5,
+      "primaryRatio": 1.0717885426036613,
+      "primaryUpper95": 1.344537693642105,
+      "secondaryRatio": 1.0609010658344902,
+      "secondaryUpper95": 1.3095521758578303,
+      "reason": "The observed mean ratios miss at least one configured threshold."
+    },
+    "1-acceptance-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "acceptance",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+          "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+          "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-envelope-28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee.json",
+          "sha256": "28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+          "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-validation-envelope-6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd.json",
+          "sha256": "6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-investigator-input-f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898.json",
+          "sha256": "f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-envelope-5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818.json",
+          "sha256": "5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-measurements-920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775.json",
+          "sha256": "920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-measurements-envelope-7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e.json",
+          "sha256": "7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-execution-validation-2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37.json",
+          "sha256": "2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-execution-validation-envelope-3539e348f99064d007b2311d66dc900d6a92572e553a6bc846ae938db8e5a104.json",
+          "sha256": "3539e348f99064d007b2311d66dc900d6a92572e553a6bc846ae938db8e5a104",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-acceptance-ea76d53912905e2aef922887173aff478aba9483af57683c942e4296fc465e94.json",
+          "sha256": "ea76d53912905e2aef922887173aff478aba9483af57683c942e4296fc465e94",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ]
+    },
+    "1-review": {
+      "recommendation": "approve",
+      "concerns": [],
+      "explanation": "Deterministic comparator uses the same correctness and measurement gates.",
+      "evidence": [
+        "validation",
+        "acceptance"
+      ],
+      "requestExperiment": false
+    },
+    "1-review-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-002",
+      "stepId": "review",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c.json",
+          "sha256": "ab1ba364869b7f5b9d755e4740b8c35d0a3e0a6914c9c429e995f2ff28eed81c",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3.json",
+          "sha256": "715d9bd3c9095570cd9022bc622b8c787c68fbb5dcddc0707e9c8875e9cd72e3",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+          "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01.json",
+          "sha256": "a3400286465954f9fe2dc3d39972be5f474d561d492e9a81d64cb755460dea01",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24.json",
+          "sha256": "8da2e899c29781fed0ae0dc97167594a058bf736eb6617df46f4cdbb89654f24",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-patch-envelope-28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee.json",
+          "sha256": "28bce56ca70f466662fb2ec3e52e17e65a086957d9a8d5133bfbb03286305cee",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+          "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-validation-envelope-6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd.json",
+          "sha256": "6086490a840a60bd1b809bae6cfbb4fabbfb59cd0b56246c2451f0190ac6f6dd",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-investigator-input-f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898.json",
+          "sha256": "f087326a92cfbae46aaae5d2b5de8ead14475744dfe6c9d7d70365db6330a898",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-envelope-5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818.json",
+          "sha256": "5dda738907498a8a8993d5798cdf4c78e0bbbe45475b09d1e88572f4b87a8818",
+          "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-measurements-920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775.json",
+          "sha256": "920e18467ea252cae59cba064fbc7d8fd39920bc576898d6c542dcf267720775",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-measurements-envelope-7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e.json",
+          "sha256": "7a63402b00245c67a05dc2096cf867f1bdc3b16e53a0723eaf0057af0746be9e",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-execution-validation-2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37.json",
+          "sha256": "2647f81316043787f6220d8b5c8d5e8f8bb25bc8bfc00be1bb94367757ecae37",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-execution-validation-envelope-3539e348f99064d007b2311d66dc900d6a92572e553a6bc846ae938db8e5a104.json",
+          "sha256": "3539e348f99064d007b2311d66dc900d6a92572e553a6bc846ae938db8e5a104",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-acceptance-ea76d53912905e2aef922887173aff478aba9483af57683c942e4296fc465e94.json",
+          "sha256": "ea76d53912905e2aef922887173aff478aba9483af57683c942e4296fc465e94",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        },
+        {
+          "path": "artifacts/1-acceptance-envelope-c579d8e79ee3b55c73971547d1c35c4b473d35512d5638801347beae937730ee.json",
+          "sha256": "c579d8e79ee3b55c73971547d1c35c4b473d35512d5638801347beae937730ee",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-review-949a4d50a3976d51ba1fb13e98a2bb48a8c173101423fa8b4c8895235ae4c16b.json",
+          "sha256": "949a4d50a3976d51ba1fb13e98a2bb48a8c173101423fa8b4c8895235ae4c16b",
+          "targetCommit": "d003b9221d86f5834d52cd4df661c4e20763c8fd",
+          "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+        }
+      ]
+    }
+  },
+  "error": null
+}

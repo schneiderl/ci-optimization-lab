@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "602a9167e977b8e4655c60f77031b7d24ec060c5785cab43f2810134c51e8b3f",
+  "correlation": "eval-014-c1-candidate-3",
+  "commit": "5e9def589148acb4b4044933133d0ad6153bcff7",
+  "ref": "lab/eval-014/c1/candidate",
+  "status": "completed",
+  "createdAt": "2026-11-08T20:41:49.873Z",
+  "runId": 42521432886
+}

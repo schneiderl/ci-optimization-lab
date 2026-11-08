@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "requestDigest": "91577f47e75601aaa32ab266b21f8f71a128943307700e97bdd642bf986edb6b",
+  "output": {
+    "files": [
+      {
+        "path": "ci/plan.json",
+        "content": "{\"schemaVersion\":1,\"cache\":true,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\"]]}\n"
+      }
+    ],
+    "explanation": "Recorded CI plan edit."
+  },
+  "usage": {
+    "provider": "recorded",
+    "role": "editor",
+    "model": "fixture-v1",
+    "requestDigest": "91577f47e75601aaa32ab266b21f8f71a128943307700e97bdd642bf986edb6b",
+    "responseDigest": "d38c349016220fba3afe21072da0847a5d78be7adf4261880b9aaa4d002e113a",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "costUsd": 0,
+    "live": false,
+    "timestamp": "2026-11-08T20:40:25.702Z"
+  }
+}

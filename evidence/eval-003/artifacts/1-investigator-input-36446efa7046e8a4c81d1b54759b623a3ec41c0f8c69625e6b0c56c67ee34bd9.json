@@ -1,0 +1,150 @@
+{
+  "snapshot": {
+    "ci/plan.json": "{\"schemaVersion\":1,\"cache\":false,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\"]]}\n",
+    ".github/workflows/experiment.yml": "name: Controlled experiment\nrun-name: ${{ inputs.correlation }}\non:\n  workflow_dispatch:\n    inputs:\n      correlation:\n        required: true\n        type: string\n      cache_key:\n        required: true\n        type: string\npermissions:\n  contents: read\njobs:\n  plan:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    outputs:\n      matrix: ${{ steps.plan.outputs.matrix }}\n      cache: ${{ steps.plan.outputs.cache }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - run: npm ci --ignore-scripts\n      - id: plan\n        run: node ci/matrix.ts\n  tests:\n    needs: plan\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    strategy:\n      fail-fast: false\n      max-parallel: 4\n      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - id: dependencies\n        if: needs.plan.outputs.cache == 'true'\n        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830\n        with:\n          path: node_modules\n          key: deps-${{ inputs.cache_key }}-${{ matrix.partition }}-${{ hashFiles('package-lock.json') }}\n      - if: steps.dependencies.outputs.cache-hit != 'true'\n        run: npm ci --ignore-scripts\n      - run: node ci/execute.ts\n        env:\n          PARTITION: ${{ matrix.partition }}\n          CACHE_KEY: ${{ inputs.cache_key }}\n          CACHE_HIT: ${{ steps.dependencies.outputs.cache-hit }}\n      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n        with:\n          name: execution-${{ matrix.partition }}\n          path: execution.json\n          retention-days: 1\n          if-no-files-found: error\n",
+    "ci/case.json": "{\n  \"id\": \"cache\",\n  \"iterations\": 50000,\n  \"tests\": {\n    \"case-000\": \"c914eb26b1fb72f47dd5f2704be37ba59ae461166860d7e7b570fedc042b913b\",\n    \"case-001\": \"55c5a0fc678e5d90db61097bbdb67d4ee561d3e6be7f2428c9cd2785b448c7ff\",\n    \"case-002\": \"4c4c08f4e948c7f267eff30c0ccd0d4e86ab623c8a4bfd502c1fb25124bc0a79\",\n    \"case-003\": \"c9832d5c03ab71dae92d4327b52d24fba9bec5cfa997384699bc81836dfdd7ca\",\n    \"case-004\": \"6ed0458eecd206cb7386847738119886255ff794354d35ef05206e5a186fcb76\",\n    \"case-005\": \"f0d7e583901b7d881c3cb88d74a1c5455ff04252246ce976c064fdaf8ea5b9af\",\n    \"case-006\": \"d98f259156a05424a9c7b6601d991b49a1bfcfc5091e20d6aeff6251c15277fd\",\n    \"case-007\": \"5d1767a420b13627ea60ec8e8905b43b6b985495208819670078652bd0574cdd\"\n  },\n  \"maxPartitions\": 1\n}\n"
+  },
+  "plan": {
+    "schemaVersion": 1,
+    "cache": false,
+    "partitions": [
+      [
+        "case-000",
+        "case-001",
+        "case-002",
+        "case-003",
+        "case-004",
+        "case-005",
+        "case-006",
+        "case-007"
+      ]
+    ]
+  },
+  "baselineEvidence": {
+    "schemaVersion": 1,
+    "pair": 0,
+    "side": "baseline",
+    "group": "cold",
+    "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+    "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+    "correlation": "eval-003-c1-profile",
+    "runId": 42520332790,
+    "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520332790",
+    "attempt": 1,
+    "conclusion": "success",
+    "createdAt": "2026-11-08T20:29:00Z",
+    "startedAt": "2026-11-08T20:29:03.000Z",
+    "completedAt": "2026-11-08T20:29:23.000Z",
+    "elapsedSeconds": 20,
+    "jobSeconds": 17,
+    "queueSeconds": 3,
+    "jobs": [
+      {
+        "id": 128852238560,
+        "name": "plan",
+        "startedAt": "2026-11-08T20:29:03Z",
+        "completedAt": "2026-11-08T20:29:11Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      },
+      {
+        "id": 128852284718,
+        "name": "tests (0)",
+        "startedAt": "2026-11-08T20:29:14Z",
+        "completedAt": "2026-11-08T20:29:23Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      }
+    ],
+    "execution": [
+      {
+        "schemaVersion": 1,
+        "runId": "42520332790",
+        "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+        "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+        "cacheKey": "eval-003-c1-profile",
+        "cacheHit": false,
+        "partition": 0,
+        "node": "v24.22.2",
+        "tests": [
+          {
+            "id": "case-000",
+            "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+            "status": "pass"
+          },
+          {
+            "id": "case-001",
+            "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+            "status": "pass"
+          },
+          {
+            "id": "case-002",
+            "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+            "status": "pass"
+          },
+          {
+            "id": "case-003",
+            "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+            "status": "pass"
+          },
+          {
+            "id": "case-004",
+            "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+            "status": "pass"
+          },
+          {
+            "id": "case-005",
+            "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+            "status": "pass"
+          },
+          {
+            "id": "case-006",
+            "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+            "status": "pass"
+          },
+          {
+            "id": "case-007",
+            "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+            "status": "pass"
+          }
+        ],
+        "dependencyCheck": true
+      }
+    ],
+    "cacheKey": "eval-003-c1-profile",
+    "expectedCacheHit": false,
+    "source": "github"
+  },
+  "allowedFiles": [
+    "ci/plan.json"
+  ],
+  "requiredTests": [
+    "case-000",
+    "case-001",
+    "case-002",
+    "case-003",
+    "case-004",
+    "case-005",
+    "case-006",
+    "case-007"
+  ],
+  "maxPartitions": 1,
+  "objective": {
+    "schemaVersion": 1,
+    "primary": "elapsedSeconds",
+    "direction": "minimize",
+    "minimumImprovement": 0.1,
+    "secondaryRegressionLimit": 0.05,
+    "pairs": 5,
+    "acceptanceRule": "paired-log-t95-v1",
+    "requiredChecks": [
+      "protected-files",
+      "exact-test-inventory",
+      "expected-outputs",
+      "successful-workflow",
+      "cache-condition",
+      "single-attempt"
+    ]
+  },
+  "previousAttempts": []
+}

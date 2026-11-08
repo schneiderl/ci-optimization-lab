@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "runId": "eval-012",
+  "stepId": "investigator-input",
+  "attemptId": "cycle-1",
+  "inputs": [
+    {
+      "path": "artifacts/1-baseline-84bd0a1d397fef85df81c69ab84f5e353c31eb08f85a2536f1e3b1639544a5b4.json",
+      "sha256": "84bd0a1d397fef85df81c69ab84f5e353c31eb08f85a2536f1e3b1639544a5b4",
+      "targetCommit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-baseline-envelope-ec8dfe7a0169329ba3b63c4bafdd781f20a8784ded7f04d20a26fd874ac987dc.json",
+      "sha256": "ec8dfe7a0169329ba3b63c4bafdd781f20a8784ded7f04d20a26fd874ac987dc",
+      "targetCommit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": null
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/1-investigator-input-441f055195f3a4a8a4d8a1569346cf8339491b59de65a2dd58841be0319b3c39.json",
+      "sha256": "441f055195f3a4a8a4d8a1569346cf8339491b59de65a2dd58841be0319b3c39",
+      "targetCommit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "status": "rejected",
+  "rule": "paired-log-t95-v1",
+  "pairs": 5,
+  "primaryRatio": 1.0752467746908143,
+  "primaryUpper95": 1.1495191183489277,
+  "secondaryRatio": 1.6083991733251972,
+  "secondaryUpper95": 1.815362858396595,
+  "reason": "The observed mean ratios miss at least one configured threshold."
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "8afd5f6b8cf7397f5dcc89ff88ff9547d6029cf304793038d000cde0e3c06974",
+  "correlation": "smoke-cache-c1-candidate-3",
+  "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+  "ref": "lab/smoke-cache/c1/candidate",
+  "status": "completed",
+  "createdAt": "2026-11-08T20:28:10.734Z",
+  "runId": 42520267889
+}

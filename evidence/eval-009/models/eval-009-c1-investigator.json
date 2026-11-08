@@ -1,0 +1,6 @@
+{
+  "status": "failed-or-ambiguous",
+  "requestDigest": "78f7a1c92091326c9dd447d0bf3a0fba68f3d917b38b127a3231a0f5f09b345c",
+  "error": "Error: AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in",
+  "timestamp": "2026-11-08T20:34:18.568Z"
+}

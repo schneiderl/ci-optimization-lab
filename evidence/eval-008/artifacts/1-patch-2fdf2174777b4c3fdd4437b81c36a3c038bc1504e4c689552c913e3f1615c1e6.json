@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+  "candidateCommit": "d04a8e8ac04eb03395773bc6195146e38ca2516d",
+  "digest": "972676111fad1f76f77af14ea046b5e09a52fd205e735e35232dd7c700f83244",
+  "changedFiles": [
+    "ci/plan.json"
+  ],
+  "text": "diff --git c/ci/plan.json w/ci/plan.json\nindex a989bd1..e65db69 100644\n--- c/ci/plan.json\n+++ w/ci/plan.json\n@@ -1 +1 @@\n-{\"schemaVersion\":1,\"cache\":true,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\",\"case-008\",\"case-009\",\"case-010\",\"case-011\",\"case-012\",\"case-013\",\"case-014\",\"case-015\",\"case-016\",\"case-017\",\"case-018\",\"case-019\",\"case-020\",\"case-021\",\"case-022\",\"case-023\"]]}\n+{\"schemaVersion\":1,\"cache\":true,\"partitions\":[[\"case-000\",\"case-002\",\"case-004\",\"case-006\",\"case-008\",\"case-010\",\"case-012\",\"case-014\",\"case-016\",\"case-018\",\"case-020\",\"case-022\"],[\"case-001\",\"case-003\",\"case-005\",\"case-007\",\"case-009\",\"case-011\",\"case-013\",\"case-015\",\"case-017\",\"case-019\",\"case-021\",\"case-023\"]]}\n"
+}

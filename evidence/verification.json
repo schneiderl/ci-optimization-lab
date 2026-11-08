@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-08T20:43:11.622346+00:00",
+  "sourceCommit": "48b4fd5ede87bc507b5706813357a2ef93953f7f",
+  "checks": {
+    "strictTypecheck": "pass",
+    "interfaceTests": 23,
+    "checkedBlockExamples": 6,
+    "build": "pass",
+    "independentCliBlocks": 6,
+    "labGitHubCi": "https://github.com/schneiderl/ci-optimization-lab/actions/runs/42521305220",
+    "targetMainCi": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42519798776",
+    "liveReconciliation": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521474775"
+  },
+  "credentialCache": {
+    "implementationTests": "pass: one capture for four concurrent requests; modes0700/0600; repeat-failure suppression",
+    "realCapture": "blocked: runtime account is not signed in; no key persisted; no repeated lookup"
+  },
+  "knownModelSpendUsd": 0.000166656,
+  "conservativeCumulativeExposureUsd": 0.223166656,
+  "note": "Snapshot before final matrix completion. CI storage ledger amounts are conservative bounds, not invoiced usage. Live model smoke and recorded agent workflow evidence remain separately labeled."
+}

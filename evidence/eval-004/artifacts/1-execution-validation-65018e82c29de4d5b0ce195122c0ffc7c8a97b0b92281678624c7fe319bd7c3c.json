@@ -1,0 +1,202 @@
+[
+  {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "successful-workflow",
+        "pass": true,
+        "reason": "All jobs must succeed on the approved standard Linux runner."
+      },
+      {
+        "name": "single-attempt",
+        "pass": true,
+        "reason": "Reruns are excluded from paired comparisons."
+      },
+      {
+        "name": "partition-coverage",
+        "pass": true,
+        "reason": "Every planned partition must execute exactly its assigned tests."
+      },
+      {
+        "name": "exact-test-inventory",
+        "pass": true,
+        "reason": "Collected reports must contain every protected test exactly once."
+      },
+      {
+        "name": "expected-outputs",
+        "pass": true,
+        "reason": "Output digests must match independently computed protected expectations."
+      },
+      {
+        "name": "execution-identity",
+        "pass": true,
+        "reason": "Reports must identify the exact workflow run, commit, and plan."
+      },
+      {
+        "name": "cache-condition",
+        "pass": true,
+        "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+      }
+    ]
+  },
+  {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "successful-workflow",
+        "pass": true,
+        "reason": "All jobs must succeed on the approved standard Linux runner."
+      },
+      {
+        "name": "single-attempt",
+        "pass": true,
+        "reason": "Reruns are excluded from paired comparisons."
+      },
+      {
+        "name": "partition-coverage",
+        "pass": true,
+        "reason": "Every planned partition must execute exactly its assigned tests."
+      },
+      {
+        "name": "exact-test-inventory",
+        "pass": true,
+        "reason": "Collected reports must contain every protected test exactly once."
+      },
+      {
+        "name": "expected-outputs",
+        "pass": true,
+        "reason": "Output digests must match independently computed protected expectations."
+      },
+      {
+        "name": "execution-identity",
+        "pass": true,
+        "reason": "Reports must identify the exact workflow run, commit, and plan."
+      },
+      {
+        "name": "cache-condition",
+        "pass": true,
+        "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+      }
+    ]
+  },
+  {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "successful-workflow",
+        "pass": true,
+        "reason": "All jobs must succeed on the approved standard Linux runner."
+      },
+      {
+        "name": "single-attempt",
+        "pass": true,
+        "reason": "Reruns are excluded from paired comparisons."
+      },
+      {
+        "name": "partition-coverage",
+        "pass": true,
+        "reason": "Every planned partition must execute exactly its assigned tests."
+      },
+      {
+        "name": "exact-test-inventory",
+        "pass": true,
+        "reason": "Collected reports must contain every protected test exactly once."
+      },
+      {
+        "name": "expected-outputs",
+        "pass": true,
+        "reason": "Output digests must match independently computed protected expectations."
+      },
+      {
+        "name": "execution-identity",
+        "pass": true,
+        "reason": "Reports must identify the exact workflow run, commit, and plan."
+      },
+      {
+        "name": "cache-condition",
+        "pass": true,
+        "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+      }
+    ]
+  },
+  {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "successful-workflow",
+        "pass": true,
+        "reason": "All jobs must succeed on the approved standard Linux runner."
+      },
+      {
+        "name": "single-attempt",
+        "pass": true,
+        "reason": "Reruns are excluded from paired comparisons."
+      },
+      {
+        "name": "partition-coverage",
+        "pass": true,
+        "reason": "Every planned partition must execute exactly its assigned tests."
+      },
+      {
+        "name": "exact-test-inventory",
+        "pass": true,
+        "reason": "Collected reports must contain every protected test exactly once."
+      },
+      {
+        "name": "expected-outputs",
+        "pass": true,
+        "reason": "Output digests must match independently computed protected expectations."
+      },
+      {
+        "name": "execution-identity",
+        "pass": true,
+        "reason": "Reports must identify the exact workflow run, commit, and plan."
+      },
+      {
+        "name": "cache-condition",
+        "pass": true,
+        "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+      }
+    ]
+  },
+  {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "successful-workflow",
+        "pass": true,
+        "reason": "All jobs must succeed on the approved standard Linux runner."
+      },
+      {
+        "name": "single-attempt",
+        "pass": true,
+        "reason": "Reruns are excluded from paired comparisons."
+      },
+      {
+        "name": "partition-coverage",
+        "pass": true,
+        "reason": "Every planned partition must execute exactly its assigned tests."
+      },
+      {
+        "name": "exact-test-inventory",
+        "pass": true,
+        "reason": "Collected reports must contain every protected test exactly once."
+      },
+      {
+        "name": "expected-outputs",
+        "pass": true,
+        "reason": "Output digests must match independently computed protected expectations."
+      },
+      {
+        "name": "execution-identity",
+        "pass": true,
+        "reason": "Reports must identify the exact workflow run, commit, and plan."
+      },
+      {
+        "name": "cache-condition",
+        "pass": true,
+        "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+      }
+    ]
+  }
+]

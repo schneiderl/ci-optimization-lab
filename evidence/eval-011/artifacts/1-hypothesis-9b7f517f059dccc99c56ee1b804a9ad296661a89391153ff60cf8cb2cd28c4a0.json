@@ -1,0 +1,9 @@
+{
+  "decision": "no-change",
+  "family": "none",
+  "explanation": "Rule v1 has no further supported change. This does not prove optimality.",
+  "plan": null,
+  "evidence": [
+    "pipeline-snapshot"
+  ]
+}

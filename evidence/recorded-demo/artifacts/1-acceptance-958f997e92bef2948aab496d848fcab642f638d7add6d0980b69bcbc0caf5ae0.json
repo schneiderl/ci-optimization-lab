@@ -1,0 +1,10 @@
+{
+  "status": "accepted",
+  "rule": "paired-log-t95-v1",
+  "pairs": 5,
+  "primaryRatio": 0.8,
+  "primaryUpper95": 0.8,
+  "secondaryRatio": 0.9,
+  "secondaryUpper95": 0.9,
+  "reason": "Both one-sided 95% paired log-ratio bounds meet the frozen thresholds."
+}

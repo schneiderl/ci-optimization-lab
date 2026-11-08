@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "4cb6a328c67c50d02a44181a0cdd4963676479b4e48c96658f8e5a07256b7aa2",
+  "correlation": "eval-020-c1-baseline-2",
+  "commit": "2b0521a647a0dda42e9c99d14714b7810276c5a0",
+  "ref": "lab/eval-020/c1/baseline",
+  "status": "completed",
+  "createdAt": "2026-11-08T20:47:00.580Z",
+  "runId": 42521866650
+}

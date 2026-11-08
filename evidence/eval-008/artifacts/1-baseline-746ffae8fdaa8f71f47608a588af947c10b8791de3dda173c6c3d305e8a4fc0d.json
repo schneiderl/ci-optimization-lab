@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "pair": 0,
+  "side": "baseline",
+  "group": "cold",
+  "commit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+  "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+  "correlation": "eval-008-c1-profile",
+  "runId": 42520525280,
+  "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520525280",
+  "attempt": 1,
+  "conclusion": "success",
+  "createdAt": "2026-11-08T20:31:11Z",
+  "startedAt": "2026-11-08T20:31:14.000Z",
+  "completedAt": "2026-11-08T20:31:35.000Z",
+  "elapsedSeconds": 21,
+  "jobSeconds": 19,
+  "queueSeconds": 3,
+  "jobs": [
+    {
+      "id": 128852808381,
+      "name": "plan",
+      "startedAt": "2026-11-08T20:31:14Z",
+      "completedAt": "2026-11-08T20:31:19Z",
+      "conclusion": "success",
+      "runner": "ubuntu-24.04"
+    },
+    {
+      "id": 128852843156,
+      "name": "tests (0)",
+      "startedAt": "2026-11-08T20:31:21Z",
+      "completedAt": "2026-11-08T20:31:35Z",
+      "conclusion": "success",
+      "runner": "ubuntu-24.04"
+    }
+  ],
+  "execution": [
+    {
+      "schemaVersion": 1,
+      "runId": "42520525280",
+      "commit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "planDigest": "d001b679d2d8b0b9eb2d14d5e7cb042e33adfc42ababfbc279b07b9d6f3ada8d",
+      "cacheKey": "eval-008-c1-profile",
+      "cacheHit": false,
+      "partition": 0,
+      "node": "v24.22.2",
+      "tests": [
+        {
+          "id": "case-000",
+          "output": "fcdcdf95272441820d7b5184ebeb7f4a491ccc2e722df195a72fbcf49feff1d7",
+          "status": "pass"
+        },
+        {
+          "id": "case-001",
+          "output": "79316bb08b031663f2a46d0d8db7f0f07629c5fc0dcf1f6bece4a43a1757a713",
+          "status": "pass"
+        },
+        {
+          "id": "case-002",
+          "output": "75b986300b0f4d48ab9554717f34cf2e2ab22230b801aaed35fc9ac208b5637b",
+          "status": "pass"
+        },
+        {
+          "id": "case-003",
+          "output": "21e2564ebe4daca5a83cff74659103dc9064073d510fd8971a62ba810709755e",
+          "status": "pass"
+        },
+        {
+          "id": "case-004",
+          "output": "0859c3f94fa6a78f77ae538697d20fc512e396ba5d1e6c025aa32043c41b7816",
+          "status": "pass"
+        },
+        {
+          "id": "case-005",
+          "output": "459bfc2ead2cd5179fe1b74001542426071c0dd4fb7be559e79b80ccb974ba6a",
+          "status": "pass"
+        },
+        {
+          "id": "case-006",
+          "output": "d21f4008984b55c565235692d954046b20bd74a4defa41aefc61e4713913be60",
+          "status": "pass"
+        },
+        {
+          "id": "case-007",
+          "output": "95b653d941225a120748d538f28c0587b28e99e435568624ef6454ae71c68410",
+          "status": "pass"
+        },
+        {
+          "id": "case-008",
+          "output": "11d07d8081fc214037c2d400e9bbf3df9448b7eb454e3f8fd49b4fc2641b0451",
+          "status": "pass"
+        },
+        {
+          "id": "case-009",
+          "output": "221cddc48be335badcc159167b43dd5ac9f397b6152bc14fe783a3f74d99b09d",
+          "status": "pass"
+        },
+        {
+          "id": "case-010",
+          "output": "1452980198b33bc7d63ef4e6533eb7321f78e63a95523223c82fe8d32f486cc4",
+          "status": "pass"
+        },
+        {
+          "id": "case-011",
+          "output": "3c210f3b2744ccbc01bb133b82394fabebb2f1a8baba1b85e33084719a50ebe1",
+          "status": "pass"
+        },
+        {
+          "id": "case-012",
+          "output": "5df61cad3b8c78dbe0ab159c58ef573271e3433481963ae9d9907f5feb5f2988",
+          "status": "pass"
+        },
+        {
+          "id": "case-013",
+          "output": "97295142d6887d24ed86fbfb51951a838cab3beec4fc04f5d384a15927cd6792",
+          "status": "pass"
+        },
+        {
+          "id": "case-014",
+          "output": "37a6b04b65b9238cef12d609cd27ae4f3f487a69fd70f48df733f2062b86ce48",
+          "status": "pass"
+        },
+        {
+          "id": "case-015",
+          "output": "67dfe50255e43f2da4ae0d6c8924aba47acceb12781f24a4a3e84c2854a0e1f8",
+          "status": "pass"
+        },
+        {
+          "id": "case-016",
+          "output": "29062ba2a0ce482c17be6cee744197265827d885b4d8b4874e072185afa34c55",
+          "status": "pass"
+        },
+        {
+          "id": "case-017",
+          "output": "55d5971e563c2f1c344024ab6fc0af16f5c0a58d75aeadef5a43ce5fb5dff3ca",
+          "status": "pass"
+        },
+        {
+          "id": "case-018",
+          "output": "f6126a6843cc4102eb4ca3e292434ff0982c489c36da4169df0361432efa3f40",
+          "status": "pass"
+        },
+        {
+          "id": "case-019",
+          "output": "f19eebbcf75de86c520276163a10e5013698585863b21f0f1900f750370417ee",
+          "status": "pass"
+        },
+        {
+          "id": "case-020",
+          "output": "ce2b1c41430374d4eecec27da7034b0eb5a0d8033bd7bef8b951f03d56234f64",
+          "status": "pass"
+        },
+        {
+          "id": "case-021",
+          "output": "dc5fc35657ca3eba29bc700bb54c6b264685965adaf8dc935019c767ab74b801",
+          "status": "pass"
+        },
+        {
+          "id": "case-022",
+          "output": "6afad5242936581e5a3f8a2e1ebc61c2ae6cd17992a55ea598b4976dffe67322",
+          "status": "pass"
+        },
+        {
+          "id": "case-023",
+          "output": "933f476a04a4fcdbc7711e5561c464378509fa62ec1ff1065757a3cd1774dd6f",
+          "status": "pass"
+        }
+      ],
+      "dependencyCheck": true
+    }
+  ],
+  "cacheKey": "eval-008-c1-profile",
+  "expectedCacheHit": false,
+  "source": "github"
+}

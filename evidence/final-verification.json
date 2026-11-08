@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-08T21:08:15.841475+00:00",
+  "sourceCommit": "c7f9d1f080d334ec37172587d4b6b5945fc0e19e",
+  "checks": {
+    "strictTypecheck": "pass",
+    "tests": 33,
+    "checkedBlockExamples": 6,
+    "additionalExecutionValidatorExample": "pass",
+    "build": "pass",
+    "independentCliBlocks": 6,
+    "independentExecutionValidatorCli": "pass",
+    "labGitHubCi": "https://github.com/schneiderl/ci-optimization-lab/actions/runs/42523518280",
+    "targetMainCi": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42519798776",
+    "revalidatedRuns": 21,
+    "revalidatedObservations": 131,
+    "revalidation": "evaluation/revalidation.json",
+    "cancellationLifecycle": "pass: pre-aborted/preflight/reservation guards, pending remote reconciliation, standalone CLI recovery and idempotent replay"
+  },
+  "originalLiveReconciliation": {
+    "sourceCommit": "48b4fd5ede87bc507b5706813357a2ef93953f7f",
+    "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521474775",
+    "repeatDispatches": 0
+  },
+  "evaluationOutcomes": {
+    "no-change": 8,
+    "rejected": 6,
+    "failed": 7
+  },
+  "knownModelSpendUsd": 0.000166656,
+  "conservativeCumulativeExposureUsd": 0.264166656,
+  "workflowReservations": 144,
+  "credentialCapture": "blocked; no key persisted; no automatic retries",
+  "limits": [
+    "Full live three-agent experiment unavailable: malformed generative output and later blocked credentials.",
+    "Final source revalidated original CI observations; it did not rerun their workflows.",
+    "The earlier malformed-output trial did not preserve usage/raw text; records remain unchanged. New code retains known usage before validation.",
+    "OpenCode successful completion/export behavior is checked with synthetic interfaces; live OpenCode calls were free-limit failures.",
+    "Actual invoice totals unavailable; storage charges use conservative bounds."
+  ],
+  "independentReview": {
+    "sourceCommit": "c7f9d1f080d334ec37172587d4b6b5945fc0e19e",
+    "status": "pass",
+    "remainingScopedBlockers": 0,
+    "receipt": "evidence/independent-review.md",
+    "liveCredentialsOrDispatchesUsed": false
+  }
+}

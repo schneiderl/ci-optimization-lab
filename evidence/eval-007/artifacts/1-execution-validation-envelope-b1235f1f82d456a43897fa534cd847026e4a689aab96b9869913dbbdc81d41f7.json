@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "runId": "eval-007",
+  "stepId": "execution-validation",
+  "attemptId": "cycle-1",
+  "inputs": [
+    {
+      "path": "artifacts/1-baseline-e7c67db2df04bb3a9d41706dc3daa84bc636f494bde7b8d37ff44103dd454d46.json",
+      "sha256": "e7c67db2df04bb3a9d41706dc3daa84bc636f494bde7b8d37ff44103dd454d46",
+      "targetCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-baseline-envelope-0da68a67c20bddbba44eab5f06d1ee3541ff1ce5847d91a48379b28674b0f7ca.json",
+      "sha256": "0da68a67c20bddbba44eab5f06d1ee3541ff1ce5847d91a48379b28674b0f7ca",
+      "targetCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-hypothesis-0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761.json",
+      "sha256": "0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761",
+      "targetCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-hypothesis-envelope-af7d1b180c4f57dbe36a01a368353bff779aee397f9b621f6406440ee4088e64.json",
+      "sha256": "af7d1b180c4f57dbe36a01a368353bff779aee397f9b621f6406440ee4088e64",
+      "targetCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-baseline-series-abded55e3865d721c86e694330afaa184926f844557d1a08143133f3d4c045ae.json",
+      "sha256": "abded55e3865d721c86e694330afaa184926f844557d1a08143133f3d4c045ae",
+      "targetCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-baseline-series-envelope-097f5618de3dcbee81848e1608a34a6ffffcb3a1d5e006e4456ef208cc58d25b.json",
+      "sha256": "097f5618de3dcbee81848e1608a34a6ffffcb3a1d5e006e4456ef208cc58d25b",
+      "targetCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "patchDigest": null
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/1-execution-validation-115cd4591d7ba7e317ae8b1efd8bb71a002ab89cb03d10bdebeb3ae2161b7e4d.json",
+      "sha256": "115cd4591d7ba7e317ae8b1efd8bb71a002ab89cb03d10bdebeb3ae2161b7e4d",
+      "targetCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "patchDigest": null
+    }
+  ]
+}

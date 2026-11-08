@@ -1,0 +1,6 @@
+{
+  "status": "failed-or-ambiguous",
+  "requestDigest": "b0cbc9bfd3c68769855d36c30114f8944c05d0c093ceea74dc7e30bf827afa67",
+  "error": "Error: opencode: 1: {\"type\":\"step_start\",\"timestamp\":1794169375309,\"sessionID\":\"ses_e432bfb97ffePr9y8dp7kJSeOc\",\"part\":{\"id\":\"prt_1bcd40a4d001qsN4DODRkEiMj7\",\"sessionID\":\"ses_e432bfb97ffePr9y8dp7kJSeOc\",\"messageID\":\"msg_1bcd409a2001EaiRfkyy1Tv927\",\"type\":\"step-start\"}}\n{\"type\":\"error\",\"timestamp\":1794169375330,\"sessionID\":\"ses_e432bfb97ffePr9y8dp7kJSeOc\",\"error\":{\"type\":\"provider.free-limit\",\"message\":\"Free usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.\",\"status\":429,\"response\":{\"body\":\"{\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"FreeUsageLimitError\\\",\\\"message\\\":\\\"Free usage limit reached. Free models work in OpenCode (https://opencode.ai); subscribe to OpenCode Go to keep going: https://opencode.ai/go\\\"}}\"},\"retryAfterMs\":13025000}}\n",
+  "timestamp": "2026-11-08T20:22:55.415Z"
+}

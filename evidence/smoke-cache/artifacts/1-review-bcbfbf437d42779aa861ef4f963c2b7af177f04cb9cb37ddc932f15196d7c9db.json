@@ -1,0 +1,12 @@
+{
+  "recommendation": "approve",
+  "concerns": [
+    "Recorded response; no live agent judgment."
+  ],
+  "explanation": "Deterministic checks control acceptance.",
+  "evidence": [
+    "validation",
+    "measurements"
+  ],
+  "requestExperiment": false
+}

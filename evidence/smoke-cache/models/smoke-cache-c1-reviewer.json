@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "requestDigest": "b232f742d0f98512911c8e896b4f246b4dbfc3b950c35ccdfeab98154689bc8d",
+  "output": {
+    "recommendation": "approve",
+    "concerns": [
+      "Recorded response; no live agent judgment."
+    ],
+    "explanation": "Deterministic checks control acceptance.",
+    "evidence": [
+      "validation",
+      "measurements"
+    ],
+    "requestExperiment": false
+  },
+  "usage": {
+    "provider": "recorded",
+    "role": "reviewer",
+    "model": "fixture-v1",
+    "requestDigest": "b232f742d0f98512911c8e896b4f246b4dbfc3b950c35ccdfeab98154689bc8d",
+    "responseDigest": "bcbfbf437d42779aa861ef4f963c2b7af177f04cb9cb37ddc932f15196d7c9db",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "costUsd": 0,
+    "live": false,
+    "timestamp": "2026-11-08T20:30:08.179Z"
+  }
+}

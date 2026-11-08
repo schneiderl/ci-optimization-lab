@@ -1,0 +1,1962 @@
+{
+  "schemaVersion": 1,
+  "runId": "eval-013",
+  "outcome": "no-change",
+  "config": {
+    "schemaVersion": 1,
+    "runId": "eval-013",
+    "targetPath": "/home/schneider/work/ci-lab-target-workloads",
+    "manifestPath": "/home/schneider/work/ci-optimization-lab/manifests/cache-heldout.json",
+    "dataRoot": "/home/schneider/work/ci-lab-runs",
+    "strategy": "unchanged",
+    "provider": "recorded",
+    "model": "cohere/north-mini-code:free",
+    "runner": "github",
+    "group": "cold",
+    "maxCycles": 1,
+    "timeoutSeconds": 1200,
+    "objective": {
+      "schemaVersion": 1,
+      "primary": "elapsedSeconds",
+      "direction": "minimize",
+      "minimumImprovement": 0.1,
+      "secondaryRegressionLimit": 0.05,
+      "pairs": 5,
+      "acceptanceRule": "paired-log-t95-v1",
+      "requiredChecks": [
+        "protected-files",
+        "exact-test-inventory",
+        "expected-outputs",
+        "successful-workflow",
+        "cache-condition",
+        "single-attempt"
+      ]
+    },
+    "cumulativeBudgetUsd": 30,
+    "perCallLimitUsd": 0.02,
+    "perExperimentLimitUsd": 1,
+    "maxConcurrency": 4
+  },
+  "models": [],
+  "ledger": {
+    "schemaVersion": 1,
+    "ceilingUsd": 30,
+    "entries": {
+      "smoke-1794169348524": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "opencode opencode/deepseek-v4.1-flash-free; no fallback"
+      },
+      "smoke-1794169348529": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": 0.00001722,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "smoke-1794169373227": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "opencode opencode/deepseek-v4.1-flash-free; no fallback"
+      },
+      "github-smoke-cache-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "smoke-1794169389759": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "opencode opencode/inkling-2-small-free; no fallback"
+      },
+      "smoke-cache-c1-investigator": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "recorded fixture-v1; no fallback"
+      },
+      "smoke-cache-c1-editor": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "recorded fixture-v1; no fallback"
+      },
+      "github-smoke-cache-c1-candidate-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "smoke-1794169494058": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "openrouter-free cohere/north-mini-code:free; no fallback"
+      },
+      "github-smoke-cache-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-006-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-006-c1-investigator": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": null,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "github-eval-002-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-003-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-baseline-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-smoke-cache-c1-candidate-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-003-c1-investigator": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": 0.000149436,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "github-eval-001-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-003-c1-editor": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": null,
+        "reason": "openrouter-free cohere/north-mini-code:free; no fallback"
+      },
+      "github-eval-004-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "smoke-cache-c1-reviewer": {
+        "reservedUsd": 0,
+        "chargedUpperBoundUsd": 0,
+        "reason": "recorded fixture-v1; no fallback"
+      },
+      "github-eval-004-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-baseline-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-004-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-baseline-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-001-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-baseline-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-007-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-baseline-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-009-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-baseline-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-009-c1-investigator": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": null,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "github-eval-002-c1-baseline-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-005-c1-candidate-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-002-c1-candidate-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-unchanged-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-012-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-baseline-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-unchanged-prime": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "eval-012-c1-investigator": {
+        "reservedUsd": 0.02,
+        "chargedUpperBoundUsd": null,
+        "reason": "jev typesafe/jev-1.14; no fallback"
+      },
+      "github-eval-008-c1-baseline-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-013-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-013-c1-unchanged-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-013-c1-unchanged-1": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-candidate-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-010-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-013-c1-unchanged-2": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-013-c1-unchanged-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-011-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-baseline-3": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-014-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-013-c1-unchanged-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": 0.001,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-008-c1-baseline-4": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": null,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-015-c1-profile": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": null,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      },
+      "github-eval-014-c1-baseline-0": {
+        "reservedUsd": 0.001,
+        "chargedUpperBoundUsd": null,
+        "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+      }
+    }
+  },
+  "artifactReferences": {
+    "1-baseline": {
+      "path": "artifacts/1-baseline-0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b.json",
+      "sha256": "0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-baseline-envelope": {
+      "path": "artifacts/1-baseline-envelope-9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04.json",
+      "sha256": "9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-investigator-input": {
+      "path": "artifacts/1-investigator-input-67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0.json",
+      "sha256": "67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-investigator-input-envelope": {
+      "path": "artifacts/1-investigator-input-envelope-8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745.json",
+      "sha256": "8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-hypothesis": {
+      "path": "artifacts/1-hypothesis-0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761.json",
+      "sha256": "0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-hypothesis-envelope": {
+      "path": "artifacts/1-hypothesis-envelope-9caa54b96287e4fadd7d5f19253537ff7f00b7bf71626117ec01079fd047bb62.json",
+      "sha256": "9caa54b96287e4fadd7d5f19253537ff7f00b7bf71626117ec01079fd047bb62",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-baseline-series": {
+      "path": "artifacts/1-baseline-series-0d16e841606c71e1963445bbb8c6215bbeb61630a09a2dd2facc73de8755bda5.json",
+      "sha256": "0d16e841606c71e1963445bbb8c6215bbeb61630a09a2dd2facc73de8755bda5",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-baseline-series-envelope": {
+      "path": "artifacts/1-baseline-series-envelope-f3f1dc9de39050ede5daf0cc56c668dd30cb7d96109aed359b18a98382eb875b.json",
+      "sha256": "f3f1dc9de39050ede5daf0cc56c668dd30cb7d96109aed359b18a98382eb875b",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-execution-validation": {
+      "path": "artifacts/1-execution-validation-65018e82c29de4d5b0ce195122c0ffc7c8a97b0b92281678624c7fe319bd7c3c.json",
+      "sha256": "65018e82c29de4d5b0ce195122c0ffc7c8a97b0b92281678624c7fe319bd7c3c",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    },
+    "1-execution-validation-envelope": {
+      "path": "artifacts/1-execution-validation-envelope-760c89dfa8273358318764ea5a0a207ab5f58b6b48915f911afe3550d17d9b86.json",
+      "sha256": "760c89dfa8273358318764ea5a0a207ab5f58b6b48915f911afe3550d17d9b86",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    }
+  },
+  "artifacts": {
+    "1-baseline": {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "baseline",
+      "group": "cold",
+      "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+      "correlation": "eval-013-c1-profile",
+      "runId": 42520967654,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520967654",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:36:10Z",
+      "startedAt": "2026-11-08T20:36:14.000Z",
+      "completedAt": "2026-11-08T20:36:34.000Z",
+      "elapsedSeconds": 20,
+      "jobSeconds": 18,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128854120637,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:36:14Z",
+          "completedAt": "2026-11-08T20:36:22Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128854165409,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:36:24Z",
+          "completedAt": "2026-11-08T20:36:34Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520967654",
+          "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+          "cacheKey": "eval-013-c1-profile",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+              "status": "pass"
+            },
+            {
+              "id": "case-008",
+              "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+              "status": "pass"
+            },
+            {
+              "id": "case-009",
+              "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+              "status": "pass"
+            },
+            {
+              "id": "case-010",
+              "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+              "status": "pass"
+            },
+            {
+              "id": "case-011",
+              "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+              "status": "pass"
+            },
+            {
+              "id": "case-012",
+              "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "eval-013-c1-profile",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    "1-baseline-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-013",
+      "stepId": "baseline",
+      "attemptId": "cycle-1",
+      "inputs": [],
+      "outputs": [
+        {
+          "path": "artifacts/1-baseline-0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b.json",
+          "sha256": "0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-investigator-input": {
+      "snapshot": {
+        "ci/plan.json": "{\"schemaVersion\":1,\"cache\":false,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\",\"case-008\",\"case-009\",\"case-010\",\"case-011\",\"case-012\"]]}\n",
+        ".github/workflows/experiment.yml": "name: Controlled experiment\nrun-name: ${{ inputs.correlation }}\non:\n  workflow_dispatch:\n    inputs:\n      correlation:\n        required: true\n        type: string\n      cache_key:\n        required: true\n        type: string\npermissions:\n  contents: read\njobs:\n  plan:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    outputs:\n      matrix: ${{ steps.plan.outputs.matrix }}\n      cache: ${{ steps.plan.outputs.cache }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - run: npm ci --ignore-scripts\n      - id: plan\n        run: node ci/matrix.ts\n  tests:\n    needs: plan\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    strategy:\n      fail-fast: false\n      max-parallel: 4\n      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - id: dependencies\n        if: needs.plan.outputs.cache == 'true'\n        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830\n        with:\n          path: node_modules\n          key: deps-${{ inputs.cache_key }}-${{ matrix.partition }}-${{ hashFiles('package-lock.json') }}\n      - if: steps.dependencies.outputs.cache-hit != 'true'\n        run: npm ci --ignore-scripts\n      - run: node ci/execute.ts\n        env:\n          PARTITION: ${{ matrix.partition }}\n          CACHE_KEY: ${{ inputs.cache_key }}\n          CACHE_HIT: ${{ steps.dependencies.outputs.cache-hit }}\n      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n        with:\n          name: execution-${{ matrix.partition }}\n          path: execution.json\n          retention-days: 1\n          if-no-files-found: error\n",
+        "ci/case.json": "{\n  \"id\": \"cache-heldout\",\n  \"iterations\": 80000,\n  \"tests\": {\n    \"case-000\": \"8b52566bdd5df3653e49e90fac320b8fe45ef3fdf699961b6f99d489b671eab8\",\n    \"case-001\": \"33ee31b07da437e5ec5eaf204a41f89c76a64a7fa8738f791f62d6e3fed7eac8\",\n    \"case-002\": \"d7f32e0ace97ebcfed8e874360da9fbf691d92d23a0c3c87a24fbd8fcca2b570\",\n    \"case-003\": \"5cfa420fa1ab038acc82e0626ada13ac46d9ad0a157fa8f812581187ae2f990f\",\n    \"case-004\": \"849f66495f3b0dd501394b6a52e614af3e2b59da73b3b4ee6ec960c752529e5a\",\n    \"case-005\": \"ce281a0cf76e0b9505d65fff64927570043a02e389652181130657b2b4a0ab74\",\n    \"case-006\": \"50a76c0b781f9d1c940bb7812bc183403c04b1efa2405b5ccfc534f857fbbf28\",\n    \"case-007\": \"57d6a50f927e6dc7cc5f9651844d893e35e1f36b51e044b2dcaa48b0e7c4e96a\",\n    \"case-008\": \"8396a5ebb969f982d71a308568cc2d55a7b39fbca5f6c72328a5edc7115a24d5\",\n    \"case-009\": \"e23b4d5bdb98b546738a32bddea1f576fe8f16e523f3ce7eb6ab6e884690592f\",\n    \"case-010\": \"0e5014023c7b587fdef605ff2caf4d7ceffcc3aa68a216f27d759b11f77a3e4e\",\n    \"case-011\": \"f9b6db43394e09a29ff098f1cb1531d242cfc1112f3d2680d3434cef139f399a\",\n    \"case-012\": \"d58eb1f5caee0c822bbcc98ae0ff647da82932b4fd8bf2761837c35c7a8635e1\"\n  },\n  \"maxPartitions\": 1\n}\n"
+      },
+      "plan": {
+        "schemaVersion": 1,
+        "cache": false,
+        "partitions": [
+          [
+            "case-000",
+            "case-001",
+            "case-002",
+            "case-003",
+            "case-004",
+            "case-005",
+            "case-006",
+            "case-007",
+            "case-008",
+            "case-009",
+            "case-010",
+            "case-011",
+            "case-012"
+          ]
+        ]
+      },
+      "baselineEvidence": {
+        "schemaVersion": 1,
+        "pair": 0,
+        "side": "baseline",
+        "group": "cold",
+        "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+        "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+        "correlation": "eval-013-c1-profile",
+        "runId": 42520967654,
+        "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520967654",
+        "attempt": 1,
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:36:10Z",
+        "startedAt": "2026-11-08T20:36:14.000Z",
+        "completedAt": "2026-11-08T20:36:34.000Z",
+        "elapsedSeconds": 20,
+        "jobSeconds": 18,
+        "queueSeconds": 4,
+        "jobs": [
+          {
+            "id": 128854120637,
+            "name": "plan",
+            "startedAt": "2026-11-08T20:36:14Z",
+            "completedAt": "2026-11-08T20:36:22Z",
+            "conclusion": "success",
+            "runner": "ubuntu-24.04"
+          },
+          {
+            "id": 128854165409,
+            "name": "tests (0)",
+            "startedAt": "2026-11-08T20:36:24Z",
+            "completedAt": "2026-11-08T20:36:34Z",
+            "conclusion": "success",
+            "runner": "ubuntu-24.04"
+          }
+        ],
+        "execution": [
+          {
+            "schemaVersion": 1,
+            "runId": "42520967654",
+            "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+            "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+            "cacheKey": "eval-013-c1-profile",
+            "cacheHit": false,
+            "partition": 0,
+            "node": "v24.22.2",
+            "tests": [
+              {
+                "id": "case-000",
+                "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+                "status": "pass"
+              },
+              {
+                "id": "case-001",
+                "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+                "status": "pass"
+              },
+              {
+                "id": "case-002",
+                "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+                "status": "pass"
+              },
+              {
+                "id": "case-003",
+                "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+                "status": "pass"
+              },
+              {
+                "id": "case-004",
+                "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+                "status": "pass"
+              },
+              {
+                "id": "case-005",
+                "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+                "status": "pass"
+              },
+              {
+                "id": "case-006",
+                "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+                "status": "pass"
+              },
+              {
+                "id": "case-007",
+                "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+                "status": "pass"
+              },
+              {
+                "id": "case-008",
+                "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+                "status": "pass"
+              },
+              {
+                "id": "case-009",
+                "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+                "status": "pass"
+              },
+              {
+                "id": "case-010",
+                "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+                "status": "pass"
+              },
+              {
+                "id": "case-011",
+                "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+                "status": "pass"
+              },
+              {
+                "id": "case-012",
+                "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+                "status": "pass"
+              }
+            ],
+            "dependencyCheck": true
+          }
+        ],
+        "cacheKey": "eval-013-c1-profile",
+        "expectedCacheHit": false,
+        "source": "github"
+      },
+      "allowedFiles": [
+        "ci/plan.json"
+      ],
+      "requiredTests": [
+        "case-000",
+        "case-001",
+        "case-002",
+        "case-003",
+        "case-004",
+        "case-005",
+        "case-006",
+        "case-007",
+        "case-008",
+        "case-009",
+        "case-010",
+        "case-011",
+        "case-012"
+      ],
+      "maxPartitions": 1,
+      "objective": {
+        "schemaVersion": 1,
+        "primary": "elapsedSeconds",
+        "direction": "minimize",
+        "minimumImprovement": 0.1,
+        "secondaryRegressionLimit": 0.05,
+        "pairs": 5,
+        "acceptanceRule": "paired-log-t95-v1",
+        "requiredChecks": [
+          "protected-files",
+          "exact-test-inventory",
+          "expected-outputs",
+          "successful-workflow",
+          "cache-condition",
+          "single-attempt"
+        ]
+      },
+      "previousAttempts": []
+    },
+    "1-investigator-input-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-013",
+      "stepId": "investigator-input",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b.json",
+          "sha256": "0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04.json",
+          "sha256": "9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-investigator-input-67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0.json",
+          "sha256": "67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-hypothesis": {
+      "decision": "no-change",
+      "family": "none",
+      "explanation": "Unchanged comparator does not propose patches.",
+      "plan": null,
+      "evidence": [
+        "baseline"
+      ]
+    },
+    "1-hypothesis-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-013",
+      "stepId": "hypothesis",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b.json",
+          "sha256": "0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04.json",
+          "sha256": "9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0.json",
+          "sha256": "67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-envelope-8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745.json",
+          "sha256": "8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-hypothesis-0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761.json",
+          "sha256": "0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-baseline-series": {
+      "observations": [
+        {
+          "schemaVersion": 1,
+          "pair": 0,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+          "correlation": "eval-013-c1-unchanged-0",
+          "runId": 42521009347,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521009347",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:36:40Z",
+          "startedAt": "2026-11-08T20:36:43.000Z",
+          "completedAt": "2026-11-08T20:37:02.000Z",
+          "elapsedSeconds": 19,
+          "jobSeconds": 17,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128854251960,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:36:43Z",
+              "completedAt": "2026-11-08T20:36:50Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128854289657,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:36:52Z",
+              "completedAt": "2026-11-08T20:37:02Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42521009347",
+              "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+              "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+              "cacheKey": "eval-013-c1-unchanged-cold-0",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-008",
+                  "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-009",
+                  "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-010",
+                  "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-011",
+                  "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-012",
+                  "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-013-c1-unchanged-cold-0",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 1,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+          "correlation": "eval-013-c1-unchanged-1",
+          "runId": 42521047540,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521047540",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:37:08Z",
+          "startedAt": "2026-11-08T20:37:12.000Z",
+          "completedAt": "2026-11-08T20:37:31.000Z",
+          "elapsedSeconds": 19,
+          "jobSeconds": 17,
+          "queueSeconds": 4,
+          "jobs": [
+            {
+              "id": 128854376127,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:37:12Z",
+              "completedAt": "2026-11-08T20:37:20Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128854419353,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:37:22Z",
+              "completedAt": "2026-11-08T20:37:31Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42521047540",
+              "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+              "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+              "cacheKey": "eval-013-c1-unchanged-cold-1",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-008",
+                  "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-009",
+                  "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-010",
+                  "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-011",
+                  "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-012",
+                  "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-013-c1-unchanged-cold-1",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 2,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+          "correlation": "eval-013-c1-unchanged-2",
+          "runId": 42521086540,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521086540",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:37:37Z",
+          "startedAt": "2026-11-08T20:37:39.000Z",
+          "completedAt": "2026-11-08T20:37:56.000Z",
+          "elapsedSeconds": 17,
+          "jobSeconds": 15,
+          "queueSeconds": 2,
+          "jobs": [
+            {
+              "id": 128854499374,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:37:39Z",
+              "completedAt": "2026-11-08T20:37:46Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128854533917,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:37:48Z",
+              "completedAt": "2026-11-08T20:37:56Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42521086540",
+              "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+              "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+              "cacheKey": "eval-013-c1-unchanged-cold-2",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-008",
+                  "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-009",
+                  "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-010",
+                  "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-011",
+                  "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-012",
+                  "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-013-c1-unchanged-cold-2",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 3,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+          "correlation": "eval-013-c1-unchanged-3",
+          "runId": 42521123708,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521123708",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:38:05Z",
+          "startedAt": "2026-11-08T20:38:09.000Z",
+          "completedAt": "2026-11-08T20:38:28.000Z",
+          "elapsedSeconds": 19,
+          "jobSeconds": 17,
+          "queueSeconds": 4,
+          "jobs": [
+            {
+              "id": 128854620117,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:38:09Z",
+              "completedAt": "2026-11-08T20:38:17Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128854666356,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:38:19Z",
+              "completedAt": "2026-11-08T20:38:28Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42521123708",
+              "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+              "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+              "cacheKey": "eval-013-c1-unchanged-cold-3",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-008",
+                  "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-009",
+                  "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-010",
+                  "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-011",
+                  "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-012",
+                  "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-013-c1-unchanged-cold-3",
+          "expectedCacheHit": false,
+          "source": "github"
+        },
+        {
+          "schemaVersion": 1,
+          "pair": 4,
+          "side": "baseline",
+          "group": "cold",
+          "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+          "correlation": "eval-013-c1-unchanged-4",
+          "runId": 42521164982,
+          "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521164982",
+          "attempt": 1,
+          "conclusion": "success",
+          "createdAt": "2026-11-08T20:38:35Z",
+          "startedAt": "2026-11-08T20:38:38.000Z",
+          "completedAt": "2026-11-08T20:38:57.000Z",
+          "elapsedSeconds": 19,
+          "jobSeconds": 17,
+          "queueSeconds": 3,
+          "jobs": [
+            {
+              "id": 128854750071,
+              "name": "plan",
+              "startedAt": "2026-11-08T20:38:38Z",
+              "completedAt": "2026-11-08T20:38:46Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            },
+            {
+              "id": 128854795231,
+              "name": "tests (0)",
+              "startedAt": "2026-11-08T20:38:48Z",
+              "completedAt": "2026-11-08T20:38:57Z",
+              "conclusion": "success",
+              "runner": "ubuntu-24.04"
+            }
+          ],
+          "execution": [
+            {
+              "schemaVersion": 1,
+              "runId": "42521164982",
+              "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+              "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+              "cacheKey": "eval-013-c1-unchanged-cold-4",
+              "cacheHit": false,
+              "partition": 0,
+              "node": "v24.22.2",
+              "tests": [
+                {
+                  "id": "case-000",
+                  "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-001",
+                  "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-002",
+                  "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-003",
+                  "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-004",
+                  "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-005",
+                  "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-006",
+                  "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-007",
+                  "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-008",
+                  "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-009",
+                  "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-010",
+                  "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-011",
+                  "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+                  "status": "pass"
+                },
+                {
+                  "id": "case-012",
+                  "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+                  "status": "pass"
+                }
+              ],
+              "dependencyCheck": true
+            }
+          ],
+          "cacheKey": "eval-013-c1-unchanged-cold-4",
+          "expectedCacheHit": false,
+          "source": "github"
+        }
+      ],
+      "primes": []
+    },
+    "1-baseline-series-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-013",
+      "stepId": "baseline-series",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b.json",
+          "sha256": "0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04.json",
+          "sha256": "9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0.json",
+          "sha256": "67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-envelope-8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745.json",
+          "sha256": "8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761.json",
+          "sha256": "0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-9caa54b96287e4fadd7d5f19253537ff7f00b7bf71626117ec01079fd047bb62.json",
+          "sha256": "9caa54b96287e4fadd7d5f19253537ff7f00b7bf71626117ec01079fd047bb62",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-baseline-series-0d16e841606c71e1963445bbb8c6215bbeb61630a09a2dd2facc73de8755bda5.json",
+          "sha256": "0d16e841606c71e1963445bbb8c6215bbeb61630a09a2dd2facc73de8755bda5",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ]
+    },
+    "1-execution-validation": [
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      },
+      {
+        "status": "pass",
+        "checks": [
+          {
+            "name": "successful-workflow",
+            "pass": true,
+            "reason": "All jobs must succeed on the approved standard Linux runner."
+          },
+          {
+            "name": "single-attempt",
+            "pass": true,
+            "reason": "Reruns are excluded from paired comparisons."
+          },
+          {
+            "name": "partition-coverage",
+            "pass": true,
+            "reason": "Every planned partition must execute exactly its assigned tests."
+          },
+          {
+            "name": "exact-test-inventory",
+            "pass": true,
+            "reason": "Collected reports must contain every protected test exactly once."
+          },
+          {
+            "name": "expected-outputs",
+            "pass": true,
+            "reason": "Output digests must match independently computed protected expectations."
+          },
+          {
+            "name": "execution-identity",
+            "pass": true,
+            "reason": "Reports must identify the exact workflow run, commit, and plan."
+          },
+          {
+            "name": "cache-condition",
+            "pass": true,
+            "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+          }
+        ]
+      }
+    ],
+    "1-execution-validation-envelope": {
+      "schemaVersion": 1,
+      "runId": "eval-013",
+      "stepId": "execution-validation",
+      "attemptId": "cycle-1",
+      "inputs": [
+        {
+          "path": "artifacts/1-baseline-0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b.json",
+          "sha256": "0c44ef2f9848efa402d51ae59079263e196730cecf6b780c0ca5d25e12c3912b",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-envelope-9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04.json",
+          "sha256": "9e76d874f6e65fde9eb69fcc7ea081876e6952de37676ac68339ecbaa6828d04",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0.json",
+          "sha256": "67a6496c2564d2af4acbac811f8523c51c85e29cba1f8e96a9bd860501eb49d0",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-investigator-input-envelope-8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745.json",
+          "sha256": "8389a0cc3ce5e9d43196d70f1b42fe9355917c9ac3f3bbd0b8a26ddae5e8a745",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761.json",
+          "sha256": "0a6762eb3b4a63196800985ff669b2fd5a108292b30794ccb02d6908b803e761",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-hypothesis-envelope-9caa54b96287e4fadd7d5f19253537ff7f00b7bf71626117ec01079fd047bb62.json",
+          "sha256": "9caa54b96287e4fadd7d5f19253537ff7f00b7bf71626117ec01079fd047bb62",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-series-0d16e841606c71e1963445bbb8c6215bbeb61630a09a2dd2facc73de8755bda5.json",
+          "sha256": "0d16e841606c71e1963445bbb8c6215bbeb61630a09a2dd2facc73de8755bda5",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        },
+        {
+          "path": "artifacts/1-baseline-series-envelope-f3f1dc9de39050ede5daf0cc56c668dd30cb7d96109aed359b18a98382eb875b.json",
+          "sha256": "f3f1dc9de39050ede5daf0cc56c668dd30cb7d96109aed359b18a98382eb875b",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ],
+      "outputs": [
+        {
+          "path": "artifacts/1-execution-validation-65018e82c29de4d5b0ce195122c0ffc7c8a97b0b92281678624c7fe319bd7c3c.json",
+          "sha256": "65018e82c29de4d5b0ce195122c0ffc7c8a97b0b92281678624c7fe319bd7c3c",
+          "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+          "patchDigest": null
+        }
+      ]
+    }
+  },
+  "error": null
+}

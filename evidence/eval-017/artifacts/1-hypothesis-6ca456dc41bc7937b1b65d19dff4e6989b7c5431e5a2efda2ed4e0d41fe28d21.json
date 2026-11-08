@@ -1,0 +1,29 @@
+{
+  "decision": "change",
+  "family": "cache",
+  "explanation": "Rule v1 enables lock-keyed dependency reuse when disabled.",
+  "plan": {
+    "schemaVersion": 1,
+    "cache": true,
+    "partitions": [
+      [
+        "case-000",
+        "case-001",
+        "case-002",
+        "case-003",
+        "case-004",
+        "case-005",
+        "case-006",
+        "case-007",
+        "case-008",
+        "case-009",
+        "case-010",
+        "case-011",
+        "case-012"
+      ]
+    ]
+  },
+  "evidence": [
+    "pipeline-snapshot"
+  ]
+}

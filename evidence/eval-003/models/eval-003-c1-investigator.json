@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "requestDigest": "847f068950909c32b98c9367fff8443f408395e75f4fcda327ca890c95cd53c7",
+  "output": {
+    "decision": "change",
+    "family": "cache",
+    "explanation": "Jev selected cache with confidence 0.18; this is a hypothesis, not correctness evidence.",
+    "plan": {
+      "schemaVersion": 1,
+      "cache": true,
+      "partitions": [
+        [
+          "case-000",
+          "case-001",
+          "case-002",
+          "case-003",
+          "case-004",
+          "case-005",
+          "case-006",
+          "case-007"
+        ]
+      ]
+    },
+    "evidence": [
+      "pipeline-snapshot"
+    ]
+  },
+  "usage": {
+    "provider": "jev",
+    "role": "investigator",
+    "model": "typesafe/jev-1.14-20261014",
+    "requestDigest": "847f068950909c32b98c9367fff8443f408395e75f4fcda327ca890c95cd53c7",
+    "responseDigest": "755ab4bd8409c133ac45703b844e22af3f8c6c9d8353352a56e3b659c88fa3e7",
+    "inputTokens": 3558,
+    "outputTokens": 38,
+    "costUsd": 0.000149436,
+    "live": true,
+    "timestamp": "2026-11-08T20:29:41.191Z"
+  }
+}

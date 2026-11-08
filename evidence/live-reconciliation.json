@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "interruption": "Error: CONTROLLED_INTERRUPTION_AFTER_GITHUB_SUBMISSION",
+  "intentBefore": {
+    "schemaVersion": 1,
+    "requestDigest": "f023928acd9fe97da648a39eb3b7c46ed372029f1f746de9a718e79c59de28fa",
+    "correlation": "live-reconciliation-smoke",
+    "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+    "ref": "lab/live-reconciliation/baseline",
+    "status": "submitting",
+    "createdAt": "2026-11-08T20:42:19.613Z",
+    "runId": null
+  },
+  "observation": {
+    "schemaVersion": 1,
+    "pair": 0,
+    "side": "baseline",
+    "group": "cold",
+    "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+    "patchDigest": "763f5028bc4bbf553e7b6bf632ad3373ec470ce60fb7e2aaa1f007879cc3a8a8",
+    "correlation": "live-reconciliation-smoke",
+    "runId": 42521474775,
+    "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521474775",
+    "attempt": 1,
+    "conclusion": "success",
+    "createdAt": "2026-11-08T20:42:21Z",
+    "startedAt": "2026-11-08T20:42:24.000Z",
+    "completedAt": "2026-11-08T20:42:40.000Z",
+    "elapsedSeconds": 16,
+    "jobSeconds": 14,
+    "queueSeconds": 3,
+    "jobs": [
+      {
+        "id": 128855708358,
+        "name": "plan",
+        "startedAt": "2026-11-08T20:42:24Z",
+        "completedAt": "2026-11-08T20:42:30Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      },
+      {
+        "id": 128855743694,
+        "name": "tests (0)",
+        "startedAt": "2026-11-08T20:42:32Z",
+        "completedAt": "2026-11-08T20:42:40Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      }
+    ],
+    "execution": [
+      {
+        "schemaVersion": 1,
+        "runId": "42521474775",
+        "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+        "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+        "cacheKey": "live-reconciliation-cold",
+        "cacheHit": false,
+        "partition": 0,
+        "node": "v24.22.2",
+        "tests": [
+          {
+            "id": "case-000",
+            "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+            "status": "pass"
+          },
+          {
+            "id": "case-001",
+            "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+            "status": "pass"
+          },
+          {
+            "id": "case-002",
+            "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+            "status": "pass"
+          },
+          {
+            "id": "case-003",
+            "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+            "status": "pass"
+          },
+          {
+            "id": "case-004",
+            "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+            "status": "pass"
+          },
+          {
+            "id": "case-005",
+            "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+            "status": "pass"
+          },
+          {
+            "id": "case-006",
+            "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+            "status": "pass"
+          },
+          {
+            "id": "case-007",
+            "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+            "status": "pass"
+          }
+        ],
+        "dependencyCheck": true
+      }
+    ],
+    "cacheKey": "live-reconciliation-cold",
+    "expectedCacheHit": false,
+    "source": "github"
+  },
+  "validation": {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "successful-workflow",
+        "pass": true,
+        "reason": "All jobs must succeed on the approved standard Linux runner."
+      },
+      {
+        "name": "single-attempt",
+        "pass": true,
+        "reason": "Reruns are excluded from paired comparisons."
+      },
+      {
+        "name": "partition-coverage",
+        "pass": true,
+        "reason": "Every planned partition must execute exactly its assigned tests."
+      },
+      {
+        "name": "exact-test-inventory",
+        "pass": true,
+        "reason": "Collected reports must contain every protected test exactly once."
+      },
+      {
+        "name": "expected-outputs",
+        "pass": true,
+        "reason": "Output digests must match independently computed protected expectations."
+      },
+      {
+        "name": "execution-identity",
+        "pass": true,
+        "reason": "Reports must identify the exact workflow run, commit, and plan."
+      },
+      {
+        "name": "cache-condition",
+        "pass": true,
+        "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+      }
+    ]
+  },
+  "matchingRemoteRunId": 42521474775,
+  "duplicateDispatches": 0,
+  "sourceCommit": "48b4fd5ede87bc507b5706813357a2ef93953f7f",
+  "note": "First transport sent a real workflow dispatch, then failed before returning. Resume found the exact existing correlation/commit/branch and reused it. matching rejects duplicate correlations."
+}

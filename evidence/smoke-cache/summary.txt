@@ -1,0 +1,4 @@
+rejected: smoke-cache
+Primary ratio 0.927; secondary 0.935; 5/5 pairs.
+Correctness and evidence: /home/schneider/work/ci-lab-runs/smoke-cache/report.md
+Patch: /home/schneider/work/ci-lab-runs/smoke-cache/candidate.patch

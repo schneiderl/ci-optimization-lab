@@ -1,0 +1,726 @@
+{
+  "schemaVersion": 1,
+  "ceilingUsd": 30,
+  "entries": {
+    "smoke-1794169348524": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": null,
+      "reason": "opencode opencode/deepseek-v4.1-flash-free; no fallback"
+    },
+    "smoke-1794169348529": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00001722,
+      "reason": "jev typesafe/jev-1.14; no fallback"
+    },
+    "smoke-1794169373227": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": null,
+      "reason": "opencode opencode/deepseek-v4.1-flash-free; no fallback"
+    },
+    "github-smoke-cache-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "smoke-1794169389759": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": null,
+      "reason": "opencode opencode/inkling-2-small-free; no fallback"
+    },
+    "smoke-cache-c1-investigator": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "smoke-cache-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "github-smoke-cache-c1-candidate-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "smoke-1794169494058": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback"
+    },
+    "github-smoke-cache-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-candidate-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-candidate-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-004-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-006-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-baseline-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "eval-006-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback"
+    },
+    "github-eval-002-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-candidate-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-004-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-003-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-001-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-007-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-baseline-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-004-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-smoke-cache-c1-candidate-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "eval-003-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.000149436,
+      "reason": "jev typesafe/jev-1.14; no fallback"
+    },
+    "github-eval-001-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-007-c1-unchanged-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "eval-003-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": null,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback"
+    },
+    "github-eval-004-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-001-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "smoke-cache-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "github-eval-004-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-007-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-001-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-004-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-007-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-001-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-001-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-007-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-candidate-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-baseline-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-candidate-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-007-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-candidate-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-candidate-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-candidate-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-007-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-baseline-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-baseline-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-009-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-baseline-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "eval-009-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback"
+    },
+    "github-eval-002-c1-baseline-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-005-c1-candidate-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-010-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-002-c1-candidate-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-011-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-010-c1-unchanged-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-012-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-011-c1-unchanged-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-010-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-011-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "eval-012-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback"
+    },
+    "github-eval-008-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-010-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-013-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-010-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-013-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-011-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-candidate-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-010-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-011-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-013-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-candidate-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-010-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-013-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-011-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-013-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-011-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-baseline-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-013-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-baseline-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-015-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-016-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-008-c1-candidate-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "eval-015-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback"
+    },
+    "github-eval-014-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-017-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-017-c1-candidate-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-016-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-018-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-016-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "eval-018-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback"
+    },
+    "github-eval-019-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-017-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "demo-c1-investigator": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "demo-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "demo-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "example-investigator-investigator-one": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "example-reviewer-reviewer-one": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "github-eval-016-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-019-c1-unchanged-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-017-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-016-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-candidate-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-019-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "example-editor-editor-one": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "recorded fixture-v1; no fallback"
+    },
+    "github-eval-017-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-016-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-candidate-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-019-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-live-reconciliation-smoke": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-baseline-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-017-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-019-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": null,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-020-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": null,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-014-c1-baseline-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": null,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-eval-017-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": null,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    }
+  }
+}

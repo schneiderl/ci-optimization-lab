@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "runId": "eval-005",
+  "stepId": "acceptance",
+  "attemptId": "cycle-1",
+  "inputs": [
+    {
+      "path": "artifacts/1-baseline-0b78c972af07c14954a58763f3b90e2fc03b19354c4f123bee40c5846645a400.json",
+      "sha256": "0b78c972af07c14954a58763f3b90e2fc03b19354c4f123bee40c5846645a400",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-baseline-envelope-865cc14e07ce41d96fe024715f46bfac318d028e3d8c364d18fbff9be65574ea.json",
+      "sha256": "865cc14e07ce41d96fe024715f46bfac318d028e3d8c364d18fbff9be65574ea",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-hypothesis-7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5.json",
+      "sha256": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-hypothesis-envelope-85035ce57270c8fcded4b6d531868801493bc65b1f12b4a1f06f328267312a1b.json",
+      "sha256": "85035ce57270c8fcded4b6d531868801493bc65b1f12b4a1f06f328267312a1b",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-patch-95f434f8cbf7233bb2e80f6eb5e13d1175f9fb30e02c855d95bff3cade98422a.json",
+      "sha256": "95f434f8cbf7233bb2e80f6eb5e13d1175f9fb30e02c855d95bff3cade98422a",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-patch-envelope-42237e954781ac388af0ed6c866ce40838f1d18a79152384b40db59130a20afa.json",
+      "sha256": "42237e954781ac388af0ed6c866ce40838f1d18a79152384b40db59130a20afa",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-validation-26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96.json",
+      "sha256": "26583eba012cbb58fa12e7bc6d27219d44190369a8f1caccf62e5b7cc94d7b96",
+      "targetCommit": "b32b21cf4ecab7497e68402086977a536c7757ef",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    {
+      "path": "artifacts/1-validation-envelope-d75f7b3f4d24629fe40e904bcd82fb6a859b20bce0eaf7ee6d434553c575f5bc.json",
+      "sha256": "d75f7b3f4d24629fe40e904bcd82fb6a859b20bce0eaf7ee6d434553c575f5bc",
+      "targetCommit": "b32b21cf4ecab7497e68402086977a536c7757ef",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    {
+      "path": "artifacts/1-investigator-input-fb28839b541538c2586bbc8965264d8b80be42d7eafa9ca76fe18ea138b713db.json",
+      "sha256": "fb28839b541538c2586bbc8965264d8b80be42d7eafa9ca76fe18ea138b713db",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-investigator-input-envelope-830cf5e0dbc959c4b893695aa938b520ce553ba74d0326efddf249417b9bd6f9.json",
+      "sha256": "830cf5e0dbc959c4b893695aa938b520ce553ba74d0326efddf249417b9bd6f9",
+      "targetCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": null
+    },
+    {
+      "path": "artifacts/1-measurements-a7c245126ba05a532c78590d581e9a8cdcae76fd038f8321725d78b1e34caf9b.json",
+      "sha256": "a7c245126ba05a532c78590d581e9a8cdcae76fd038f8321725d78b1e34caf9b",
+      "targetCommit": "b32b21cf4ecab7497e68402086977a536c7757ef",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    {
+      "path": "artifacts/1-measurements-envelope-abe3d4f96fb2f40c603ff73574c9555238829faf9418993da64cb631f23e3c8c.json",
+      "sha256": "abe3d4f96fb2f40c603ff73574c9555238829faf9418993da64cb631f23e3c8c",
+      "targetCommit": "b32b21cf4ecab7497e68402086977a536c7757ef",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    {
+      "path": "artifacts/1-execution-validation-28882a10248959fae3fbcb8566aacff864ac175f368a3bf35eee91bbdcd926a9.json",
+      "sha256": "28882a10248959fae3fbcb8566aacff864ac175f368a3bf35eee91bbdcd926a9",
+      "targetCommit": "b32b21cf4ecab7497e68402086977a536c7757ef",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    },
+    {
+      "path": "artifacts/1-execution-validation-envelope-b155f8bfadc3cf32e2bdcffaa80db06d2029dd31b0931e6cff0a137d7a6fe2fe.json",
+      "sha256": "b155f8bfadc3cf32e2bdcffaa80db06d2029dd31b0931e6cff0a137d7a6fe2fe",
+      "targetCommit": "b32b21cf4ecab7497e68402086977a536c7757ef",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "artifacts/1-acceptance-c944ccdaa45354bb139c65cac513cc5f245474d58f5b852ddee1f95ddc260785.json",
+      "sha256": "c944ccdaa45354bb139c65cac513cc5f245474d58f5b852ddee1f95ddc260785",
+      "targetCommit": "b32b21cf4ecab7497e68402086977a536c7757ef",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7"
+    }
+  ]
+}

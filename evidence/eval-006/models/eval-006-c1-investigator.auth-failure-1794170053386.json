@@ -1,0 +1,6 @@
+{
+  "status": "failed-or-ambiguous",
+  "requestDigest": "9da3f35e3909cdd14cf1b0fa6891196e0a2a09634dd71d8ed313ab7b6c9227b4",
+  "error": "Error: AUTH_BLOCKED: 1Password is not signed in or the OpenRouter credential is unavailable",
+  "timestamp": "2026-11-08T20:28:56.673Z"
+}

@@ -1,0 +1,1051 @@
+{
+  "observations": [
+    {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-baseline-0",
+      "runId": 42520022693,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520022693",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:25:12Z",
+      "startedAt": "2026-11-08T20:25:16.000Z",
+      "completedAt": "2026-11-08T20:25:31.000Z",
+      "elapsedSeconds": 15,
+      "jobSeconds": 14,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128851274835,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:25:16Z",
+          "completedAt": "2026-11-08T20:25:22Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128851308208,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:25:23Z",
+          "completedAt": "2026-11-08T20:25:31Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520022693",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "candidate",
+      "group": "warm",
+      "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-candidate-0",
+      "runId": 42520061385,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520061385",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:25:39Z",
+      "startedAt": "2026-11-08T20:25:41.000Z",
+      "completedAt": "2026-11-08T20:25:57.000Z",
+      "elapsedSeconds": 16,
+      "jobSeconds": 14,
+      "queueSeconds": 2,
+      "jobs": [
+        {
+          "id": 128851388299,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:25:41Z",
+          "completedAt": "2026-11-08T20:25:48Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128851423625,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:25:50Z",
+          "completedAt": "2026-11-08T20:25:57Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520061385",
+          "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+          "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+          "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 1,
+      "side": "candidate",
+      "group": "warm",
+      "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-candidate-1",
+      "runId": 42520097412,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520097412",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:26:05Z",
+      "startedAt": "2026-11-08T20:26:08.000Z",
+      "completedAt": "2026-11-08T20:26:25.000Z",
+      "elapsedSeconds": 17,
+      "jobSeconds": 15,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128851502173,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:26:08Z",
+          "completedAt": "2026-11-08T20:26:14Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128851537618,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:26:16Z",
+          "completedAt": "2026-11-08T20:26:25Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520097412",
+          "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+          "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+          "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 1,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-baseline-1",
+      "runId": 42520134629,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520134629",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:26:32Z",
+      "startedAt": "2026-11-08T20:26:34.000Z",
+      "completedAt": "2026-11-08T20:26:55.000Z",
+      "elapsedSeconds": 21,
+      "jobSeconds": 18,
+      "queueSeconds": 2,
+      "jobs": [
+        {
+          "id": 128851615451,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:26:34Z",
+          "completedAt": "2026-11-08T20:26:40Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128851646216,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:26:43Z",
+          "completedAt": "2026-11-08T20:26:55Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520134629",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 2,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-baseline-2",
+      "runId": 42520182151,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520182151",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:27:08Z",
+      "startedAt": "2026-11-08T20:27:12.000Z",
+      "completedAt": "2026-11-08T20:27:33.000Z",
+      "elapsedSeconds": 21,
+      "jobSeconds": 18,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128851767430,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:27:12Z",
+          "completedAt": "2026-11-08T20:27:20Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128851813376,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:27:23Z",
+          "completedAt": "2026-11-08T20:27:33Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520182151",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 2,
+      "side": "candidate",
+      "group": "warm",
+      "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-candidate-2",
+      "runId": 42520232038,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520232038",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:27:45Z",
+      "startedAt": "2026-11-08T20:27:48.000Z",
+      "completedAt": "2026-11-08T20:28:03.000Z",
+      "elapsedSeconds": 15,
+      "jobSeconds": 13,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128851922782,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:27:48Z",
+          "completedAt": "2026-11-08T20:27:54Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128851955164,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:27:56Z",
+          "completedAt": "2026-11-08T20:28:03Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520232038",
+          "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+          "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+          "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 3,
+      "side": "candidate",
+      "group": "warm",
+      "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-candidate-3",
+      "runId": 42520267889,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520267889",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:28:11Z",
+      "startedAt": "2026-11-08T20:28:14.000Z",
+      "completedAt": "2026-11-08T20:28:29.000Z",
+      "elapsedSeconds": 15,
+      "jobSeconds": 13,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128852035903,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:28:14Z",
+          "completedAt": "2026-11-08T20:28:20Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128852068387,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:28:22Z",
+          "completedAt": "2026-11-08T20:28:29Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520267889",
+          "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+          "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+          "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 3,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-baseline-3",
+      "runId": 42520304987,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520304987",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:28:38Z",
+      "startedAt": "2026-11-08T20:28:42.000Z",
+      "completedAt": "2026-11-08T20:29:00.000Z",
+      "elapsedSeconds": 18,
+      "jobSeconds": 16,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128852152183,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:28:42Z",
+          "completedAt": "2026-11-08T20:28:48Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128852186306,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:28:50Z",
+          "completedAt": "2026-11-08T20:29:00Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520304987",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 4,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-baseline-4",
+      "runId": 42520340700,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520340700",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:29:05Z",
+      "startedAt": "2026-11-08T20:29:09.000Z",
+      "completedAt": "2026-11-08T20:29:24.000Z",
+      "elapsedSeconds": 15,
+      "jobSeconds": 13,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128852263565,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:29:09Z",
+          "completedAt": "2026-11-08T20:29:15Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128852298289,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:29:17Z",
+          "completedAt": "2026-11-08T20:29:24Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520340700",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-baseline-warm-shared",
+      "expectedCacheHit": false,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 4,
+      "side": "candidate",
+      "group": "warm",
+      "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-candidate-4",
+      "runId": 42520375780,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520375780",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:29:32Z",
+      "startedAt": "2026-11-08T20:29:36.000Z",
+      "completedAt": "2026-11-08T20:29:56.000Z",
+      "elapsedSeconds": 20,
+      "jobSeconds": 19,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128852372617,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:29:36Z",
+          "completedAt": "2026-11-08T20:29:45Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128852418889,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:29:46Z",
+          "completedAt": "2026-11-08T20:29:56Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42520375780",
+          "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+          "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+          "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+      "expectedCacheHit": true,
+      "source": "github"
+    }
+  ],
+  "primes": [
+    {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "candidate",
+      "group": "warm",
+      "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+      "patchDigest": "56ab2c465a5932cf38bf91a80b6851c65fedc2970de8a3a6c845229ebf7a09e7",
+      "correlation": "smoke-cache-c1-candidate-prime",
+      "runId": 42519971968,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42519971968",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:24:35Z",
+      "startedAt": "2026-11-08T20:24:39.000Z",
+      "completedAt": "2026-11-08T20:24:58.000Z",
+      "elapsedSeconds": 19,
+      "jobSeconds": 17,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128851114038,
+          "name": "plan",
+          "startedAt": "2026-11-08T20:24:39Z",
+          "completedAt": "2026-11-08T20:24:47Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128851159357,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T20:24:49Z",
+          "completedAt": "2026-11-08T20:24:58Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42519971968",
+          "commit": "0d428bb26c85e6e55cf5b8cb52c33c478b7358fd",
+          "planDigest": "488bb63d0d4d857518a02340befdeb0970fb9f873dfb1e1003ab0931430ec6a6",
+          "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "smoke-cache-c1-candidate-warm-shared",
+      "expectedCacheHit": false,
+      "source": "github"
+    }
+  ]
+}

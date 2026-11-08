@@ -1,0 +1,185 @@
+{
+  "snapshot": {
+    "ci/plan.json": "{\"schemaVersion\":1,\"cache\":false,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\",\"case-008\",\"case-009\",\"case-010\",\"case-011\",\"case-012\"]]}\n",
+    ".github/workflows/experiment.yml": "name: Controlled experiment\nrun-name: ${{ inputs.correlation }}\non:\n  workflow_dispatch:\n    inputs:\n      correlation:\n        required: true\n        type: string\n      cache_key:\n        required: true\n        type: string\npermissions:\n  contents: read\njobs:\n  plan:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    outputs:\n      matrix: ${{ steps.plan.outputs.matrix }}\n      cache: ${{ steps.plan.outputs.cache }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - run: npm ci --ignore-scripts\n      - id: plan\n        run: node ci/matrix.ts\n  tests:\n    needs: plan\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    strategy:\n      fail-fast: false\n      max-parallel: 4\n      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - id: dependencies\n        if: needs.plan.outputs.cache == 'true'\n        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830\n        with:\n          path: node_modules\n          key: deps-${{ inputs.cache_key }}-${{ matrix.partition }}-${{ hashFiles('package-lock.json') }}\n      - if: steps.dependencies.outputs.cache-hit != 'true'\n        run: npm ci --ignore-scripts\n      - run: node ci/execute.ts\n        env:\n          PARTITION: ${{ matrix.partition }}\n          CACHE_KEY: ${{ inputs.cache_key }}\n          CACHE_HIT: ${{ steps.dependencies.outputs.cache-hit }}\n      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n        with:\n          name: execution-${{ matrix.partition }}\n          path: execution.json\n          retention-days: 1\n          if-no-files-found: error\n",
+    "ci/case.json": "{\n  \"id\": \"cache-heldout\",\n  \"iterations\": 80000,\n  \"tests\": {\n    \"case-000\": \"8b52566bdd5df3653e49e90fac320b8fe45ef3fdf699961b6f99d489b671eab8\",\n    \"case-001\": \"33ee31b07da437e5ec5eaf204a41f89c76a64a7fa8738f791f62d6e3fed7eac8\",\n    \"case-002\": \"d7f32e0ace97ebcfed8e874360da9fbf691d92d23a0c3c87a24fbd8fcca2b570\",\n    \"case-003\": \"5cfa420fa1ab038acc82e0626ada13ac46d9ad0a157fa8f812581187ae2f990f\",\n    \"case-004\": \"849f66495f3b0dd501394b6a52e614af3e2b59da73b3b4ee6ec960c752529e5a\",\n    \"case-005\": \"ce281a0cf76e0b9505d65fff64927570043a02e389652181130657b2b4a0ab74\",\n    \"case-006\": \"50a76c0b781f9d1c940bb7812bc183403c04b1efa2405b5ccfc534f857fbbf28\",\n    \"case-007\": \"57d6a50f927e6dc7cc5f9651844d893e35e1f36b51e044b2dcaa48b0e7c4e96a\",\n    \"case-008\": \"8396a5ebb969f982d71a308568cc2d55a7b39fbca5f6c72328a5edc7115a24d5\",\n    \"case-009\": \"e23b4d5bdb98b546738a32bddea1f576fe8f16e523f3ce7eb6ab6e884690592f\",\n    \"case-010\": \"0e5014023c7b587fdef605ff2caf4d7ceffcc3aa68a216f27d759b11f77a3e4e\",\n    \"case-011\": \"f9b6db43394e09a29ff098f1cb1531d242cfc1112f3d2680d3434cef139f399a\",\n    \"case-012\": \"d58eb1f5caee0c822bbcc98ae0ff647da82932b4fd8bf2761837c35c7a8635e1\"\n  },\n  \"maxPartitions\": 1\n}\n"
+  },
+  "plan": {
+    "schemaVersion": 1,
+    "cache": false,
+    "partitions": [
+      [
+        "case-000",
+        "case-001",
+        "case-002",
+        "case-003",
+        "case-004",
+        "case-005",
+        "case-006",
+        "case-007",
+        "case-008",
+        "case-009",
+        "case-010",
+        "case-011",
+        "case-012"
+      ]
+    ]
+  },
+  "baselineEvidence": {
+    "schemaVersion": 1,
+    "pair": 0,
+    "side": "baseline",
+    "group": "cold",
+    "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+    "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+    "correlation": "eval-013-c1-profile",
+    "runId": 42520967654,
+    "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520967654",
+    "attempt": 1,
+    "conclusion": "success",
+    "createdAt": "2026-11-08T20:36:10Z",
+    "startedAt": "2026-11-08T20:36:14.000Z",
+    "completedAt": "2026-11-08T20:36:34.000Z",
+    "elapsedSeconds": 20,
+    "jobSeconds": 18,
+    "queueSeconds": 4,
+    "jobs": [
+      {
+        "id": 128854120637,
+        "name": "plan",
+        "startedAt": "2026-11-08T20:36:14Z",
+        "completedAt": "2026-11-08T20:36:22Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      },
+      {
+        "id": 128854165409,
+        "name": "tests (0)",
+        "startedAt": "2026-11-08T20:36:24Z",
+        "completedAt": "2026-11-08T20:36:34Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      }
+    ],
+    "execution": [
+      {
+        "schemaVersion": 1,
+        "runId": "42520967654",
+        "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+        "planDigest": "c18f9e0699977f3a1159f814bb5bd418ef3b3db64d581c0080210dab8f1e14ef",
+        "cacheKey": "eval-013-c1-profile",
+        "cacheHit": false,
+        "partition": 0,
+        "node": "v24.22.2",
+        "tests": [
+          {
+            "id": "case-000",
+            "output": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+            "status": "pass"
+          },
+          {
+            "id": "case-001",
+            "output": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+            "status": "pass"
+          },
+          {
+            "id": "case-002",
+            "output": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+            "status": "pass"
+          },
+          {
+            "id": "case-003",
+            "output": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+            "status": "pass"
+          },
+          {
+            "id": "case-004",
+            "output": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+            "status": "pass"
+          },
+          {
+            "id": "case-005",
+            "output": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+            "status": "pass"
+          },
+          {
+            "id": "case-006",
+            "output": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+            "status": "pass"
+          },
+          {
+            "id": "case-007",
+            "output": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+            "status": "pass"
+          },
+          {
+            "id": "case-008",
+            "output": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+            "status": "pass"
+          },
+          {
+            "id": "case-009",
+            "output": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+            "status": "pass"
+          },
+          {
+            "id": "case-010",
+            "output": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+            "status": "pass"
+          },
+          {
+            "id": "case-011",
+            "output": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+            "status": "pass"
+          },
+          {
+            "id": "case-012",
+            "output": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6",
+            "status": "pass"
+          }
+        ],
+        "dependencyCheck": true
+      }
+    ],
+    "cacheKey": "eval-013-c1-profile",
+    "expectedCacheHit": false,
+    "source": "github"
+  },
+  "allowedFiles": [
+    "ci/plan.json"
+  ],
+  "requiredTests": [
+    "case-000",
+    "case-001",
+    "case-002",
+    "case-003",
+    "case-004",
+    "case-005",
+    "case-006",
+    "case-007",
+    "case-008",
+    "case-009",
+    "case-010",
+    "case-011",
+    "case-012"
+  ],
+  "maxPartitions": 1,
+  "objective": {
+    "schemaVersion": 1,
+    "primary": "elapsedSeconds",
+    "direction": "minimize",
+    "minimumImprovement": 0.1,
+    "secondaryRegressionLimit": 0.05,
+    "pairs": 5,
+    "acceptanceRule": "paired-log-t95-v1",
+    "requiredChecks": [
+      "protected-files",
+      "exact-test-inventory",
+      "expected-outputs",
+      "successful-workflow",
+      "cache-condition",
+      "single-attempt"
+    ]
+  },
+  "previousAttempts": []
+}

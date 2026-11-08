@@ -1,0 +1,4 @@
+inconclusive: demo
+Primary ratio 0.800; secondary 0.900; 5/5 pairs.
+Correctness and evidence: /home/schneider/work/ci-lab-runs/demo/report.md
+Patch: /home/schneider/work/ci-lab-runs/demo/candidate.patch

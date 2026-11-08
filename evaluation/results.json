@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T20:50:28.107Z",
+  "planDigest": "1f8c5ed392d7db46345d998a2c5609da506885c0983815ab458caa88c8113d67",
+  "results": [
+    {
+      "runId": "eval-001",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "cold",
+      "strategy": "unchanged",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520332862",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520382467",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520419682",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520464919",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520509082",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520551112"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-002",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "cold",
+      "strategy": "rules",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 1.0717885426036613,
+        "primaryUpper95": 1.344537693642105,
+        "secondaryRatio": 1.0609010658344902,
+        "secondaryUpper95": 1.3095521758578303,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520273747",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520313111",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520361666",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520397246",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520472402",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520532069",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520588035",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520629762",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520686316",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520804021",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520845190"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-003",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "cold",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "847f068950909c32b98c9367fff8443f408395e75f4fcda327ca890c95cd53c7",
+          "responseDigest": "755ab4bd8409c133ac45703b844e22af3f8c6c9d8353352a56e3b659c88fa3e7",
+          "inputTokens": 3558,
+          "outputTokens": 38,
+          "costUsd": 0.000149436,
+          "live": true,
+          "timestamp": "2026-11-08T20:29:41.191Z"
+        }
+      ],
+      "observations": 0,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520332790"
+      ],
+      "error": "Error: MODEL_AMBIGUOUS: prior call has no durable response; no automatic replay"
+    },
+    {
+      "runId": "eval-004",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "unchanged",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520273731",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520323859",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520358792",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520394122",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520433865",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520478706"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-005",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "rules",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 1.0930640295698482,
+        "primaryUpper95": 1.2724013889493724,
+        "secondaryRatio": 1.0795196383154528,
+        "secondaryUpper95": 1.2955151621988814,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520275160",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520362593",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520398378",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520439084",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520499983",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520541803",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520582691",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520639469",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520696405",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520738013",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520806041"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-006",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520275059"
+      ],
+      "error": "Error: AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in"
+    },
+    {
+      "runId": "eval-007",
+      "fixture": "partition",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "unchanged",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520334663",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520439238",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520500454",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520557076",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520614456",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520670509"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-008",
+      "fixture": "partition",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "rules",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 0.9375785823807115,
+        "primaryUpper95": 1.028358266296206,
+        "secondaryRatio": 1.4261092857722497,
+        "secondaryUpper95": 1.619523327014568,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520525280",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520699899",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520806671",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520849134",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520910272",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520965996",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521020546",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521075378",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521127530",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521168465",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521206564"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-009",
+      "fixture": "partition",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520717141"
+      ],
+      "error": "Error: AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in"
+    },
+    {
+      "runId": "eval-010",
+      "fixture": "no-change",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "unchanged",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520808403",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520926371",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520967256",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521007840",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521046775",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521085478"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-011",
+      "fixture": "no-change",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "rules",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520851168",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520952693",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521009426",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521047492",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521087763",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521126057"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-012",
+      "fixture": "no-change",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520907890"
+      ],
+      "error": "Error: AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in"
+    },
+    {
+      "runId": "eval-013",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "cold",
+      "strategy": "unchanged",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42520967654",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521009347",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521047540",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521086540",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521123708",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521164982"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-014",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "cold",
+      "strategy": "rules",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 1.0801851873035635,
+        "primaryUpper95": 1.2357649856916817,
+        "secondaryRatio": 1.0899250784383827,
+        "secondaryUpper95": 1.2646581379567405,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521127450",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521171104",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521208165",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521261412",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521303774",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521348797",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521389020",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521432886",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521477989",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521523590",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521567221"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-015",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "cold",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521169947"
+      ],
+      "error": "Error: AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in"
+    },
+    {
+      "runId": "eval-016",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "unchanged",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521205232",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521259545",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521301633",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521346131",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521386376",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521429763"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-017",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "rules",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 0.9668637882949821,
+        "primaryUpper95": 1.1451055803043921,
+        "secondaryRatio": 0.945904109507937,
+        "secondaryUpper95": 1.114291417578684,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521211859",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521313856",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521371371",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521427641",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521486295",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521546566",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521603978",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521647428",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521693019",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521743387",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521789374"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-018",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521264040"
+      ],
+      "error": "Error: AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in"
+    },
+    {
+      "runId": "eval-019",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "unchanged",
+      "outcome": "no-change",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 5,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521311889",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521397270",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521454703",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521513709",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521557041",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521600660"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-020",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "rules",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 1.0752467746908143,
+        "primaryUpper95": 1.1495191183489277,
+        "secondaryRatio": 1.6083991733251972,
+        "secondaryUpper95": 1.815362858396595,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521520533",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521668914",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521714093",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521777597",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521821665",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521866650",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521912221",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521971845",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42522016281",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42522061365",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42522102235"
+      ],
+      "error": null
+    },
+    {
+      "runId": "eval-021",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42521613840"
+      ],
+      "error": "Error: AUTH_BLOCKED: prior 1Password lookup failed; run credentials refresh explicitly after signing in"
+    }
+  ]
+}

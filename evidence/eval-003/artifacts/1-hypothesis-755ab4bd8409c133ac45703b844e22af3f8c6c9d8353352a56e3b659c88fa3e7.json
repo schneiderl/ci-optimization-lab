@@ -1,0 +1,24 @@
+{
+  "decision": "change",
+  "family": "cache",
+  "explanation": "Jev selected cache with confidence 0.18; this is a hypothesis, not correctness evidence.",
+  "plan": {
+    "schemaVersion": 1,
+    "cache": true,
+    "partitions": [
+      [
+        "case-000",
+        "case-001",
+        "case-002",
+        "case-003",
+        "case-004",
+        "case-005",
+        "case-006",
+        "case-007"
+      ]
+    ]
+  },
+  "evidence": [
+    "pipeline-snapshot"
+  ]
+}

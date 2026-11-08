@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "requestDigest": "20a8c8c4912987881e42c8b53555e429298781cfd3e8c1d34efc7108ff4d12ec",
+  "output": {
+    "decision": "change",
+    "family": "cache",
+    "explanation": "Rule v1 enables lock-keyed dependency reuse when disabled.",
+    "plan": {
+      "schemaVersion": 1,
+      "cache": true,
+      "partitions": [
+        [
+          "case-000",
+          "case-001",
+          "case-002",
+          "case-003",
+          "case-004",
+          "case-005",
+          "case-006",
+          "case-007"
+        ]
+      ]
+    },
+    "evidence": [
+      "pipeline-snapshot"
+    ]
+  },
+  "usage": {
+    "provider": "recorded",
+    "role": "investigator",
+    "model": "fixture-v1",
+    "requestDigest": "20a8c8c4912987881e42c8b53555e429298781cfd3e8c1d34efc7108ff4d12ec",
+    "responseDigest": "7f7d115011797ef8121d66efbe2d60f6a381f38bb1c4252260b0bd77b4ac5ce5",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "costUsd": 0,
+    "live": false,
+    "timestamp": "2026-11-08T20:23:22.916Z"
+  }
+}

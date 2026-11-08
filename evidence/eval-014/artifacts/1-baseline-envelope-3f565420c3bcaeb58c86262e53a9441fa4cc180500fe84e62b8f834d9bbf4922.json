@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "runId": "eval-014",
+  "stepId": "baseline",
+  "attemptId": "cycle-1",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/1-baseline-d5594fe19c02aa793c10cbcc18ab808919cb051738fe7317adb8c08f50df09d6.json",
+      "sha256": "d5594fe19c02aa793c10cbcc18ab808919cb051738fe7317adb8c08f50df09d6",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    }
+  ]
+}

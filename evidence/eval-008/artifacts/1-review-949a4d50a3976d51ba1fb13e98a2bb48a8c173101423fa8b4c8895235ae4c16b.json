@@ -1,0 +1,10 @@
+{
+  "recommendation": "approve",
+  "concerns": [],
+  "explanation": "Deterministic comparator uses the same correctness and measurement gates.",
+  "evidence": [
+    "validation",
+    "acceptance"
+  ],
+  "requestExperiment": false
+}
