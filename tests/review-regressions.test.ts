@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile, writeFile, mkdir, mkdtemp } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, mkdtemp, chmod } from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import { fixture } from './helpers.js';
@@ -105,4 +105,39 @@ test('OpenCode requires an explicit successful finish, complete usage and matchi
   await assert.rejects(new OpenCodeModel('opencode/test-free', 1000, executor('other-free')).call(input), /identity/);
   await assert.rejects(new OpenCodeModel('opencode/test-free', 1000, executor('test-free', { type: 'step-finish', reason: 'stop' })).call(input));
   const valid = await new OpenCodeModel('opencode/test-free', 1000, executor('test-free')).call(input); assert.equal(valid.usage.inputTokens, 5); assert.equal(valid.usage.outputTokens, 10); assert.equal(valid.usage.model, 'opencode/test-free');
+});
+test('pre-aborted and abort-during-preflight requests never reserve or submit work', async () => {
+  for (const phase of ['before', 'preflight']) {
+    const f = await githubFixture(), abort = new AbortController();
+    const transport = { ...f.transport, async api(endpoint: string) { const value = await f.transport.api(endpoint); if (phase === 'preflight') abort.abort(); return value; } };
+    if (phase === 'before') abort.abort();
+    const runner = new GitHubRunner(transport, f.store, f.budget, f.manifest, 10, 1);
+    await assert.rejects(runner.execute(f.request, f.plan, abort.signal), /CANCELLED/);
+    assert.deepEqual(f.counts(), { dispatches: 0, cancels: 0 }); assert.equal(Object.keys((await f.budget.snapshot()).entries).length, 0);
+    assert.equal(await runner.cancellationStatus(f.request), 'none'); assert.equal(await runner.hasPendingCancellation(), false);
+  }
+});
+test('abort after reservation releases unsubmitted allowance and creates no ambiguous intent', async () => {
+  const f = await githubFixture(), abort = new AbortController();
+  class AbortBudget extends Budget { override async reserve(...args: Parameters<Budget['reserve']>) { await super.reserve(...args); abort.abort(); } }
+  const budget = new AbortBudget(f.data), runner = new GitHubRunner(f.transport, f.store, budget, f.manifest, 10, 1);
+  await assert.rejects(runner.execute(f.request, f.plan, abort.signal), /CANCELLED/);
+  assert.deepEqual(f.counts(), { dispatches: 0, cancels: 0 }); assert.equal(await runner.cancellationStatus(f.request), 'none');
+  assert.equal((await budget.snapshot()).entries[`github-${f.request.correlation}`]!.chargedUpperBoundUsd, 0);
+});
+test('standalone GitHub CLI reconciles pending cancellation and replays cancellation without dispatch', async () => {
+  const f = await githubFixture(), root = await mkdtemp(path.join(os.tmpdir(), 'ci-cli-cancel-')), cwd = path.join(root, 'lab'), bin = path.join(root, 'bin');
+  await mkdir(cwd); await mkdir(bin);
+  const data = path.join(root, 'remote.json'), log = path.join(root, 'calls.jsonl');
+  await atomic(data, json({ ...f.remote, status: 'in_progress' }));
+  const executable = path.join(bin, 'gh');
+  await writeFile(executable, `#!${process.execPath}\nconst fs=require('node:fs');const args=process.argv.slice(2),file=${JSON.stringify(data)};fs.appendFileSync(${JSON.stringify(log)},JSON.stringify(args)+'\\n');const remote=JSON.parse(fs.readFileSync(file,'utf8'));if(args[0]==='api'){console.log(JSON.stringify(remote));}else if(args[0]==='run'&&args[1]==='cancel'){remote.status='completed';remote.conclusion='cancelled';fs.writeFileSync(file,JSON.stringify(remote));}else{throw Error('Unexpected external action');}\n`);
+  await chmod(executable, 0o700);
+  const id = 'pending-cli', blockRoot = path.join(root, 'ci-lab-runs/blocks', id), inputFile = path.join(root, 'input.json');
+  await atomic(path.join(blockRoot, `dispatch/${f.request.correlation}.json`), json({ schemaVersion: 1, requestDigest: digest(json(f.request)), correlation: f.request.correlation, commit: f.request.commit, ref: f.request.ref, status: 'cancel-pending', createdAt: now(), runId: 123, cancelRequested: true }));
+  await atomic(inputFile, json({ envelope: { schemaVersion: 1, runId: id, stepId: 'runner', attemptId: 'one', inputs: [], outputs: [] }, context: { manifest: f.manifest, plan: f.plan, request: f.request } }));
+  const cli = async (mode: string) => JSON.parse(await command(process.execPath, ['--import', path.resolve('node_modules/tsx/dist/loader.mjs'), path.resolve('src/cli/index.ts'), 'block', 'runner', inputFile, mode], { cwd, env: { PATH: bin, HOME: root, NO_COLOR: '1' }, timeout: 30000 }));
+  assert.equal((await cli('github')).output.status, 'cancelled'); assert.equal((await cli('github')).output.status, 'cancelled'); assert.equal((await cli('github-reconcile')).output.status, 'cancelled');
+  const calls = (await readFile(log, 'utf8')).trim().split('\n').map(line => JSON.parse(line) as string[]);
+  assert.equal(calls.filter(args => args[0] === 'workflow').length, 0); assert.equal(calls.filter(args => args[0] === 'run' && args[1] === 'cancel').length, 1);
 });

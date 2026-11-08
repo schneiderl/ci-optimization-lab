@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { z } from 'zod';
-import { Envelope, Manifest, Plan, Dispatch, InvestigatorInput, EditorInput, ReviewerInput, ValidatorInput, Hypothesis, Edit, Review, Observation, Validation, Config, State } from '../contracts/index.js';
+import { Envelope, Manifest, Plan, Dispatch, Cancellation, InvestigatorInput, EditorInput, ReviewerInput, ValidatorInput, Hypothesis, Edit, Review, Observation, Validation, Config, State } from '../contracts/index.js';
 import { Store, Budget } from '../adapters/records/store.js';
 import { RecordedModel, OpenCodeModel, JevModel, OpenRouterFreeModel, roleSchemas } from '../adapters/models/index.js';
 import { GitHubRunner, GhTransport } from '../adapters/github/index.js';
@@ -33,7 +33,16 @@ export async function block(name: string, file: string, provider = 'recorded', c
   }
   else if (name === 'runner') {
     const input = z.object({ manifest: Manifest, plan: Plan, request: Dispatch }).strict().parse(request.context);
-    output = provider === 'github' ? await new GitHubRunner(new GhTransport(), store, budget, input.manifest).execute(input.request, input.plan, signal) : await new RecordedRunner(input.manifest).execute(input.request, input.plan);
+    const mode = z.enum(['recorded', 'github', 'github-reconcile']).parse(provider);
+    if (mode === 'recorded') output = await new RecordedRunner(input.manifest).execute(input.request, input.plan);
+    else {
+      const runner = new GitHubRunner(new GhTransport(), store, budget, input.manifest);
+      const cancellation = await runner.cancellationStatus(input.request);
+      if (mode === 'github-reconcile' || cancellation !== 'none') {
+        if (mode === 'github-reconcile' || cancellation === 'pending') await runner.reconcileCancellations();
+        output = Cancellation.parse({ schemaVersion: 1, status: 'cancelled', correlation: input.request.correlation, reason: 'Cancellation reconciled; no submitted workflow remains active. No dispatch was issued.' });
+      } else output = await runner.execute(input.request, input.plan, signal);
+    }
   } else if (name === 'reporter') {
     const input = z.object({ runDirectory: z.string() }).strict().parse(request.context), source = new Store(path.resolve(input.runDirectory));
     const config = Config.parse(await readJson(path.join(source.root, 'config.json'))), state = State.parse(await readJson(path.join(source.root, 'state.json')));

@@ -61,3 +61,15 @@ npm run lab -- block runner examples/runner.input.json github
 ```
 
 The live option uses the same repository policy, request binding, shared budget, cancellation, and reconciliation as the coordinator. Prepare the example branch first or create a new input matching your experimental branch. Never reuse an ID for a different request.
+
+## Cancellation recovery
+
+An already-aborted request or cancellation during preflight never submits new work. Guards run after asynchronous preflight and reservation, and immediately before dispatch. A cancelled intent that never called the transport is recorded as `not-submitted`, with its allowance released. A known post-submission cancellation stays pending until its remote run is reconciled.
+
+Standalone `github` invocations automatically reconcile their saved cancellation before returning a versioned `Cancellation` result. They need no coordinator config/state and never redispatch a cancelled request. Explicit reconciliation is also available:
+
+```sh
+npm run lab -- block runner examples/runner.input.json github-reconcile
+```
+
+Use the original input and run identity for recovery. Repeated reconciliation is idempotent. Choose a new correlation for new work after cancellation.

@@ -29,6 +29,7 @@ export const EditorInput = z.object({ hypothesis: Hypothesis, currentPlan: Plan,
 export const ReviewerInput = z.union([z.object({ hypothesis: Hypothesis, patch: Patch, validation: Validation, acceptance: Acceptance, observations: z.array(Observation) }).strict(), z.object({ hypothesis: Hypothesis, baselineEvidence: Observation, noChange: z.literal(true), observations: z.array(Observation) }).strict()]);
 export const ValidatorInput = z.object({ checkout: z.string(), manifest: Manifest }).strict();
 export const Dispatch = z.object({ correlation: Id, commit: Commit, ref: z.string().regex(/^lab\/[\w./-]+$/), pair: z.number().int().min(0).max(4), side: z.enum(['baseline', 'candidate']), group: z.enum(['cold', 'warm']), cacheKey: Id, expectedCacheHit: z.boolean(), patchDigest: Digest, prime: z.boolean().optional() }).strict();
+export const Cancellation = z.object({ schemaVersion: Version, status: z.literal('cancelled'), correlation: Id, reason: z.string() }).strict();
 export type Workload = z.infer<typeof Manifest>;
 export type RunConfig = z.infer<typeof Config>;
 export type RunState = z.infer<typeof State>;

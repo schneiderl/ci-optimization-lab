@@ -62,6 +62,34 @@
       ],
       "additionalProperties": false
     },
+    "Cancellation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "status": {
+          "type": "string",
+          "const": "cancelled"
+        },
+        "correlation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "status",
+        "correlation",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
     "Commit": {
       "$schema": "https://json-schema.org/draft/2020-12/schema",
       "type": "string",
