@@ -1,0 +1,9 @@
+{
+  "status": "failed-or-ambiguous",
+  "requestDigest": "c62800154d45df2a9da0402bf33ff43abbe2800e69bb8cea79b4081af35e14d3",
+  "provider": "jev",
+  "model": "typesafe/jev-1.14",
+  "role": "investigator",
+  "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]",
+  "timestamp": "2026-11-08T22:23:21.458Z"
+}

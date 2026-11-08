@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "5231df2a74d4dc06e3e514c5eced2c847c04d52abdf310b58a462a6ef5ee44fa",
+  "correlation": "agent2-012-c1-profile",
+  "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+  "ref": "lab/agent2-012/c1/baseline",
+  "status": "completed",
+  "createdAt": "2026-11-08T22:22:12.513Z",
+  "runId": 42529901679,
+  "cancelRequested": false
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T22:23:22.079Z",
+  "planDigest": "6dad39491a8892f8116adf762651024eb4cb0c7d31da3f25e6cb17364146495c",
+  "results": [
+    {
+      "runId": "agent2-003",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "cold",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42529901320"
+      ],
+      "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]"
+    },
+    {
+      "runId": "agent2-006",
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42529902273"
+      ],
+      "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]"
+    },
+    {
+      "runId": "agent2-009",
+      "fixture": "partition",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42529901956"
+      ],
+      "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]"
+    },
+    {
+      "runId": "agent2-012",
+      "fixture": "no-change",
+      "heldOut": false,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42529901679"
+      ],
+      "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]"
+    },
+    {
+      "runId": "agent2-015",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "cold",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42529950989"
+      ],
+      "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]"
+    },
+    {
+      "runId": "agent2-018",
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42529951608"
+      ],
+      "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]"
+    },
+    {
+      "runId": "agent2-021",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42529951571"
+      ],
+      "error": "[\n  {\n    \"expected\": \"number\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"data\",\n      \"context_length\"\n    ],\n    \"message\": \"Invalid input: expected number, received undefined\"\n  }\n]"
+    }
+  ]
+}

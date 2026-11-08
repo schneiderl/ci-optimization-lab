@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "runId": "agent2-015",
+  "stepId": "baseline",
+  "attemptId": "cycle-1",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "artifacts/1-baseline-58d2ac21a908af95565c097eaec61876a5bc3a62591cc862dfbb870d90b47d51.json",
+      "sha256": "58d2ac21a908af95565c097eaec61876a5bc3a62591cc862dfbb870d90b47d51",
+      "targetCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "patchDigest": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "98120c44a589324ec86f255ff4667beaf6c688bef3e21739901a37d2bc0f15bc",
+  "correlation": "agent2-006-c1-profile",
+  "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+  "ref": "lab/agent2-006/c1/baseline",
+  "status": "completed",
+  "createdAt": "2026-11-08T22:22:12.587Z",
+  "runId": 42529902273,
+  "cancelRequested": false
+}
