@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "cache-heldout",
+  "repository": "schneiderl/ci-lab-target-workloads",
+  "baselineCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+  "workflow": "experiment.yml",
+  "runner": "ubuntu-24.04",
+  "allowedFiles": [
+    "ci/plan.json"
+  ],
+  "protectedFiles": {
+    ".github/workflows/experiment.yml": "ad736a4f78022149db40fbc36a7c69bbc36d7fa47c49a7b76b5e6763762073d4",
+    ".github/workflows/verify.yml": "f9a34ba658ee8ab0445cc272e0c88098db66e2c5ab154e51ec97677ad46e027c",
+    ".gitignore": "d72f2fbc6fb98e74db644dae8695c430b08d8d9c6f0dd0313c67bcc1838da23d",
+    "README.md": "bcdbf554c45f8ffdd27296f146bd8a0b0e6740a4bdfc8dc8769c58a68e21e871",
+    "ci/case.json": "47c9571d35f908f7881fa0f3e6eb9834403d2fe9c8d4a17f5948f2b0af7d1d36",
+    "ci/execute.ts": "6df7a3fd785976df56eaaf2c759b17b3c0cea31834f8138b6f66019fe2492c95",
+    "ci/local.ts": "2d61c1715534e665a50685421ef959c061193e0971f9aee6b40605902a114c68",
+    "ci/matrix.ts": "a414e0bbbf52aca8bacd57ce790327d63a8dc930946d7bc0d5d9adff26fb0c7f",
+    "ci/requirements.ts": "889b654287515dd87ca8433a0ad63180ff69bef38574607b7868b92076fc9d75",
+    "package-lock.json": "0defccacdb2f5b770bddddfa287ed4a29fe8c048f02581afd51304e1d216509e",
+    "package.json": "0c194ebdab74395874593359e8227683dfd7b5aa693748cb384502c7d71be85a",
+    "src/derive.ts": "b72b5c6d77bb1230f6c219f27ed97f6e586a41f6af67e8970600ac3faed3efdb",
+    "tests/inventory.ts": "1307128a8aed8322559d7d654075787c89a5d7074226df68cd4ef5f0a870a32f"
+  },
+  "tests": {
+    "case-000": "27e161327b215b3de078a3faf82b71dd01e8bbb8978c554eaceb4ba074d79693",
+    "case-001": "43556b876000671c4e94918778b66b71aa28f8ac95ec5f459972aacb4b6284e2",
+    "case-002": "c340d3eaae9bd2daea6f774ffa5bd6d12637693c3a07032ea14f3aa0136174d6",
+    "case-003": "e20b885452dc2243f76e7e61686f820ff898307d0b7392718bbf4196518c9de1",
+    "case-004": "f96c69b0a8b8f317cf30829bcc40d6bef8d2b3955bb1de795d4537adfedcb336",
+    "case-005": "ff244958917f078d8c11d96b118342a375d3dedc42c52400c7f249ec67518f67",
+    "case-006": "29af1d6264667081d6d49eee068894897cbd37d3469255edc7c0a04f0e5dabd2",
+    "case-007": "0aad33ff48ed9603e7ccb07440f323c8a0f7231455af056db1ff16f3438ec236",
+    "case-008": "9b3b4070d6ac1cb034e0bb960bc74df101b4213be41681ff1c91d64fb1f4341e",
+    "case-009": "26fafb676319297de9e797573b835dff7cb615a7361f96783fdbf7417b8c4a70",
+    "case-010": "1dd997c44c845122450eec9bfd3a0fde65f3cbe0dc24f85d9db214b3cc73bf4c",
+    "case-011": "f2bddd4303d004840e3693450760d33f6a06b11d58ee1a1abedb689dc78c8073",
+    "case-012": "d43c1c48700e36266b9a2052e5ca4773359afacc3f430ad928e817bec2cffce6"
+  },
+  "maxPartitions": 1,
+  "commands": [
+    "npm ci --ignore-scripts",
+    "node ci/execute.ts"
+  ],
+  "fixtureDigest": "3997da135ce53a5246683b493757c0ff501ae626c55a0dbea47d461992cd04db"
+}

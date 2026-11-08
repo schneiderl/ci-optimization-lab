@@ -1,0 +1,74 @@
+{
+  "envelope": {
+    "schemaVersion": 1,
+    "runId": "example-editor",
+    "stepId": "editor",
+    "attemptId": "one",
+    "inputs": [],
+    "outputs": []
+  },
+  "context": {
+    "hypothesis": {
+      "decision": "change",
+      "family": "cache",
+      "explanation": "Rule v1 enables lock-keyed dependency reuse when disabled.",
+      "plan": {
+        "schemaVersion": 1,
+        "cache": true,
+        "partitions": [
+          [
+            "case-000",
+            "case-001",
+            "case-002",
+            "case-003",
+            "case-004",
+            "case-005",
+            "case-006",
+            "case-007"
+          ]
+        ]
+      },
+      "evidence": [
+        "pipeline-snapshot"
+      ]
+    },
+    "currentPlan": {
+      "schemaVersion": 1,
+      "cache": false,
+      "partitions": [
+        [
+          "case-000",
+          "case-001",
+          "case-002",
+          "case-003",
+          "case-004",
+          "case-005",
+          "case-006",
+          "case-007"
+        ]
+      ]
+    },
+    "requiredTests": [
+      "case-000",
+      "case-001",
+      "case-002",
+      "case-003",
+      "case-004",
+      "case-005",
+      "case-006",
+      "case-007"
+    ],
+    "allowedFiles": [
+      "ci/plan.json"
+    ]
+  },
+  "recordedOutput": {
+    "files": [
+      {
+        "path": "ci/plan.json",
+        "content": "{\"schemaVersion\":1,\"cache\":true,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\"]]}\n"
+      }
+    ],
+    "explanation": "Enable protected lock-keyed dependency reuse."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "no-change",
+  "repository": "schneiderl/ci-lab-target-workloads",
+  "baselineCommit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+  "workflow": "experiment.yml",
+  "runner": "ubuntu-24.04",
+  "allowedFiles": [
+    "ci/plan.json"
+  ],
+  "protectedFiles": {
+    ".github/workflows/experiment.yml": "ad736a4f78022149db40fbc36a7c69bbc36d7fa47c49a7b76b5e6763762073d4",
+    ".github/workflows/verify.yml": "f9a34ba658ee8ab0445cc272e0c88098db66e2c5ab154e51ec97677ad46e027c",
+    ".gitignore": "d72f2fbc6fb98e74db644dae8695c430b08d8d9c6f0dd0313c67bcc1838da23d",
+    "README.md": "bcdbf554c45f8ffdd27296f146bd8a0b0e6740a4bdfc8dc8769c58a68e21e871",
+    "ci/case.json": "7ab9e787896cbfc0d80de0a1526b212308bc094b6c78e084781042328bf9c316",
+    "ci/execute.ts": "6df7a3fd785976df56eaaf2c759b17b3c0cea31834f8138b6f66019fe2492c95",
+    "ci/local.ts": "2d61c1715534e665a50685421ef959c061193e0971f9aee6b40605902a114c68",
+    "ci/matrix.ts": "a414e0bbbf52aca8bacd57ce790327d63a8dc930946d7bc0d5d9adff26fb0c7f",
+    "ci/requirements.ts": "889b654287515dd87ca8433a0ad63180ff69bef38574607b7868b92076fc9d75",
+    "package-lock.json": "0defccacdb2f5b770bddddfa287ed4a29fe8c048f02581afd51304e1d216509e",
+    "package.json": "0c194ebdab74395874593359e8227683dfd7b5aa693748cb384502c7d71be85a",
+    "src/derive.ts": "b72b5c6d77bb1230f6c219f27ed97f6e586a41f6af67e8970600ac3faed3efdb",
+    "tests/inventory.ts": "1307128a8aed8322559d7d654075787c89a5d7074226df68cd4ef5f0a870a32f"
+  },
+  "tests": {
+    "case-000": "3290b0a53f1f53521055c4cb8f7f5156c94f379011e9991adac976a554ed7176"
+  },
+  "maxPartitions": 1,
+  "commands": [
+    "npm ci --ignore-scripts",
+    "node ci/execute.ts"
+  ],
+  "fixtureDigest": "ecae33721b0a7cea9a1a1ea9e1d0217e892f965ce8a034ae1d96d67be48fa976"
+}

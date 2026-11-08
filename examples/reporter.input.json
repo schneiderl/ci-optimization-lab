@@ -1,0 +1,13 @@
+{
+  "envelope": {
+    "schemaVersion": 1,
+    "runId": "example-reporter",
+    "stepId": "reporter",
+    "attemptId": "one",
+    "inputs": [],
+    "outputs": []
+  },
+  "context": {
+    "runDirectory": "../ci-lab-runs/demo"
+  }
+}

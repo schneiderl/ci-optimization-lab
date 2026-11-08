@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "cache": true,
+  "partitions": [
+    [
+      "missing-test"
+    ]
+  ],
+  "command": "skip"
+}

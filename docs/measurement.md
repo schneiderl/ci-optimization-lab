@@ -1,0 +1,17 @@
+# Frozen measurement and acceptance rules
+
+Rule `paired-log-t95-v1` was selected before evaluation. Its definitions and thresholds stay fixed for rules and agents, training and held-out cases, and cold and warm groups. The source and evaluation freeze files record the implementation.
+
+Elapsed execution begins at the earliest measured job's `started_at` and ends at the latest job's `completed_at`. It includes scheduling between dependent jobs, setup, dependency installation, tests, cache work, uploads, and cleanup. Initial queue time is earliest job start minus workflow creation; it is recorded separately and excluded from elapsed execution. Job seconds sum each non-skipped job's completion minus start. They are a compute proxy, not an invoice.
+
+A valid pair has one baseline and one candidate at the same pair index and cache group, exact pinned commits and patch identity, successful protected checks, approved standard Ubuntu runners, first workflow attempts, and complete jobs and reports. Failed, cancelled, rerun, duplicate, mixed, or incomplete observations remain in the report and cannot count toward acceptance. Five pairs are required; the runner does not replace an unfavorable observation or delete an outlier.
+
+Pair order alternates B/C, C/B, B/C, C/B, B/C. Warm groups prime each caching side before measured runs and verify every later hit. A side without caching does not claim hits. Baseline and candidate use separate key namespaces, and partitions add separate suffixes. Cold runs use a unique key for every side and pair, with no restore prefixes, and must miss. Prime observations remain in evidence and correctness checks but are excluded from summary ratios. A unique baseline profile precedes model investigation and does not warm evaluation keys.
+
+For each metric, take the five candidate/baseline ratios. Compute their natural logs, mean, and sample standard deviation. The reported point ratio is `exp(mean)`. The one-sided 95% upper bound is `exp(mean + 2.132 * sd / sqrt(5))`, using Student t with four degrees of freedom. Both bounds must meet the objective: primary upper bound at most `0.90`, secondary upper bound at most `1.05`. These are joint necessary gates; no independence between metrics is claimed. Review can veto acceptance but cannot loosen a gate.
+
+A point estimate that misses either threshold is rejected. A point estimate that meets both thresholds but whose bounds do not is inconclusive. Incomplete or noisy data cannot prove improvement. A recorded-run acceptance calculation is exposed for testing, but the coordinator's final outcome remains inconclusive.
+
+Five samples rely on approximate independence and roughly normal log ratios. Shared-runner tails and second-resolution API timestamps limit certainty. The rule is a conservative demonstration policy, not a universal statistical guarantee. Thresholds and noise rules were not tuned after observing the held-out fixtures. No extra samples are collected opportunistically to rescue a failed candidate.
+
+No-change and unchanged strategies receive five protected baseline observations, plus a cold profile and any necessary prime. They make no measured improvement claim. Cold and warm groups are never averaged together.

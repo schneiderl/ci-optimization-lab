@@ -1,0 +1,17 @@
+# Model providers and credentials
+
+Every role has a configured adapter and strict output contract. Persisted metadata includes provider, exact model, request and response digests, timestamp, input/output token usage, actual model cost, and whether the call was live. A recorded adapter is always marked `live: false`. Completed receipts replay without another call. A provider failure does not select another model.
+
+OpenCode accepts only an explicit `opencode/*-free` model. It runs with an isolated temporary home, sanitized environment, private server, and tools denied. Two selected free models returned `provider.free-limit` during preflight. That restriction is a recorded provider blocker; the adapter does not upgrade to a paid model.
+
+The explicitly selected alternate generative adapter uses OpenRouter chat completions with one `:free` model and provider fallback disabled. It verifies current model metadata says zero input/output/request price before looking up credentials, limits output tokens, validates returned model identity and zero usage cost, and parses the role schema. Missing usage, truncation, malformed JSON, unavailable models, and rate limits fail explicitly. This separate configured route passed a tiny live smoke; it is not a silent fallback.
+
+Jev uses direct `POST /api/alpha/decisions`, model `typesafe/jev-1.14`, typed Choice questions, and recorded probabilities/confidence. It selects a bounded hypothesis; it cannot generate an edit or prose and cannot prove correctness. The implementation does not call Jev Router or substitute chat completions. The [Decisions reference](https://openrouter.ai/docs/api/api-reference/alphadecisions/submit-a-decisions-request) and [model metadata](https://openrouter.ai/api/v1/models/typesafe/jev-1.14/endpoints) were checked during implementation. Live smoke returned exact model `typesafe/jev-1.14-20261014` and actual usage cost. Later runtime credential calls failed; each result remains distinct.
+
+## Local credential cache
+
+The user authorized persistent caching of only the OpenRouter API key. Lookup uses an explicit `OPENROUTER_API_KEY` environment value or cached value, then one serialized 1Password lookup. The credential source is the item `OpenRouter API Key - self-host`, field `credential`. Stdout remains in memory and is never printed. Models, target checkouts, and target workflows never receive the key as context or a repository secret.
+
+An already-running, already-unlocked Secret Service collection is preferred. Detection uses D-Bus metadata before `secret-tool`; the app does not activate or unlock a keyring. Otherwise the fallback is `~/.local/share/ci-optimization-lab/credentials/openrouter`, in a mode 0700 directory with a mode 0600 user-owned file. A shared lock prevents concurrent 1Password lookups. A failed capture creates a non-secret marker and stops repeated automatic prompts. A missing key remains an auth blocker, even when an earlier smoke call succeeded.
+
+Use `npm run lab -- credentials refresh` after signing in or rotating the item. Use `npm run lab -- credentials remove` to delete the app's cache. These commands print status only. The cache never stores a 1Password master password. Environment-based secrets belong in the controller process only; OpenCode's sanitized environment omits them. Do not run credential commands under shell tracing.

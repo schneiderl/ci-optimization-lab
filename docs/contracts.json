@@ -1,0 +1,3489 @@
+{
+  "schemaVersion": 1,
+  "schemas": {
+    "Acceptance": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "rejected",
+            "inconclusive"
+          ]
+        },
+        "rule": {
+          "type": "string",
+          "const": "paired-log-t95-v1"
+        },
+        "pairs": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "primaryRatio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "primaryUpper95": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "secondaryRatio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "secondaryUpper95": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "rule",
+        "pairs",
+        "primaryRatio",
+        "primaryUpper95",
+        "secondaryRatio",
+        "secondaryUpper95",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "Commit": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "Config": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "runId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "targetPath": {
+          "type": "string"
+        },
+        "manifestPath": {
+          "type": "string"
+        },
+        "dataRoot": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string",
+          "enum": [
+            "agent",
+            "rules",
+            "unchanged"
+          ]
+        },
+        "provider": {
+          "type": "string",
+          "enum": [
+            "recorded",
+            "opencode",
+            "openrouter-free",
+            "jev-openrouter-free"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "runner": {
+          "type": "string",
+          "enum": [
+            "recorded",
+            "github"
+          ]
+        },
+        "group": {
+          "type": "string",
+          "enum": [
+            "cold",
+            "warm"
+          ]
+        },
+        "maxCycles": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "timeoutSeconds": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 1800
+        },
+        "objective": {
+          "type": "object",
+          "properties": {
+            "schemaVersion": {
+              "type": "number",
+              "const": 1
+            },
+            "primary": {
+              "type": "string",
+              "enum": [
+                "elapsedSeconds",
+                "jobSeconds"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "const": "minimize"
+            },
+            "minimumImprovement": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "secondaryRegressionLimit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "pairs": {
+              "type": "number",
+              "const": 5
+            },
+            "acceptanceRule": {
+              "type": "string",
+              "const": "paired-log-t95-v1"
+            },
+            "requiredChecks": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "primary",
+            "direction",
+            "minimumImprovement",
+            "secondaryRegressionLimit",
+            "pairs",
+            "acceptanceRule",
+            "requiredChecks"
+          ],
+          "additionalProperties": false
+        },
+        "cumulativeBudgetUsd": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 30
+        },
+        "perCallLimitUsd": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "perExperimentLimitUsd": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 5
+        },
+        "maxConcurrency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "runId",
+        "targetPath",
+        "manifestPath",
+        "dataRoot",
+        "strategy",
+        "provider",
+        "model",
+        "runner",
+        "group",
+        "maxCycles",
+        "timeoutSeconds",
+        "objective",
+        "cumulativeBudgetUsd",
+        "perCallLimitUsd",
+        "perExperimentLimitUsd",
+        "maxConcurrency"
+      ],
+      "additionalProperties": false
+    },
+    "Digest": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "Dispatch": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "correlation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "ref": {
+          "type": "string",
+          "pattern": "^lab\\/[\\w./-]+$"
+        },
+        "pair": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "side": {
+          "type": "string",
+          "enum": [
+            "baseline",
+            "candidate"
+          ]
+        },
+        "group": {
+          "type": "string",
+          "enum": [
+            "cold",
+            "warm"
+          ]
+        },
+        "cacheKey": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "expectedCacheHit": {
+          "type": "boolean"
+        },
+        "patchDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prime": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "correlation",
+        "commit",
+        "ref",
+        "pair",
+        "side",
+        "group",
+        "cacheKey",
+        "expectedCacheHit",
+        "patchDigest"
+      ],
+      "additionalProperties": false
+    },
+    "Edit": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "files": {
+          "maxItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "const": "ci/plan.json"
+              },
+              "content": {
+                "type": "string",
+                "maxLength": 20000
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        }
+      },
+      "required": [
+        "files",
+        "explanation"
+      ],
+      "additionalProperties": false
+    },
+    "EditorInput": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "hypothesis": {
+          "type": "object",
+          "properties": {
+            "decision": {
+              "type": "string",
+              "enum": [
+                "change",
+                "no-change"
+              ]
+            },
+            "family": {
+              "type": "string",
+              "enum": [
+                "cache",
+                "partition",
+                "none"
+              ]
+            },
+            "explanation": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4000
+            },
+            "plan": {
+              "anyOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "schemaVersion": {
+                      "type": "number",
+                      "const": 1
+                    },
+                    "cache": {
+                      "type": "boolean"
+                    },
+                    "partitions": {
+                      "minItems": 1,
+                      "maxItems": 4,
+                      "type": "array",
+                      "items": {
+                        "minItems": 1,
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "schemaVersion",
+                    "cache",
+                    "partitions"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "evidence": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "decision",
+            "family",
+            "explanation",
+            "plan",
+            "evidence"
+          ],
+          "additionalProperties": false
+        },
+        "currentPlan": {
+          "type": "object",
+          "properties": {
+            "schemaVersion": {
+              "type": "number",
+              "const": 1
+            },
+            "cache": {
+              "type": "boolean"
+            },
+            "partitions": {
+              "minItems": 1,
+              "maxItems": 4,
+              "type": "array",
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                }
+              }
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "cache",
+            "partitions"
+          ],
+          "additionalProperties": false
+        },
+        "requiredTests": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+          }
+        },
+        "allowedFiles": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "string",
+              "const": "ci/plan.json"
+            }
+          ],
+          "items": false,
+          "minItems": 1,
+          "maxItems": 1
+        }
+      },
+      "required": [
+        "hypothesis",
+        "currentPlan",
+        "requiredTests",
+        "allowedFiles"
+      ],
+      "additionalProperties": false
+    },
+    "Envelope": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "runId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "stepId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "attemptId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "targetCommit": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "patchDigest": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "targetCommit",
+              "patchDigest"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "targetCommit": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "patchDigest": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "targetCommit",
+              "patchDigest"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "runId",
+        "stepId",
+        "attemptId",
+        "inputs",
+        "outputs"
+      ],
+      "additionalProperties": false
+    },
+    "Execution": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "runId": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "planDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "cacheKey": {
+          "type": "string"
+        },
+        "cacheHit": {
+          "type": "boolean"
+        },
+        "partition": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "node": {
+          "type": "string"
+        },
+        "tests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+              },
+              "output": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "status": {
+                "type": "string",
+                "const": "pass"
+              }
+            },
+            "required": [
+              "id",
+              "output",
+              "status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "dependencyCheck": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "runId",
+        "commit",
+        "planDigest",
+        "cacheKey",
+        "cacheHit",
+        "partition",
+        "node",
+        "tests",
+        "dependencyCheck"
+      ],
+      "additionalProperties": false
+    },
+    "Hypothesis": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": [
+            "change",
+            "no-change"
+          ]
+        },
+        "family": {
+          "type": "string",
+          "enum": [
+            "cache",
+            "partition",
+            "none"
+          ]
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "plan": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "schemaVersion": {
+                  "type": "number",
+                  "const": 1
+                },
+                "cache": {
+                  "type": "boolean"
+                },
+                "partitions": {
+                  "minItems": 1,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "schemaVersion",
+                "cache",
+                "partitions"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "decision",
+        "family",
+        "explanation",
+        "plan",
+        "evidence"
+      ],
+      "additionalProperties": false
+    },
+    "Id": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+    },
+    "InvestigatorInput": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "snapshot": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "plan": {
+          "type": "object",
+          "properties": {
+            "schemaVersion": {
+              "type": "number",
+              "const": 1
+            },
+            "cache": {
+              "type": "boolean"
+            },
+            "partitions": {
+              "minItems": 1,
+              "maxItems": 4,
+              "type": "array",
+              "items": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                }
+              }
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "cache",
+            "partitions"
+          ],
+          "additionalProperties": false
+        },
+        "baselineEvidence": {
+          "type": "object",
+          "properties": {
+            "schemaVersion": {
+              "type": "number",
+              "const": 1
+            },
+            "pair": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4
+            },
+            "side": {
+              "type": "string",
+              "enum": [
+                "baseline",
+                "candidate"
+              ]
+            },
+            "group": {
+              "type": "string",
+              "enum": [
+                "cold",
+                "warm"
+              ]
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            },
+            "patchDigest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "correlation": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+            },
+            "runId": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "url": {
+              "type": "string"
+            },
+            "attempt": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "conclusion": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+            },
+            "startedAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+            },
+            "completedAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+            },
+            "elapsedSeconds": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "jobSeconds": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "queueSeconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "jobs": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "startedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "completedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "conclusion": {
+                    "type": "string"
+                  },
+                  "runner": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "startedAt",
+                  "completedAt",
+                  "conclusion",
+                  "runner"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "execution": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "schemaVersion": {
+                    "type": "number",
+                    "const": 1
+                  },
+                  "runId": {
+                    "type": "string"
+                  },
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  },
+                  "planDigest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "cacheKey": {
+                    "type": "string"
+                  },
+                  "cacheHit": {
+                    "type": "boolean"
+                  },
+                  "partition": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "node": {
+                    "type": "string"
+                  },
+                  "tests": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                        },
+                        "output": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        },
+                        "status": {
+                          "type": "string",
+                          "const": "pass"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "output",
+                        "status"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "dependencyCheck": {
+                    "type": "boolean",
+                    "const": true
+                  }
+                },
+                "required": [
+                  "schemaVersion",
+                  "runId",
+                  "commit",
+                  "planDigest",
+                  "cacheKey",
+                  "cacheHit",
+                  "partition",
+                  "node",
+                  "tests",
+                  "dependencyCheck"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "cacheKey": {
+              "type": "string"
+            },
+            "expectedCacheHit": {
+              "type": "boolean"
+            },
+            "source": {
+              "type": "string",
+              "enum": [
+                "github",
+                "recorded"
+              ]
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "pair",
+            "side",
+            "group",
+            "commit",
+            "patchDigest",
+            "correlation",
+            "runId",
+            "url",
+            "attempt",
+            "conclusion",
+            "createdAt",
+            "startedAt",
+            "completedAt",
+            "elapsedSeconds",
+            "jobSeconds",
+            "queueSeconds",
+            "jobs",
+            "execution",
+            "cacheKey",
+            "expectedCacheHit",
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        "allowedFiles": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "string",
+              "const": "ci/plan.json"
+            }
+          ],
+          "items": false,
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "requiredTests": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+          }
+        },
+        "maxPartitions": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "objective": {
+          "type": "object",
+          "properties": {
+            "schemaVersion": {
+              "type": "number",
+              "const": 1
+            },
+            "primary": {
+              "type": "string",
+              "enum": [
+                "elapsedSeconds",
+                "jobSeconds"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "const": "minimize"
+            },
+            "minimumImprovement": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "secondaryRegressionLimit": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "pairs": {
+              "type": "number",
+              "const": 5
+            },
+            "acceptanceRule": {
+              "type": "string",
+              "const": "paired-log-t95-v1"
+            },
+            "requiredChecks": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "primary",
+            "direction",
+            "minimumImprovement",
+            "secondaryRegressionLimit",
+            "pairs",
+            "acceptanceRule",
+            "requiredChecks"
+          ],
+          "additionalProperties": false
+        },
+        "previousAttempts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "hypothesis": {
+                "type": "object",
+                "properties": {
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "change",
+                      "no-change"
+                    ]
+                  },
+                  "family": {
+                    "type": "string",
+                    "enum": [
+                      "cache",
+                      "partition",
+                      "none"
+                    ]
+                  },
+                  "explanation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 4000
+                  },
+                  "plan": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "schemaVersion": {
+                            "type": "number",
+                            "const": 1
+                          },
+                          "cache": {
+                            "type": "boolean"
+                          },
+                          "partitions": {
+                            "minItems": 1,
+                            "maxItems": 4,
+                            "type": "array",
+                            "items": {
+                              "minItems": 1,
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "schemaVersion",
+                          "cache",
+                          "partitions"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "evidence": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "decision",
+                  "family",
+                  "explanation",
+                  "plan",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              },
+              "acceptance": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "accepted",
+                      "rejected",
+                      "inconclusive"
+                    ]
+                  },
+                  "rule": {
+                    "type": "string",
+                    "const": "paired-log-t95-v1"
+                  },
+                  "pairs": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "primaryRatio": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "primaryUpper95": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "secondaryRatio": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "secondaryUpper95": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "status",
+                  "rule",
+                  "pairs",
+                  "primaryRatio",
+                  "primaryUpper95",
+                  "secondaryRatio",
+                  "secondaryUpper95",
+                  "reason"
+                ],
+                "additionalProperties": false
+              },
+              "recommendation": {
+                "type": "object",
+                "properties": {
+                  "recommendation": {
+                    "type": "string",
+                    "enum": [
+                      "approve",
+                      "reject",
+                      "more-evidence"
+                    ]
+                  },
+                  "concerns": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "explanation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 4000
+                  },
+                  "evidence": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "requestExperiment": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "recommendation",
+                  "concerns",
+                  "explanation",
+                  "evidence",
+                  "requestExperiment"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "hypothesis",
+              "acceptance",
+              "recommendation"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "snapshot",
+        "plan",
+        "baselineEvidence",
+        "allowedFiles",
+        "requiredTests",
+        "maxPartitions",
+        "objective",
+        "previousAttempts"
+      ],
+      "additionalProperties": false
+    },
+    "Job": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "name": {
+          "type": "string"
+        },
+        "startedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+        },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+        },
+        "conclusion": {
+          "type": "string"
+        },
+        "runner": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "startedAt",
+        "completedAt",
+        "conclusion",
+        "runner"
+      ],
+      "additionalProperties": false
+    },
+    "Lifecycle": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "string",
+      "enum": [
+        "created",
+        "baselining",
+        "investigating",
+        "editing",
+        "validating",
+        "measuring",
+        "reviewing",
+        "accepted",
+        "no-change",
+        "rejected",
+        "inconclusive",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "Manifest": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^[\\w.-]+\\/[\\w.-]+$"
+        },
+        "baselineCommit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "workflow": {
+          "type": "string",
+          "const": "experiment.yml"
+        },
+        "runner": {
+          "type": "string",
+          "const": "ubuntu-24.04"
+        },
+        "allowedFiles": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "string",
+              "const": "ci/plan.json"
+            }
+          ],
+          "items": false,
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "protectedFiles": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "tests": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "maxPartitions": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "commands": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "string",
+              "const": "npm ci --ignore-scripts"
+            },
+            {
+              "type": "string",
+              "const": "node ci/execute.ts"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "fixtureDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "repository",
+        "baselineCommit",
+        "workflow",
+        "runner",
+        "allowedFiles",
+        "protectedFiles",
+        "tests",
+        "maxPartitions",
+        "commands",
+        "fixtureDigest"
+      ],
+      "additionalProperties": false
+    },
+    "MeasurementPlan": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "pairs": {
+          "type": "number",
+          "const": 5
+        },
+        "group": {
+          "type": "string",
+          "enum": [
+            "cold",
+            "warm"
+          ]
+        },
+        "order": {
+          "type": "string",
+          "const": "alternating-v1"
+        },
+        "timeoutSeconds": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 1800
+        },
+        "maxConcurrency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "pairs",
+        "group",
+        "order",
+        "timeoutSeconds",
+        "maxConcurrency"
+      ],
+      "additionalProperties": false
+    },
+    "ModelRecord": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": [
+            "recorded",
+            "opencode",
+            "jev",
+            "openrouter-free"
+          ]
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "investigator",
+            "editor",
+            "reviewer"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "requestDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "responseDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "inputTokens": {
+          "type": "number",
+          "minimum": 0
+        },
+        "outputTokens": {
+          "type": "number",
+          "minimum": 0
+        },
+        "costUsd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "live": {
+          "type": "boolean"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+        }
+      },
+      "required": [
+        "provider",
+        "role",
+        "model",
+        "requestDigest",
+        "responseDigest",
+        "inputTokens",
+        "outputTokens",
+        "costUsd",
+        "live",
+        "timestamp"
+      ],
+      "additionalProperties": false
+    },
+    "Objective": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "primary": {
+          "type": "string",
+          "enum": [
+            "elapsedSeconds",
+            "jobSeconds"
+          ]
+        },
+        "direction": {
+          "type": "string",
+          "const": "minimize"
+        },
+        "minimumImprovement": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "secondaryRegressionLimit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "pairs": {
+          "type": "number",
+          "const": 5
+        },
+        "acceptanceRule": {
+          "type": "string",
+          "const": "paired-log-t95-v1"
+        },
+        "requiredChecks": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "primary",
+        "direction",
+        "minimumImprovement",
+        "secondaryRegressionLimit",
+        "pairs",
+        "acceptanceRule",
+        "requiredChecks"
+      ],
+      "additionalProperties": false
+    },
+    "Observation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "pair": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "side": {
+          "type": "string",
+          "enum": [
+            "baseline",
+            "candidate"
+          ]
+        },
+        "group": {
+          "type": "string",
+          "enum": [
+            "cold",
+            "warm"
+          ]
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "patchDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "correlation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "runId": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "url": {
+          "type": "string"
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": -9007199254740991,
+          "maximum": 9007199254740991
+        },
+        "conclusion": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+        },
+        "startedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+        },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+        },
+        "elapsedSeconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "jobSeconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "queueSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "jobs": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "name": {
+                "type": "string"
+              },
+              "startedAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "completedAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "conclusion": {
+                "type": "string"
+              },
+              "runner": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "startedAt",
+              "completedAt",
+              "conclusion",
+              "runner"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "execution": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "schemaVersion": {
+                "type": "number",
+                "const": 1
+              },
+              "runId": {
+                "type": "string"
+              },
+              "commit": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{40}$"
+              },
+              "planDigest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "cacheKey": {
+                "type": "string"
+              },
+              "cacheHit": {
+                "type": "boolean"
+              },
+              "partition": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "node": {
+                "type": "string"
+              },
+              "tests": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                    },
+                    "output": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    },
+                    "status": {
+                      "type": "string",
+                      "const": "pass"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "output",
+                    "status"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "dependencyCheck": {
+                "type": "boolean",
+                "const": true
+              }
+            },
+            "required": [
+              "schemaVersion",
+              "runId",
+              "commit",
+              "planDigest",
+              "cacheKey",
+              "cacheHit",
+              "partition",
+              "node",
+              "tests",
+              "dependencyCheck"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "cacheKey": {
+          "type": "string"
+        },
+        "expectedCacheHit": {
+          "type": "boolean"
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "github",
+            "recorded"
+          ]
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "pair",
+        "side",
+        "group",
+        "commit",
+        "patchDigest",
+        "correlation",
+        "runId",
+        "url",
+        "attempt",
+        "conclusion",
+        "createdAt",
+        "startedAt",
+        "completedAt",
+        "elapsedSeconds",
+        "jobSeconds",
+        "queueSeconds",
+        "jobs",
+        "execution",
+        "cacheKey",
+        "expectedCacheHit",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "Patch": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "baselineCommit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "candidateCommit": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        "digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "changedFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "baselineCommit",
+        "candidateCommit",
+        "digest",
+        "changedFiles",
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "Plan": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "cache": {
+          "type": "boolean"
+        },
+        "partitions": {
+          "minItems": 1,
+          "maxItems": 4,
+          "type": "array",
+          "items": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+            }
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "cache",
+        "partitions"
+      ],
+      "additionalProperties": false
+    },
+    "Ref": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "targetCommit": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "patchDigest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "targetCommit",
+        "patchDigest"
+      ],
+      "additionalProperties": false
+    },
+    "Review": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "enum": [
+            "approve",
+            "reject",
+            "more-evidence"
+          ]
+        },
+        "concerns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "evidence": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requestExperiment": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "recommendation",
+        "concerns",
+        "explanation",
+        "evidence",
+        "requestExperiment"
+      ],
+      "additionalProperties": false
+    },
+    "ReviewerInput": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "hypothesis": {
+              "type": "object",
+              "properties": {
+                "decision": {
+                  "type": "string",
+                  "enum": [
+                    "change",
+                    "no-change"
+                  ]
+                },
+                "family": {
+                  "type": "string",
+                  "enum": [
+                    "cache",
+                    "partition",
+                    "none"
+                  ]
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "plan": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "schemaVersion": {
+                          "type": "number",
+                          "const": 1
+                        },
+                        "cache": {
+                          "type": "boolean"
+                        },
+                        "partitions": {
+                          "minItems": 1,
+                          "maxItems": 4,
+                          "type": "array",
+                          "items": {
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "schemaVersion",
+                        "cache",
+                        "partitions"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "decision",
+                "family",
+                "explanation",
+                "plan",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            "patch": {
+              "type": "object",
+              "properties": {
+                "schemaVersion": {
+                  "type": "number",
+                  "const": 1
+                },
+                "baselineCommit": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{40}$"
+                },
+                "candidateCommit": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{40}$"
+                },
+                "digest": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "changedFiles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "schemaVersion",
+                "baselineCommit",
+                "candidateCommit",
+                "digest",
+                "changedFiles",
+                "text"
+              ],
+              "additionalProperties": false
+            },
+            "validation": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "pass",
+                    "fail",
+                    "inconclusive"
+                  ]
+                },
+                "checks": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "pass": {
+                        "type": "boolean"
+                      },
+                      "reason": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "pass",
+                      "reason"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "status",
+                "checks"
+              ],
+              "additionalProperties": false
+            },
+            "acceptance": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "accepted",
+                    "rejected",
+                    "inconclusive"
+                  ]
+                },
+                "rule": {
+                  "type": "string",
+                  "const": "paired-log-t95-v1"
+                },
+                "pairs": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "primaryRatio": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "primaryUpper95": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "secondaryRatio": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "secondaryUpper95": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "status",
+                "rule",
+                "pairs",
+                "primaryRatio",
+                "primaryUpper95",
+                "secondaryRatio",
+                "secondaryUpper95",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "schemaVersion": {
+                    "type": "number",
+                    "const": 1
+                  },
+                  "pair": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "side": {
+                    "type": "string",
+                    "enum": [
+                      "baseline",
+                      "candidate"
+                    ]
+                  },
+                  "group": {
+                    "type": "string",
+                    "enum": [
+                      "cold",
+                      "warm"
+                    ]
+                  },
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  },
+                  "patchDigest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "correlation": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                  },
+                  "runId": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "attempt": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "conclusion": {
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "startedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "completedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "elapsedSeconds": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "jobSeconds": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "queueSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "jobs": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "startedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                        },
+                        "completedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                        },
+                        "conclusion": {
+                          "type": "string"
+                        },
+                        "runner": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "startedAt",
+                        "completedAt",
+                        "conclusion",
+                        "runner"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "execution": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "schemaVersion": {
+                          "type": "number",
+                          "const": 1
+                        },
+                        "runId": {
+                          "type": "string"
+                        },
+                        "commit": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{40}$"
+                        },
+                        "planDigest": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        },
+                        "cacheKey": {
+                          "type": "string"
+                        },
+                        "cacheHit": {
+                          "type": "boolean"
+                        },
+                        "partition": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 9007199254740991
+                        },
+                        "node": {
+                          "type": "string"
+                        },
+                        "tests": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                              },
+                              "output": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$"
+                              },
+                              "status": {
+                                "type": "string",
+                                "const": "pass"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "output",
+                              "status"
+                            ],
+                            "additionalProperties": false
+                          }
+                        },
+                        "dependencyCheck": {
+                          "type": "boolean",
+                          "const": true
+                        }
+                      },
+                      "required": [
+                        "schemaVersion",
+                        "runId",
+                        "commit",
+                        "planDigest",
+                        "cacheKey",
+                        "cacheHit",
+                        "partition",
+                        "node",
+                        "tests",
+                        "dependencyCheck"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "cacheKey": {
+                    "type": "string"
+                  },
+                  "expectedCacheHit": {
+                    "type": "boolean"
+                  },
+                  "source": {
+                    "type": "string",
+                    "enum": [
+                      "github",
+                      "recorded"
+                    ]
+                  }
+                },
+                "required": [
+                  "schemaVersion",
+                  "pair",
+                  "side",
+                  "group",
+                  "commit",
+                  "patchDigest",
+                  "correlation",
+                  "runId",
+                  "url",
+                  "attempt",
+                  "conclusion",
+                  "createdAt",
+                  "startedAt",
+                  "completedAt",
+                  "elapsedSeconds",
+                  "jobSeconds",
+                  "queueSeconds",
+                  "jobs",
+                  "execution",
+                  "cacheKey",
+                  "expectedCacheHit",
+                  "source"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "hypothesis",
+            "patch",
+            "validation",
+            "acceptance",
+            "observations"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "hypothesis": {
+              "type": "object",
+              "properties": {
+                "decision": {
+                  "type": "string",
+                  "enum": [
+                    "change",
+                    "no-change"
+                  ]
+                },
+                "family": {
+                  "type": "string",
+                  "enum": [
+                    "cache",
+                    "partition",
+                    "none"
+                  ]
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "plan": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "schemaVersion": {
+                          "type": "number",
+                          "const": 1
+                        },
+                        "cache": {
+                          "type": "boolean"
+                        },
+                        "partitions": {
+                          "minItems": 1,
+                          "maxItems": 4,
+                          "type": "array",
+                          "items": {
+                            "minItems": 1,
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "schemaVersion",
+                        "cache",
+                        "partitions"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "decision",
+                "family",
+                "explanation",
+                "plan",
+                "evidence"
+              ],
+              "additionalProperties": false
+            },
+            "baselineEvidence": {
+              "type": "object",
+              "properties": {
+                "schemaVersion": {
+                  "type": "number",
+                  "const": 1
+                },
+                "pair": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4
+                },
+                "side": {
+                  "type": "string",
+                  "enum": [
+                    "baseline",
+                    "candidate"
+                  ]
+                },
+                "group": {
+                  "type": "string",
+                  "enum": [
+                    "cold",
+                    "warm"
+                  ]
+                },
+                "commit": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{40}$"
+                },
+                "patchDigest": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "correlation": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                },
+                "runId": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "url": {
+                  "type": "string"
+                },
+                "attempt": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "conclusion": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                },
+                "startedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                },
+                "completedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                },
+                "elapsedSeconds": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "jobSeconds": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "queueSeconds": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "jobs": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "startedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                      },
+                      "completedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                      },
+                      "conclusion": {
+                        "type": "string"
+                      },
+                      "runner": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "startedAt",
+                      "completedAt",
+                      "conclusion",
+                      "runner"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "execution": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "schemaVersion": {
+                        "type": "number",
+                        "const": 1
+                      },
+                      "runId": {
+                        "type": "string"
+                      },
+                      "commit": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{40}$"
+                      },
+                      "planDigest": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      "cacheKey": {
+                        "type": "string"
+                      },
+                      "cacheHit": {
+                        "type": "boolean"
+                      },
+                      "partition": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 9007199254740991
+                      },
+                      "node": {
+                        "type": "string"
+                      },
+                      "tests": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                            },
+                            "output": {
+                              "type": "string",
+                              "pattern": "^[a-f0-9]{64}$"
+                            },
+                            "status": {
+                              "type": "string",
+                              "const": "pass"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "output",
+                            "status"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "dependencyCheck": {
+                        "type": "boolean",
+                        "const": true
+                      }
+                    },
+                    "required": [
+                      "schemaVersion",
+                      "runId",
+                      "commit",
+                      "planDigest",
+                      "cacheKey",
+                      "cacheHit",
+                      "partition",
+                      "node",
+                      "tests",
+                      "dependencyCheck"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "cacheKey": {
+                  "type": "string"
+                },
+                "expectedCacheHit": {
+                  "type": "boolean"
+                },
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "github",
+                    "recorded"
+                  ]
+                }
+              },
+              "required": [
+                "schemaVersion",
+                "pair",
+                "side",
+                "group",
+                "commit",
+                "patchDigest",
+                "correlation",
+                "runId",
+                "url",
+                "attempt",
+                "conclusion",
+                "createdAt",
+                "startedAt",
+                "completedAt",
+                "elapsedSeconds",
+                "jobSeconds",
+                "queueSeconds",
+                "jobs",
+                "execution",
+                "cacheKey",
+                "expectedCacheHit",
+                "source"
+              ],
+              "additionalProperties": false
+            },
+            "noChange": {
+              "type": "boolean",
+              "const": true
+            },
+            "observations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "schemaVersion": {
+                    "type": "number",
+                    "const": 1
+                  },
+                  "pair": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4
+                  },
+                  "side": {
+                    "type": "string",
+                    "enum": [
+                      "baseline",
+                      "candidate"
+                    ]
+                  },
+                  "group": {
+                    "type": "string",
+                    "enum": [
+                      "cold",
+                      "warm"
+                    ]
+                  },
+                  "commit": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  },
+                  "patchDigest": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "correlation": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                  },
+                  "runId": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "attempt": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "conclusion": {
+                    "type": "string"
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "startedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "completedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  "elapsedSeconds": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "jobSeconds": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "queueSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "jobs": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "startedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                        },
+                        "completedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                        },
+                        "conclusion": {
+                          "type": "string"
+                        },
+                        "runner": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "startedAt",
+                        "completedAt",
+                        "conclusion",
+                        "runner"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "execution": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "schemaVersion": {
+                          "type": "number",
+                          "const": 1
+                        },
+                        "runId": {
+                          "type": "string"
+                        },
+                        "commit": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{40}$"
+                        },
+                        "planDigest": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        },
+                        "cacheKey": {
+                          "type": "string"
+                        },
+                        "cacheHit": {
+                          "type": "boolean"
+                        },
+                        "partition": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 9007199254740991
+                        },
+                        "node": {
+                          "type": "string"
+                        },
+                        "tests": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+                              },
+                              "output": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$"
+                              },
+                              "status": {
+                                "type": "string",
+                                "const": "pass"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "output",
+                              "status"
+                            ],
+                            "additionalProperties": false
+                          }
+                        },
+                        "dependencyCheck": {
+                          "type": "boolean",
+                          "const": true
+                        }
+                      },
+                      "required": [
+                        "schemaVersion",
+                        "runId",
+                        "commit",
+                        "planDigest",
+                        "cacheKey",
+                        "cacheHit",
+                        "partition",
+                        "node",
+                        "tests",
+                        "dependencyCheck"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "cacheKey": {
+                    "type": "string"
+                  },
+                  "expectedCacheHit": {
+                    "type": "boolean"
+                  },
+                  "source": {
+                    "type": "string",
+                    "enum": [
+                      "github",
+                      "recorded"
+                    ]
+                  }
+                },
+                "required": [
+                  "schemaVersion",
+                  "pair",
+                  "side",
+                  "group",
+                  "commit",
+                  "patchDigest",
+                  "correlation",
+                  "runId",
+                  "url",
+                  "attempt",
+                  "conclusion",
+                  "createdAt",
+                  "startedAt",
+                  "completedAt",
+                  "elapsedSeconds",
+                  "jobSeconds",
+                  "queueSeconds",
+                  "jobs",
+                  "execution",
+                  "cacheKey",
+                  "expectedCacheHit",
+                  "source"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "hypothesis",
+            "baselineEvidence",
+            "noChange",
+            "observations"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "State": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "runId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+        },
+        "configDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "manifestDigest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "created",
+            "baselining",
+            "investigating",
+            "editing",
+            "validating",
+            "measuring",
+            "reviewing",
+            "accepted",
+            "no-change",
+            "rejected",
+            "inconclusive",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "cycle": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "artifacts": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "targetCommit": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{40}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "patchDigest": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "sha256",
+              "targetCommit",
+              "patchDigest"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "enum": [
+                  "recorded",
+                  "opencode",
+                  "jev",
+                  "openrouter-free"
+                ]
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "investigator",
+                  "editor",
+                  "reviewer"
+                ]
+              },
+              "model": {
+                "type": "string"
+              },
+              "requestDigest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "responseDigest": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "inputTokens": {
+                "type": "number",
+                "minimum": 0
+              },
+              "outputTokens": {
+                "type": "number",
+                "minimum": 0
+              },
+              "costUsd": {
+                "type": "number",
+                "minimum": 0
+              },
+              "live": {
+                "type": "boolean"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              }
+            },
+            "required": [
+              "provider",
+              "role",
+              "model",
+              "requestDigest",
+              "responseDigest",
+              "inputTokens",
+              "outputTokens",
+              "costUsd",
+              "live",
+              "timestamp"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "runId",
+        "configDigest",
+        "manifestDigest",
+        "status",
+        "cycle",
+        "sequence",
+        "artifacts",
+        "models",
+        "error",
+        "updatedAt"
+      ],
+      "additionalProperties": false
+    },
+    "Validation": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "fail",
+            "inconclusive"
+          ]
+        },
+        "checks": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "pass": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "pass",
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "status",
+        "checks"
+      ],
+      "additionalProperties": false
+    },
+    "ValidatorInput": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "checkout": {
+          "type": "string"
+        },
+        "manifest": {
+          "type": "object",
+          "properties": {
+            "schemaVersion": {
+              "type": "number",
+              "const": 1
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+            },
+            "repository": {
+              "type": "string",
+              "pattern": "^[\\w.-]+\\/[\\w.-]+$"
+            },
+            "baselineCommit": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{40}$"
+            },
+            "workflow": {
+              "type": "string",
+              "const": "experiment.yml"
+            },
+            "runner": {
+              "type": "string",
+              "const": "ubuntu-24.04"
+            },
+            "allowedFiles": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "string",
+                  "const": "ci/plan.json"
+                }
+              ],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "protectedFiles": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "tests": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,119}$"
+              },
+              "additionalProperties": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "maxPartitions": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "commands": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "string",
+                  "const": "npm ci --ignore-scripts"
+                },
+                {
+                  "type": "string",
+                  "const": "node ci/execute.ts"
+                }
+              ],
+              "items": false,
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "fixtureDigest": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "id",
+            "repository",
+            "baselineCommit",
+            "workflow",
+            "runner",
+            "allowedFiles",
+            "protectedFiles",
+            "tests",
+            "maxPartitions",
+            "commands",
+            "fixtureDigest"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "checkout",
+        "manifest"
+      ],
+      "additionalProperties": false
+    },
+    "Version": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "number",
+      "const": 1
+    }
+  }
+}

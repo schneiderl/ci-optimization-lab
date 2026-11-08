@@ -1,0 +1,8 @@
+{
+  "name": "ci-optimization-lab", "version": "1.0.0", "private": true, "type": "module",
+  "description": "A measured, resumable CI optimization lab with protected workloads",
+  "engines": {"node": ">=24"},
+  "scripts": {"lab": "tsx src/cli/index.ts", "test": "tsx --test tests/*.test.ts", "check": "tsc --noEmit", "build": "tsc", "evaluate": "tsx scripts/evaluate.ts", "fixtures": "tsx scripts/fixtures.ts", "docs:check": "tsx scripts/check-docs.ts"},
+  "dependencies": {"zod": "4.6.7", "yaml": "2.9.1"},
+  "devDependencies": {"@types/node": "26.6.6", "tsx": "4.23.15", "typescript": "7.0.2"}
+}

@@ -1,0 +1,209 @@
+{
+  "envelope": {
+    "schemaVersion": 1,
+    "runId": "example-reviewer",
+    "stepId": "reviewer",
+    "attemptId": "one",
+    "inputs": [],
+    "outputs": []
+  },
+  "context": {
+    "hypothesis": {
+      "decision": "no-change",
+      "family": "none",
+      "explanation": "No supported change in this example.",
+      "plan": null,
+      "evidence": [
+        "baseline"
+      ]
+    },
+    "baselineEvidence": {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "baseline",
+      "group": "cold",
+      "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "patchDigest": "50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c",
+      "correlation": "example-run",
+      "runId": 219615340037,
+      "url": "recorded://219615340037",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T20:35:39.558Z",
+      "startedAt": "2026-11-08T20:35:39.558Z",
+      "completedAt": "2026-11-08T20:37:19.558Z",
+      "elapsedSeconds": 100,
+      "jobSeconds": 100,
+      "queueSeconds": 0,
+      "jobs": [
+        {
+          "id": 1,
+          "name": "recorded",
+          "startedAt": "2026-11-08T20:35:39.558Z",
+          "completedAt": "2026-11-08T20:35:39.558Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "219615340037",
+          "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+          "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+          "cacheKey": "example-cold",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "recorded",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+              "status": "pass"
+            },
+            {
+              "id": "case-001",
+              "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+              "status": "pass"
+            },
+            {
+              "id": "case-002",
+              "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+              "status": "pass"
+            },
+            {
+              "id": "case-003",
+              "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+              "status": "pass"
+            },
+            {
+              "id": "case-004",
+              "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+              "status": "pass"
+            },
+            {
+              "id": "case-005",
+              "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+              "status": "pass"
+            },
+            {
+              "id": "case-006",
+              "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+              "status": "pass"
+            },
+            {
+              "id": "case-007",
+              "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "example-cold",
+      "expectedCacheHit": false,
+      "source": "recorded"
+    },
+    "noChange": true,
+    "observations": [
+      {
+        "schemaVersion": 1,
+        "pair": 0,
+        "side": "baseline",
+        "group": "cold",
+        "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+        "patchDigest": "50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c",
+        "correlation": "example-run",
+        "runId": 219615340037,
+        "url": "recorded://219615340037",
+        "attempt": 1,
+        "conclusion": "success",
+        "createdAt": "2026-11-08T20:35:39.558Z",
+        "startedAt": "2026-11-08T20:35:39.558Z",
+        "completedAt": "2026-11-08T20:37:19.558Z",
+        "elapsedSeconds": 100,
+        "jobSeconds": 100,
+        "queueSeconds": 0,
+        "jobs": [
+          {
+            "id": 1,
+            "name": "recorded",
+            "startedAt": "2026-11-08T20:35:39.558Z",
+            "completedAt": "2026-11-08T20:35:39.558Z",
+            "conclusion": "success",
+            "runner": "ubuntu-24.04"
+          }
+        ],
+        "execution": [
+          {
+            "schemaVersion": 1,
+            "runId": "219615340037",
+            "commit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+            "planDigest": "6da42163de21cf4d5d816cff1b6fcc0f0c008d12c87f31182a1179d6f9dc230d",
+            "cacheKey": "example-cold",
+            "cacheHit": false,
+            "partition": 0,
+            "node": "recorded",
+            "tests": [
+              {
+                "id": "case-000",
+                "output": "4452dbb784e7ca16666cfa5598b7acc9b93184ccad4cf5174536112d143109f9",
+                "status": "pass"
+              },
+              {
+                "id": "case-001",
+                "output": "0f97764d6ce5a381708c7b9402d7bceb94a6de64668eba88b284b12075b95d8e",
+                "status": "pass"
+              },
+              {
+                "id": "case-002",
+                "output": "416760b3fbc3a9672a30ff368d88ab4a50d84dbb18d1a71cd634edac5ce4b52f",
+                "status": "pass"
+              },
+              {
+                "id": "case-003",
+                "output": "36429604c3b9131942d9347ace219b57ae49dd28444834c070288b3bae475f62",
+                "status": "pass"
+              },
+              {
+                "id": "case-004",
+                "output": "30e42d63af57239a8fd83f5beabcecc77e38f5f5fd36a453b3f40289189c0991",
+                "status": "pass"
+              },
+              {
+                "id": "case-005",
+                "output": "541a1f8ca27b3066c7a589072808752098ef63f4fe3872a8c52cf0e8e56d589c",
+                "status": "pass"
+              },
+              {
+                "id": "case-006",
+                "output": "cf7ab85a878b05c1a15974deb859ce6af5f311007fb371253666ff4562563a11",
+                "status": "pass"
+              },
+              {
+                "id": "case-007",
+                "output": "0b195bc4ab2eb4e3267d5645bd5b31c888ca6c4bcb695ce356ae1a98de60bba9",
+                "status": "pass"
+              }
+            ],
+            "dependencyCheck": true
+          }
+        ],
+        "cacheKey": "example-cold",
+        "expectedCacheHit": false,
+        "source": "recorded"
+      }
+    ]
+  },
+  "recordedOutput": {
+    "recommendation": "more-evidence",
+    "concerns": [
+      "Recorded measurements cannot prove a live improvement."
+    ],
+    "explanation": "Run the protected pipeline on GitHub before making a performance claim.",
+    "evidence": [
+      "baseline"
+    ],
+    "requestExperiment": false
+  }
+}

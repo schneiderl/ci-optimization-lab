@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-11-08T20:22:09.158Z",
+  "prompts": {
+    "investigator": "059b1e2315acdbf084e7ee41a731fe6c66cef138ab583d7f7d1448870e1823c9"
+  },
+  "acceptance": "paired-log-t95-v1",
+  "thresholds": {
+    "primary": 0.1,
+    "secondary": 0.05,
+    "pairs": 5
+  },
+  "rules": "enable-cache-else-two-partitions-v1",
+  "cases": [
+    {
+      "id": "cache",
+      "heldOut": false,
+      "manifest": "manifests/cache.json",
+      "manifestDigest": "20faafcbefa92d3dbb35da5fd8a656366f40762587d313f1d93d05a544a7c910",
+      "baselineCommit": "ad3f9d3de2a7033922b565232a0e477baa0fd81d",
+      "groups": [
+        "cold",
+        "warm"
+      ]
+    },
+    {
+      "id": "partition",
+      "heldOut": false,
+      "manifest": "manifests/partition.json",
+      "manifestDigest": "4d3f88532a229b43951612b482737e2dc4a304e12900dabbc8c1bdb3d7ec8741",
+      "baselineCommit": "b2c9d3ebca580d777254283b0c196d065fba39e5",
+      "groups": [
+        "warm"
+      ]
+    },
+    {
+      "id": "no-change",
+      "heldOut": false,
+      "manifest": "manifests/no-change.json",
+      "manifestDigest": "b958a184ac7b249abd8d4676624bfd25e630f9370bd2f56c50ef5e938e6d47cf",
+      "baselineCommit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "groups": [
+        "warm"
+      ]
+    },
+    {
+      "id": "cache-heldout",
+      "heldOut": true,
+      "manifest": "manifests/cache-heldout.json",
+      "manifestDigest": "17e4364ee98df3ad59721c924fda27cd849cb0e78c97ad79f03c63789d49eb18",
+      "baselineCommit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+      "groups": [
+        "cold",
+        "warm"
+      ]
+    },
+    {
+      "id": "partition-heldout",
+      "heldOut": true,
+      "manifest": "manifests/partition-heldout.json",
+      "manifestDigest": "fed7a5949278baac0d13e7229d02cae943eb13d3c443e5ff5a88432ae23c055a",
+      "baselineCommit": "2b0521a647a0dda42e9c99d14714b7810276c5a0",
+      "groups": [
+        "warm"
+      ]
+    }
+  ],
+  "note": "Held-out fixtures frozen before model calls or evaluation. Sole implementer knows the variants; models receive no evaluation labels or expected fixes. No prompt tuning after this freeze."
+}
