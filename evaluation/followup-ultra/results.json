@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T22:47:32.762Z",
+  "planDigest": "faee1ce001501515a8575bafcf3b4f7045168f88c704b9d90347aec9def8bed6",
+  "results": [
+    {
+      "runId": "agent7-021",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "rejected",
+      "decision": {
+        "status": "rejected",
+        "rule": "paired-log-t95-v1",
+        "pairs": 5,
+        "primaryRatio": 0.8217002251498314,
+        "primaryUpper95": 1.0119495144948052,
+        "secondaryRatio": 1.2632356074386228,
+        "secondaryUpper95": 1.605063163171065,
+        "reason": "The observed mean ratios miss at least one configured threshold."
+      },
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "76f227eacabf3fa4bcb47fc7ee571872156a83764966fbe6b96303fae96dd123",
+          "responseDigest": "7b6d92ce85949d522cc6bce4be5a1bac08bdae9046d0d005c6cb894451fb5682",
+          "inputTokens": 7590,
+          "outputTokens": 38,
+          "costUsd": 0.00031878,
+          "live": true,
+          "timestamp": "2026-11-08T22:39:42.103Z"
+        },
+        {
+          "provider": "openrouter-free",
+          "role": "editor",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "requestDigest": "762f12727932fa5ab777bc498691f717e15edfbcffaec7a734dc8d00930dfb41",
+          "responseDigest": "e9902711db60c4b62ad93220493e37cacdd23ce03342df4c7fdf2c2ccd788af1",
+          "inputTokens": 866,
+          "outputTokens": 477,
+          "costUsd": 0,
+          "live": true,
+          "timestamp": "2026-11-08T22:39:49.353Z"
+        },
+        {
+          "provider": "openrouter-free",
+          "role": "reviewer",
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "requestDigest": "b8c4a8c25d701975d775d2fe1e7b0115196d155584ce5b4b6b7d04ef1314e829",
+          "responseDigest": "873755582778bfcc683b80bc5f57576d8f90fa9f35f0e607e6279703d325c1b8",
+          "inputTokens": 32682,
+          "outputTokens": 507,
+          "costUsd": 0,
+          "live": true,
+          "timestamp": "2026-11-08T22:47:31.084Z"
+        }
+      ],
+      "observations": 10,
+      "correctness": true,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531286629",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531454492",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531503755",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531553655",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531606452",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531657379",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531708941",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531756700",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531812040",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531864089",
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531916831"
+      ],
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "observations": [
+    {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent4-012-c1-unchanged-0",
+      "runId": 42530935485,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530935485",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:34:44Z",
+      "startedAt": "2026-11-08T22:34:48.000Z",
+      "completedAt": "2026-11-08T22:35:06.000Z",
+      "elapsedSeconds": 18,
+      "jobSeconds": 16,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128884748415,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:34:48Z",
+          "completedAt": "2026-11-08T22:34:56Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128884791156,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:34:58Z",
+          "completedAt": "2026-11-08T22:35:06Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530935485",
+          "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+          "planDigest": "215ca40c1842b52ceec8ff7c19721347db2e1396efa005dacd32a9ac0590f5ee",
+          "cacheKey": "agent4-012-c1-unchanged-warm",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "3290b0a53f1f53521055c4cb8f7f5156c94f379011e9991adac976a554ed7176",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent4-012-c1-unchanged-warm",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 1,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent4-012-c1-unchanged-1",
+      "runId": 42530988027,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530988027",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:35:21Z",
+      "startedAt": "2026-11-08T22:35:24.000Z",
+      "completedAt": "2026-11-08T22:35:41.000Z",
+      "elapsedSeconds": 17,
+      "jobSeconds": 15,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128884904423,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:35:24Z",
+          "completedAt": "2026-11-08T22:35:30Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128884938578,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:35:32Z",
+          "completedAt": "2026-11-08T22:35:41Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530988027",
+          "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+          "planDigest": "215ca40c1842b52ceec8ff7c19721347db2e1396efa005dacd32a9ac0590f5ee",
+          "cacheKey": "agent4-012-c1-unchanged-warm",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "3290b0a53f1f53521055c4cb8f7f5156c94f379011e9991adac976a554ed7176",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent4-012-c1-unchanged-warm",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 2,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent4-012-c1-unchanged-2",
+      "runId": 42531037767,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531037767",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:35:56Z",
+      "startedAt": "2026-11-08T22:35:59.000Z",
+      "completedAt": "2026-11-08T22:36:18.000Z",
+      "elapsedSeconds": 19,
+      "jobSeconds": 17,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128885055116,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:35:59Z",
+          "completedAt": "2026-11-08T22:36:06Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128885095161,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:36:08Z",
+          "completedAt": "2026-11-08T22:36:18Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42531037767",
+          "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+          "planDigest": "215ca40c1842b52ceec8ff7c19721347db2e1396efa005dacd32a9ac0590f5ee",
+          "cacheKey": "agent4-012-c1-unchanged-warm",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "3290b0a53f1f53521055c4cb8f7f5156c94f379011e9991adac976a554ed7176",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent4-012-c1-unchanged-warm",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 3,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent4-012-c1-unchanged-3",
+      "runId": 42531085410,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531085410",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:36:32Z",
+      "startedAt": "2026-11-08T22:36:35.000Z",
+      "completedAt": "2026-11-08T22:36:54.000Z",
+      "elapsedSeconds": 19,
+      "jobSeconds": 16,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128885205240,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:36:35Z",
+          "completedAt": "2026-11-08T22:36:41Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128885237314,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:36:44Z",
+          "completedAt": "2026-11-08T22:36:54Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42531085410",
+          "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+          "planDigest": "215ca40c1842b52ceec8ff7c19721347db2e1396efa005dacd32a9ac0590f5ee",
+          "cacheKey": "agent4-012-c1-unchanged-warm",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "3290b0a53f1f53521055c4cb8f7f5156c94f379011e9991adac976a554ed7176",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent4-012-c1-unchanged-warm",
+      "expectedCacheHit": true,
+      "source": "github"
+    },
+    {
+      "schemaVersion": 1,
+      "pair": 4,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent4-012-c1-unchanged-4",
+      "runId": 42531131730,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531131730",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:37:08Z",
+      "startedAt": "2026-11-08T22:37:12.000Z",
+      "completedAt": "2026-11-08T22:37:41.000Z",
+      "elapsedSeconds": 29,
+      "jobSeconds": 27,
+      "queueSeconds": 4,
+      "jobs": [
+        {
+          "id": 128885350823,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:37:12Z",
+          "completedAt": "2026-11-08T22:37:28Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128885423236,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:37:30Z",
+          "completedAt": "2026-11-08T22:37:41Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42531131730",
+          "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+          "planDigest": "215ca40c1842b52ceec8ff7c19721347db2e1396efa005dacd32a9ac0590f5ee",
+          "cacheKey": "agent4-012-c1-unchanged-warm",
+          "cacheHit": true,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "3290b0a53f1f53521055c4cb8f7f5156c94f379011e9991adac976a554ed7176",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent4-012-c1-unchanged-warm",
+      "expectedCacheHit": true,
+      "source": "github"
+    }
+  ],
+  "primes": [
+    {
+      "schemaVersion": 1,
+      "pair": 0,
+      "side": "baseline",
+      "group": "warm",
+      "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+      "patchDigest": "aaa8d3c8d74ad3e8f6b1772aa9c7e0eaa528cb42fc93599ce2f125b00d4c424c",
+      "correlation": "agent4-012-c1-unchanged-prime",
+      "runId": 42530881721,
+      "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530881721",
+      "attempt": 1,
+      "conclusion": "success",
+      "createdAt": "2026-11-08T22:34:06Z",
+      "startedAt": "2026-11-08T22:34:09.000Z",
+      "completedAt": "2026-11-08T22:34:26.000Z",
+      "elapsedSeconds": 17,
+      "jobSeconds": 16,
+      "queueSeconds": 3,
+      "jobs": [
+        {
+          "id": 128884580333,
+          "name": "plan",
+          "startedAt": "2026-11-08T22:34:09Z",
+          "completedAt": "2026-11-08T22:34:16Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        },
+        {
+          "id": 128884618743,
+          "name": "tests (0)",
+          "startedAt": "2026-11-08T22:34:17Z",
+          "completedAt": "2026-11-08T22:34:26Z",
+          "conclusion": "success",
+          "runner": "ubuntu-24.04"
+        }
+      ],
+      "execution": [
+        {
+          "schemaVersion": 1,
+          "runId": "42530881721",
+          "commit": "cec4345379a3f8552f5d4fc1b3cd5e1a95936255",
+          "planDigest": "215ca40c1842b52ceec8ff7c19721347db2e1396efa005dacd32a9ac0590f5ee",
+          "cacheKey": "agent4-012-c1-unchanged-warm",
+          "cacheHit": false,
+          "partition": 0,
+          "node": "v24.22.2",
+          "tests": [
+            {
+              "id": "case-000",
+              "output": "3290b0a53f1f53521055c4cb8f7f5156c94f379011e9991adac976a554ed7176",
+              "status": "pass"
+            }
+          ],
+          "dependencyCheck": true
+        }
+      ],
+      "cacheKey": "agent4-012-c1-unchanged-warm",
+      "expectedCacheHit": false,
+      "source": "github"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-08T22:48:02.214Z",
+  "controllerSourceCommit": "0f46a9a49f69d91cbf60c529a2fe00ef6c674ef8",
+  "controllerSourceTreeDigest": "2a1f4f42f659238f74f09c82bb14e5623f54edbd083ec0b4e94224d517168cbf",
+  "model": "opencode/deepseek-v4.1-flash-free",
+  "command": "npm run lab -- smoke-model opencode/deepseek-v4.1-flash-free",
+  "concurrentMeasuredExperiments": 0
+}

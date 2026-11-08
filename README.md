@@ -2,7 +2,7 @@
 
 A TypeScript CLI investigates a CI pipeline, edits a protected CI plan, measures the patch on GitHub Actions, and reports the result. Three agent roles work behind deterministic correctness, budget, and acceptance gates. Target history lives in a separate public repository.
 
-Start with [live results](evaluation/RESULTS.md), [architecture](docs/architecture.md), or the [approved specification](docs/spec.md). A rejected or inconclusive experiment is a valid result. Recorded responses demonstrate orchestration; they do not demonstrate a live agent or speedup.
+Start with the [continued live evaluation](evaluation/CONTINUATION.md), [original results](evaluation/RESULTS.md), [architecture](docs/architecture.md), or the [approved specification](docs/spec.md). A rejected or inconclusive experiment is a valid result. Recorded responses demonstrate orchestration; they do not demonstrate a live agent or speedup.
 
 ## Run locally
 
@@ -40,10 +40,10 @@ npm run lab -- smoke-model jev
 npm run lab -- smoke-model cohere/north-mini-code:free
 ```
 
-The first two commands use recorded agent decisions with real CI. For live agents, set `provider` to `jev-openrouter-free`, `model` to an explicit available zero-price model, and `perCallLimitUsd` to `0.02` in a new config before running. No automatic paid fallback exists. `npm run evaluate -- --live` resumes the published frozen matrix and preserves failed attempts; use new run IDs for a separate evaluation.
+The first two commands use recorded agent decisions with real CI. For live agents, set `provider` to `jev-openrouter-free`, `model` to an explicit available zero-price model, and `perCallLimitUsd` to `0.02` in a new config before running. No automatic paid fallback exists. The original matrix is archived; preserve it. The [continuation index](evaluation/CONTINUATION.md) links separate frozen plans. Resume a selected plan with its recorded controller source, or use a new plan and run IDs for new work.
 
 ## Blocks and extension
 
 Each block has an implementation, interface tests, complete checked examples, and [documentation](docs/blocks/). Run `npm run lab -- block investigator examples/investigator.input.json` for an independent recorded call. See [contracts.json](docs/contracts.json) for every runtime schema and [extension guidance](docs/extensions.md) for steps and objectives.
 
-Known limits and unresolved live acceptance appear in the [handover](docs/handover.md). This controlled benchmark does not claim production adoption or general optimization ability.
+Known limits and pending independent review appear in the [handover](docs/handover.md). This controlled benchmark does not claim production adoption or general optimization ability.

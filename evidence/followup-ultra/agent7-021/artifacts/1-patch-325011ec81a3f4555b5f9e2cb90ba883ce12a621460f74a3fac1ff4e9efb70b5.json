@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "2b0521a647a0dda42e9c99d14714b7810276c5a0",
+  "candidateCommit": "ec0e795d0175f86ec2741508946f9a66ed8ade95",
+  "digest": "296db4f0db2cafa01ce9c91a6c72970c9eea77bc182e1daeccb6cba4841b9264",
+  "changedFiles": [
+    "ci/plan.json"
+  ],
+  "text": "diff --git c/ci/plan.json w/ci/plan.json\nindex cf93ef9..248eae3 100644\n--- c/ci/plan.json\n+++ w/ci/plan.json\n@@ -1 +1,41 @@\n-{\"schemaVersion\":1,\"cache\":true,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\",\"case-008\",\"case-009\",\"case-010\",\"case-011\",\"case-012\",\"case-013\",\"case-014\",\"case-015\",\"case-016\",\"case-017\",\"case-018\",\"case-019\",\"case-020\",\"case-021\",\"case-022\",\"case-023\",\"case-024\",\"case-025\",\"case-026\",\"case-027\",\"case-028\",\"case-029\",\"case-030\"]]}\n+{\n+  \"schemaVersion\": 1,\n+  \"cache\": true,\n+  \"partitions\": [\n+    [\n+      \"case-000\",\n+      \"case-002\",\n+      \"case-004\",\n+      \"case-006\",\n+      \"case-008\",\n+      \"case-010\",\n+      \"case-012\",\n+      \"case-014\",\n+      \"case-016\",\n+      \"case-018\",\n+      \"case-020\",\n+      \"case-022\",\n+      \"case-024\",\n+      \"case-026\",\n+      \"case-028\",\n+      \"case-030\"\n+    ],\n+    [\n+      \"case-001\",\n+      \"case-003\",\n+      \"case-005\",\n+      \"case-007\",\n+      \"case-009\",\n+      \"case-011\",\n+      \"case-013\",\n+      \"case-015\",\n+      \"case-017\",\n+      \"case-019\",\n+      \"case-021\",\n+      \"case-023\",\n+      \"case-025\",\n+      \"case-027\",\n+      \"case-029\"\n+    ]\n+  ]\n+}\n\\ No newline at end of file\n"
+}

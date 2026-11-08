@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T22:36:15.968Z",
+  "planDigest": "6a230d8ad12e96f0cf33daf905e1ea57a0303d3dc5daeeb6a88d7aac8d846483",
+  "results": [
+    {
+      "runId": "agent5-021",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "6756e384b39726e6a7eb0b33576b517579c791fd139ec6c9d9fed0b8ee103ea1",
+          "responseDigest": "8dd8b10ea81c0efc6a53f3188168ce95f30eed9be0caa15a95e0ac770c33124d",
+          "inputTokens": 7590,
+          "outputTokens": 38,
+          "costUsd": 0.00031878,
+          "live": true,
+          "timestamp": "2026-11-08T22:36:13.428Z"
+        }
+      ],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530997530"
+      ],
+      "error": "[\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"files\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"explanation\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"invalidModelJson\",\n      \"rawOutput\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized keys: \\\"invalidModelJson\\\", \\\"rawOutput\\\"\"\n  }\n]"
+    }
+  ]
+}

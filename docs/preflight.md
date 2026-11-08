@@ -9,3 +9,5 @@ The public standard-runner policy establishes $0 compute. Larger runners are bil
 OpenCode 2.2.6 listed free models, but two explicit free models returned a free-limit error. Jev's Decisions API and the explicit free OpenRouter generative model each passed a tiny live call. Initial `op whoami` and later diagnostics reported not signed in; successful intervening lookups do not establish durable authentication. The authorized credential cache avoids repeated prompts; inability to capture the item remains explicit until a key is supplied through the supported mechanism.
 
 Implementation target: 30 focused hours; no scope was silently removed to meet it. This delivery records actual duration and unresolved checks in `docs/handover.md`. The approved spec and plan remain the source of acceptance requirements.
+
+Continuation check: real `credentials import-env` and environment-free persisted readback succeeded. Current provider selection, failed attempts, exact source provenance, budget, and completed live outcomes appear in the [continuation index](../evaluation/CONTINUATION.md). The earlier authentication failures above remain historical results.

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "7515f3d80b00c9c5755072b8ea3ca7e0fff858f7a57439e04b6b8525a11ae29d",
+  "correlation": "agent4-018-c1-unchanged-1",
+  "commit": "aaead267dd5fbbd0779d5fb0debbe340ec4d89fa",
+  "ref": "lab/agent4-018/c1/baseline",
+  "status": "completed",
+  "createdAt": "2026-11-08T22:34:39.786Z",
+  "runId": 42530930923,
+  "cancelRequested": false
+}

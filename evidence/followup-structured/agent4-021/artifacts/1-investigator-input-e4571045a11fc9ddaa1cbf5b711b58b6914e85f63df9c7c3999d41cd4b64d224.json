@@ -1,0 +1,311 @@
+{
+  "snapshot": {
+    "ci/plan.json": "{\"schemaVersion\":1,\"cache\":true,\"partitions\":[[\"case-000\",\"case-001\",\"case-002\",\"case-003\",\"case-004\",\"case-005\",\"case-006\",\"case-007\",\"case-008\",\"case-009\",\"case-010\",\"case-011\",\"case-012\",\"case-013\",\"case-014\",\"case-015\",\"case-016\",\"case-017\",\"case-018\",\"case-019\",\"case-020\",\"case-021\",\"case-022\",\"case-023\",\"case-024\",\"case-025\",\"case-026\",\"case-027\",\"case-028\",\"case-029\",\"case-030\"]]}\n",
+    ".github/workflows/experiment.yml": "name: Controlled experiment\nrun-name: ${{ inputs.correlation }}\non:\n  workflow_dispatch:\n    inputs:\n      correlation:\n        required: true\n        type: string\n      cache_key:\n        required: true\n        type: string\npermissions:\n  contents: read\njobs:\n  plan:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    outputs:\n      matrix: ${{ steps.plan.outputs.matrix }}\n      cache: ${{ steps.plan.outputs.cache }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - run: npm ci --ignore-scripts\n      - id: plan\n        run: node ci/matrix.ts\n  tests:\n    needs: plan\n    runs-on: ubuntu-24.04\n    timeout-minutes: 5\n    strategy:\n      fail-fast: false\n      max-parallel: 4\n      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}\n    steps:\n      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262\n        with:\n          persist-credentials: false\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020\n        with:\n          node-version: '24'\n      - id: dependencies\n        if: needs.plan.outputs.cache == 'true'\n        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830\n        with:\n          path: node_modules\n          key: deps-${{ inputs.cache_key }}-${{ matrix.partition }}-${{ hashFiles('package-lock.json') }}\n      - if: steps.dependencies.outputs.cache-hit != 'true'\n        run: npm ci --ignore-scripts\n      - run: node ci/execute.ts\n        env:\n          PARTITION: ${{ matrix.partition }}\n          CACHE_KEY: ${{ inputs.cache_key }}\n          CACHE_HIT: ${{ steps.dependencies.outputs.cache-hit }}\n      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02\n        with:\n          name: execution-${{ matrix.partition }}\n          path: execution.json\n          retention-days: 1\n          if-no-files-found: error\n",
+    "ci/case.json": "{\n  \"id\": \"partition-heldout\",\n  \"iterations\": 700000,\n  \"tests\": {\n    \"case-000\": \"44e8c027019ab7cce1690e0b08cb821cb40665e5079fe5b0e97a347b94a0c009\",\n    \"case-001\": \"ad9d272f07ffef21f3c71b86f4ebf13067c0ddfa14e310126bac85adc33d08d0\",\n    \"case-002\": \"240280c9565e96837bf1cd1fff690eb4e07b7eb73d85a6b995a75d6e456f6487\",\n    \"case-003\": \"195d5ee87da2a11a81a656f501d56519717fbecaa60964453711e8354a2c5be1\",\n    \"case-004\": \"4dbf9e11db1f95f4a312dfe0a28c3ee352a649e1e3e1b662ac373533f134296c\",\n    \"case-005\": \"632e78dd2eb40eb3fc476ab58f9bdad7937fb264062968f6fdb448748b3389ca\",\n    \"case-006\": \"2da98c9ef060f531b71e3774ec159d50a73701e7de79ccfdf1719e054965d29b\",\n    \"case-007\": \"e257a1d82dd85722713e75a9c7c90b86087382e973e72001167b3b53a422508a\",\n    \"case-008\": \"89d5424a735a4ceefc032fb6f73077bcbf635410efe5fa7bab53befcb917e626\",\n    \"case-009\": \"5af4f878de7ed1ccc4aab1e6e764d747d63d89b541a3fc983fabc63541f52889\",\n    \"case-010\": \"4bcfbce401ae365d6f0aafb5949153e0e2784e52c2e0e74ea7a35e37f59776ca\",\n    \"case-011\": \"b2a1c0e1b78880f49d73d8e5994e35156df55e3a67f760769669cb82538836ba\",\n    \"case-012\": \"99cbac7f0e76a6750b0af55181c3eb01a5e49fc470edac81747f94f97ceca484\",\n    \"case-013\": \"aa17f0a2324f4f075657b8e9278d82e272a8ad01cea5fde6cb6062e159280964\",\n    \"case-014\": \"46f44eea57af29f3ae47229db1d53e1cc988595e1bcacdd8210b2baf7c1177c6\",\n    \"case-015\": \"dcdc4c03cbe0e16491cd52554539b4fc8198fea070750887ec803832ea9de3b5\",\n    \"case-016\": \"599010acefeabb3c23be7254d81f91997f85679f4cedd035ffc8545bae8606c0\",\n    \"case-017\": \"80651ad0c64eee4a1bd3ecda5da35d45cdeede46034ed5878723c5c029a4398e\",\n    \"case-018\": \"f5a20085f5a9167cfadfb8b347bbda1b228e2375834c4bd742803caadb92e078\",\n    \"case-019\": \"f82e9b6234a187fc7d598b2238d3136b6d505b33b0d524b044fb3a122a9a8232\",\n    \"case-020\": \"3d17ea769586a9a5cf3de6c6d8892d66229657d8fc9dc1d7fd29ff7b5f973064\",\n    \"case-021\": \"37418899adaa9f7c0e1df4bf22d3e3d90fa165d95d749833934a9e8240b304d2\",\n    \"case-022\": \"b35d24e58b35e1374dc335191a151950e800e51f5b348d7eb72cf83d194b9e95\",\n    \"case-023\": \"1b1d873472e4ed40aca23aecbc8f319463b2c0da43b568ad002c8df524cc5459\",\n    \"case-024\": \"86f8de4f8c0bc599576481ea2a8e0c0dd3c7d140d2680ff6835e336237505dfd\",\n    \"case-025\": \"d2ec1e740cd42bf55d654c618b6c8ba52f31693076ad3a349d5167767639e61e\",\n    \"case-026\": \"3580f4da2222f50e456853c9fd03e709e4cd2585e5eaea3c762683863d583fa1\",\n    \"case-027\": \"35ab1def695d8798374edae92b1e05aac4964196871355a12049b88e1443d707\",\n    \"case-028\": \"ebd7ee26272174babd03b6f475e33eb851e1aad3f0a6a68378d244c55c3993bc\",\n    \"case-029\": \"be29888f919b04183886b2024e51b698f074fe900167d23cbf32d41862b22e6a\",\n    \"case-030\": \"8fcb3c9d6a159dfb2cb49ab2108b27ac598212ad4965bb999f944a26660a8566\"\n  },\n  \"maxPartitions\": 2\n}\n"
+  },
+  "plan": {
+    "schemaVersion": 1,
+    "cache": true,
+    "partitions": [
+      [
+        "case-000",
+        "case-001",
+        "case-002",
+        "case-003",
+        "case-004",
+        "case-005",
+        "case-006",
+        "case-007",
+        "case-008",
+        "case-009",
+        "case-010",
+        "case-011",
+        "case-012",
+        "case-013",
+        "case-014",
+        "case-015",
+        "case-016",
+        "case-017",
+        "case-018",
+        "case-019",
+        "case-020",
+        "case-021",
+        "case-022",
+        "case-023",
+        "case-024",
+        "case-025",
+        "case-026",
+        "case-027",
+        "case-028",
+        "case-029",
+        "case-030"
+      ]
+    ]
+  },
+  "baselineEvidence": {
+    "schemaVersion": 1,
+    "pair": 0,
+    "side": "baseline",
+    "group": "cold",
+    "commit": "2b0521a647a0dda42e9c99d14714b7810276c5a0",
+    "patchDigest": "5b74bf116ab9854d3d055d80722db8e89d52b99588728f511353bd379de00d3e",
+    "correlation": "agent4-021-c1-profile",
+    "runId": 42530827878,
+    "url": "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42530827878",
+    "attempt": 1,
+    "conclusion": "success",
+    "createdAt": "2026-11-08T22:33:28Z",
+    "startedAt": "2026-11-08T22:33:31.000Z",
+    "completedAt": "2026-11-08T22:33:55.000Z",
+    "elapsedSeconds": 24,
+    "jobSeconds": 21,
+    "queueSeconds": 3,
+    "jobs": [
+      {
+        "id": 128884412735,
+        "name": "plan",
+        "startedAt": "2026-11-08T22:33:31Z",
+        "completedAt": "2026-11-08T22:33:37Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      },
+      {
+        "id": 128884445823,
+        "name": "tests (0)",
+        "startedAt": "2026-11-08T22:33:40Z",
+        "completedAt": "2026-11-08T22:33:55Z",
+        "conclusion": "success",
+        "runner": "ubuntu-24.04"
+      }
+    ],
+    "execution": [
+      {
+        "schemaVersion": 1,
+        "runId": "42530827878",
+        "commit": "2b0521a647a0dda42e9c99d14714b7810276c5a0",
+        "planDigest": "e41e1490d4eb8b580e61b72b54156a827dc89dc71f66ed00da414f0344ca50eb",
+        "cacheKey": "agent4-021-c1-profile",
+        "cacheHit": false,
+        "partition": 0,
+        "node": "v24.22.2",
+        "tests": [
+          {
+            "id": "case-000",
+            "output": "e08427993b60a441655e7dd942b504936f5e6eb9376b46a866647e1539374fe3",
+            "status": "pass"
+          },
+          {
+            "id": "case-001",
+            "output": "c0032603f7a7242d2ce3ac8244234a4a31cd8760f82ee703d12905e6bc9956b1",
+            "status": "pass"
+          },
+          {
+            "id": "case-002",
+            "output": "97ea2f31da3b4727c63f57f330cb005a027dd5005627d699822b3c9eba0ce1fc",
+            "status": "pass"
+          },
+          {
+            "id": "case-003",
+            "output": "35f99386da436c494205644fc0a12e516765414749cac9ae9756d8f8921137b4",
+            "status": "pass"
+          },
+          {
+            "id": "case-004",
+            "output": "40fffeee973f0750c2f7cc5122b54d7a727a705b07063d560049f05d1307e9f8",
+            "status": "pass"
+          },
+          {
+            "id": "case-005",
+            "output": "a5b5bd76bae838f6c20202cffc781fbd15c50e2befcea687ade64dd9d0a73f31",
+            "status": "pass"
+          },
+          {
+            "id": "case-006",
+            "output": "11832ed989395679f7da04a39380a263d0c3412b1ac51267d76151cedda73960",
+            "status": "pass"
+          },
+          {
+            "id": "case-007",
+            "output": "e7ba5205e118d9af476ac581d55ff58d9783282065912656cadf1aad65b95170",
+            "status": "pass"
+          },
+          {
+            "id": "case-008",
+            "output": "302d1aa20bc83924266440fc6925a3a258f7c6abf29c984560869834ebe0f6db",
+            "status": "pass"
+          },
+          {
+            "id": "case-009",
+            "output": "c9e966b48d7cecdd02eb323d09c8dd19af8d0f7def354f81ea35e0f243d179e7",
+            "status": "pass"
+          },
+          {
+            "id": "case-010",
+            "output": "517ac6f84e6d3a3e76c2af1a294b5d4f797bbc592d3a70906c59b0944244199c",
+            "status": "pass"
+          },
+          {
+            "id": "case-011",
+            "output": "dae00b635aba31f72b7ccd8b595a7b4fb6a51338f793074fb005603276ae8190",
+            "status": "pass"
+          },
+          {
+            "id": "case-012",
+            "output": "f245f121d9d7837668601e02f0714fb7aec8ad083d23ea375ff4d9363d2e0a93",
+            "status": "pass"
+          },
+          {
+            "id": "case-013",
+            "output": "3d0b016291992848777a9b65b91d333f3b23b362a00000011e4118fe6110c304",
+            "status": "pass"
+          },
+          {
+            "id": "case-014",
+            "output": "400f80a9fa1ac58a8186c884b148c96ebf67317d3dc35a490fe952e72f5c9955",
+            "status": "pass"
+          },
+          {
+            "id": "case-015",
+            "output": "c5e9616417bde0fc89625d63c6c3be9a3baacb2923db1188ef8d31bc093be17c",
+            "status": "pass"
+          },
+          {
+            "id": "case-016",
+            "output": "eba2e4031ffc5bcbe56e686b2c9899879ffc4ed2ea373f602273add8afbedd32",
+            "status": "pass"
+          },
+          {
+            "id": "case-017",
+            "output": "52fef5f9961776ff6f7a73b0a242a6b059bba67926e9efbc010e5f8c0870db82",
+            "status": "pass"
+          },
+          {
+            "id": "case-018",
+            "output": "840d9005e27bf8596a0543081b94c76a9252fd1d22ebe2c4fb0dda87498f456d",
+            "status": "pass"
+          },
+          {
+            "id": "case-019",
+            "output": "054a748624167296c8cadb525d1c1665460d36565027e00fef07eca65581b10f",
+            "status": "pass"
+          },
+          {
+            "id": "case-020",
+            "output": "f26ce123076b6bb896088db9fddf111202927e88e2f549b06a15e0eabbcbf60b",
+            "status": "pass"
+          },
+          {
+            "id": "case-021",
+            "output": "500189cec3dcf1d160363909ccd2d7745e9e5d036a5d6d4b6fb5cde9b51678f9",
+            "status": "pass"
+          },
+          {
+            "id": "case-022",
+            "output": "0edfbbcb4232857e1bfb9b79ef5276dc3b16cc931b8676d9f3f9d5186435f43d",
+            "status": "pass"
+          },
+          {
+            "id": "case-023",
+            "output": "a868ec5a989369997fd0a7e05aa98ba2f5e4221058460e492093c81dd59a5cec",
+            "status": "pass"
+          },
+          {
+            "id": "case-024",
+            "output": "cf99cac54ee4b769119aea67959f082e645e8bb4106daa7da936bbcf69ac9f2a",
+            "status": "pass"
+          },
+          {
+            "id": "case-025",
+            "output": "f50881d613022cfada96bd7ac476d9db087ca1c7fc63fbbe9ad827b13d7bb687",
+            "status": "pass"
+          },
+          {
+            "id": "case-026",
+            "output": "3fb261431993af97e60ee8dafe6def570c69ad3db36f08cc1b61be6bd32a5da9",
+            "status": "pass"
+          },
+          {
+            "id": "case-027",
+            "output": "ab3531086c2545a11350ba4e82f4c81e85a37e60763e1e474c4025651b00bc67",
+            "status": "pass"
+          },
+          {
+            "id": "case-028",
+            "output": "e94427bbd0b4b57516d629c6d4a3c126d4e90d57beddaa6b17bcc93cd7ef5ffe",
+            "status": "pass"
+          },
+          {
+            "id": "case-029",
+            "output": "cf9d99e8f58ce6a239c692c93cd45178c95522d573319b103463dbdeb0886214",
+            "status": "pass"
+          },
+          {
+            "id": "case-030",
+            "output": "0f580e7b6a1419d8bea62018934190019634f81c3a38a5151dd8c6a2000b9ff0",
+            "status": "pass"
+          }
+        ],
+        "dependencyCheck": true
+      }
+    ],
+    "cacheKey": "agent4-021-c1-profile",
+    "expectedCacheHit": false,
+    "source": "github"
+  },
+  "allowedFiles": [
+    "ci/plan.json"
+  ],
+  "requiredTests": [
+    "case-000",
+    "case-001",
+    "case-002",
+    "case-003",
+    "case-004",
+    "case-005",
+    "case-006",
+    "case-007",
+    "case-008",
+    "case-009",
+    "case-010",
+    "case-011",
+    "case-012",
+    "case-013",
+    "case-014",
+    "case-015",
+    "case-016",
+    "case-017",
+    "case-018",
+    "case-019",
+    "case-020",
+    "case-021",
+    "case-022",
+    "case-023",
+    "case-024",
+    "case-025",
+    "case-026",
+    "case-027",
+    "case-028",
+    "case-029",
+    "case-030"
+  ],
+  "maxPartitions": 2,
+  "objective": {
+    "schemaVersion": 1,
+    "primary": "elapsedSeconds",
+    "direction": "minimize",
+    "minimumImprovement": 0.1,
+    "secondaryRegressionLimit": 0.05,
+    "pairs": 5,
+    "acceptanceRule": "paired-log-t95-v1",
+    "requiredChecks": [
+      "protected-files",
+      "exact-test-inventory",
+      "expected-outputs",
+      "successful-workflow",
+      "cache-condition",
+      "single-attempt"
+    ]
+  },
+  "previousAttempts": []
+}

@@ -1,0 +1,719 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T22:50:16.744971+00:00",
+  "controllerSourceFreeze": "f039815e248dc5c6863d89677171ad39d83a56fb",
+  "sourceReview": "Fresh independent review pending; previous c7f9d1f review remains historical.",
+  "originalOutcomes": {
+    "no-change": 8,
+    "rejected": 6,
+    "failed": 7
+  },
+  "continuationOutcomes": {
+    "failed": 14,
+    "no-change": 5,
+    "rejected": 2
+  },
+  "totalTrials": 42,
+  "newValidatedObservations": 87,
+  "originalValidatedObservations": 131,
+  "allNewAuditsPass": true,
+  "allOriginalFilesPreserved": true,
+  "comparison": [
+    {
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "cold",
+      "unchanged": "eval-001",
+      "rules": "eval-002",
+      "originalAgent": "eval-003",
+      "followupTrials": [
+        "agent2-003",
+        "agent3-003"
+      ],
+      "latestCompletedAgent": "agent3-003"
+    },
+    {
+      "fixture": "cache",
+      "heldOut": false,
+      "group": "warm",
+      "unchanged": "eval-004",
+      "rules": "eval-005",
+      "originalAgent": "eval-006",
+      "followupTrials": [
+        "agent2-006",
+        "agent3-006"
+      ],
+      "latestCompletedAgent": "agent3-006"
+    },
+    {
+      "fixture": "partition",
+      "heldOut": false,
+      "group": "warm",
+      "unchanged": "eval-007",
+      "rules": "eval-008",
+      "originalAgent": "eval-009",
+      "followupTrials": [
+        "agent2-009",
+        "agent3-009"
+      ],
+      "latestCompletedAgent": "agent3-009"
+    },
+    {
+      "fixture": "no-change",
+      "heldOut": false,
+      "group": "warm",
+      "unchanged": "eval-010",
+      "rules": "eval-011",
+      "originalAgent": "eval-012",
+      "followupTrials": [
+        "agent2-012",
+        "agent3-012",
+        "agent4-012"
+      ],
+      "latestCompletedAgent": "agent4-012"
+    },
+    {
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "cold",
+      "unchanged": "eval-013",
+      "rules": "eval-014",
+      "originalAgent": "eval-015",
+      "followupTrials": [
+        "agent2-015",
+        "agent3-015",
+        "agent4-015"
+      ],
+      "latestCompletedAgent": "agent4-015"
+    },
+    {
+      "fixture": "cache-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "unchanged": "eval-016",
+      "rules": "eval-017",
+      "originalAgent": "eval-018",
+      "followupTrials": [
+        "agent2-018",
+        "agent3-018",
+        "agent4-018"
+      ],
+      "latestCompletedAgent": "agent4-018"
+    },
+    {
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "unchanged": "eval-019",
+      "rules": "eval-020",
+      "originalAgent": "eval-021",
+      "followupTrials": [
+        "agent2-021",
+        "agent3-021",
+        "agent4-021",
+        "agent5-021",
+        "agent6-021",
+        "agent7-021"
+      ],
+      "latestCompletedAgent": "agent7-021"
+    }
+  ],
+  "plans": {
+    "followup": {
+      "path": "followup/live-plan.json",
+      "results": "followup/results.json",
+      "outcomes": {
+        "failed": 7
+      }
+    },
+    "followup-corrected": {
+      "path": "followup-corrected/live-plan.json",
+      "results": "followup-corrected/results.json",
+      "outcomes": {
+        "no-change": 2,
+        "rejected": 1,
+        "failed": 4
+      }
+    },
+    "followup-structured": {
+      "path": "followup-structured/live-plan.json",
+      "results": "followup-structured/results.json",
+      "outcomes": {
+        "no-change": 3,
+        "failed": 1
+      }
+    },
+    "followup-coding": {
+      "path": "followup-coding/live-plan.json",
+      "results": "followup-coding/results.json",
+      "outcomes": {
+        "failed": 1
+      }
+    },
+    "followup-gemma": {
+      "path": "followup-gemma/live-plan.json",
+      "results": "followup-gemma/results.json",
+      "outcomes": {
+        "failed": 1
+      }
+    },
+    "followup-ultra": {
+      "path": "followup-ultra/live-plan.json",
+      "results": "followup-ultra/results.json",
+      "outcomes": {
+        "rejected": 1
+      }
+    }
+  },
+  "modelReceipts": [
+    {
+      "runId": "agent2-003",
+      "receipt": "agent2-003-c1-investigator.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent2-006",
+      "receipt": "agent2-006-c1-investigator.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent2-009",
+      "receipt": "agent2-009-c1-investigator.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent2-012",
+      "receipt": "agent2-012-c1-investigator.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent2-015",
+      "receipt": "agent2-015-c1-investigator.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent2-018",
+      "receipt": "agent2-018-c1-investigator.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent2-021",
+      "receipt": "agent2-021-c1-investigator.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent3-003",
+      "receipt": "agent3-003-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "449e7b265302018fe38433e65818f646da2dcdfca91ea9f5011d5b25f2f453ee",
+        "responseDigest": "e5fc7419180bd2e6bd88f1f74b8fd1224b9f4ba84b8352150db19a20fe72674a",
+        "inputTokens": 3561,
+        "outputTokens": 38,
+        "costUsd": 0.000149562,
+        "live": true,
+        "timestamp": "2026-11-08T22:24:36.416Z"
+      }
+    },
+    {
+      "runId": "agent3-003",
+      "receipt": "agent3-003-c1-reviewer.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "14fa5f7c4b3882f629c673b80d98f3cf5885e67146db4bbfdea1ce827d2b66a0",
+        "responseDigest": "7a4f597b0fa8dd5ac1d3fe91bafd3ccc0d88afe684e51d674b15757325810e9c",
+        "inputTokens": 5461,
+        "outputTokens": 2249,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:27:41.512Z"
+      }
+    },
+    {
+      "runId": "agent3-006",
+      "receipt": "agent3-006-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "8edee46bbb46b83a91c4e147bf4335990222fbbef9e11635252941eb0907a81f",
+        "responseDigest": "841161488411bdb8e9ba7047e7fe21f6296ef7b73dfad256a8017519713575d7",
+        "inputTokens": 3561,
+        "outputTokens": 38,
+        "costUsd": 0.000149562,
+        "live": true,
+        "timestamp": "2026-11-08T22:24:35.100Z"
+      }
+    },
+    {
+      "runId": "agent3-006",
+      "receipt": "agent3-006-c1-reviewer.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "11f77d80d840628163b82620ad3ac3672281f58c0fb308fbffcd549b64da18f4",
+        "responseDigest": "aebe0c4530f25bc913857f04dee1a50737e8ecc3bff733956e4b10c70977b629",
+        "inputTokens": 5451,
+        "outputTokens": 2750,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:27:30.945Z"
+      }
+    },
+    {
+      "runId": "agent3-009",
+      "receipt": "agent3-009-c1-editor.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "editor",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "e0dacfae94be155e2af66449449bba1468ccff6d82d7d3a06093c7aebf4ab518",
+        "responseDigest": "df437bee04fc98a362a20c9adedeb65a40e92e5f04aaa0c52d9f317eb2bccf54",
+        "inputTokens": 539,
+        "outputTokens": 1721,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:24:40.856Z"
+      }
+    },
+    {
+      "runId": "agent3-009",
+      "receipt": "agent3-009-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "f2bab6fccd88f27ec0fbd0ccfb5bcf740388a1b0131802c9d39b685528897ed6",
+        "responseDigest": "8d6d29ccf34d9bcadfa5cf1f0836639ef29c972b4bb0ccbfc738f0f75d9d588e",
+        "inputTokens": 6356,
+        "outputTokens": 38,
+        "costUsd": 0.000266952,
+        "live": true,
+        "timestamp": "2026-11-08T22:24:34.058Z"
+      }
+    },
+    {
+      "runId": "agent3-009",
+      "receipt": "agent3-009-c1-reviewer.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "1c577f377143e9bb3bed42b87956bb3146d7e53193eb25396ab772a69712d184",
+        "responseDigest": "5be8578b8dd2615e8b57591c8177cff3c78aac4fcd1afa3ad8522b409daa39d7",
+        "inputTokens": 18438,
+        "outputTokens": 2901,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:32:09.425Z"
+      }
+    },
+    {
+      "runId": "agent3-012",
+      "receipt": "agent3-012-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "e635fd41bfcab84bc70f8eb9e584945b3ea096373863cdf8d3f4132e24d0c399",
+        "responseDigest": "207f488d8e849cd18d5cf097c8de0134ad4569189c2443b9754355042a27ca94",
+        "inputTokens": 2337,
+        "outputTokens": 38,
+        "costUsd": 9.8154e-05,
+        "live": true,
+        "timestamp": "2026-11-08T22:24:34.387Z"
+      }
+    },
+    {
+      "runId": "agent3-012",
+      "receipt": "agent3-012-c1-reviewer.json",
+      "status": "invalid-output",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "4c1583b4dc11fc573bd865b16a78d143929c22d645ca67d793dbbbae989ea524",
+        "responseDigest": "61042adb35d34d7c8a0ddfea9d2cdd93515c0788fec81c4f5eff90d628cb11f5",
+        "inputTokens": 3417,
+        "outputTokens": 3000,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:28:06.498Z"
+      }
+    },
+    {
+      "runId": "agent3-015",
+      "receipt": "agent3-015-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "b7f5c99657104f65c6be48c0807c2663b35b73ceb8b331b889a7cd06aa842bb0",
+        "responseDigest": "c07fe8a404fcf88fae9d96d3981abb27209d04e7c9cd2e39b4d84e85a9cc59c5",
+        "inputTokens": 4415,
+        "outputTokens": 38,
+        "costUsd": 0.00018543,
+        "live": true,
+        "timestamp": "2026-11-08T22:28:08.698Z"
+      }
+    },
+    {
+      "runId": "agent3-015",
+      "receipt": "agent3-015-c1-reviewer.json",
+      "status": "invalid-output",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "204cec459630f91c484c6077c09969c3499cc83a15d3674c51e615458838faf6",
+        "responseDigest": "5ef57f9bfbab0a480cc017f783a9c062e05b058a26e21b013b232225d600eaaf",
+        "inputTokens": 6859,
+        "outputTokens": 2663,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:31:23.933Z"
+      }
+    },
+    {
+      "runId": "agent3-018",
+      "receipt": "agent3-018-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "3d41cdf6c81ca6cfdd7a303b53f67bfbb5fe7b13bea78249d0db0501a6f86d5c",
+        "responseDigest": "884a651e857bb3e7d938d60ed63ac49417f043652e0d7bbf222e14cef2bc6c29",
+        "inputTokens": 4415,
+        "outputTokens": 38,
+        "costUsd": 0.00018543,
+        "live": true,
+        "timestamp": "2026-11-08T22:28:18.504Z"
+      }
+    },
+    {
+      "runId": "agent3-018",
+      "receipt": "agent3-018-c1-reviewer.json",
+      "status": "invalid-output",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "60f7b18ed8a0932839dddc5f1ea8a76f7bfc882838ef18cfa4ea113ece3847e2",
+        "responseDigest": "ab022a34adb647fb033c0e72e4e873847761c0eec6533745b9d67b4f67c301a9",
+        "inputTokens": 6849,
+        "outputTokens": 2997,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:31:23.781Z"
+      }
+    },
+    {
+      "runId": "agent3-021",
+      "receipt": "agent3-021-c1-editor.json",
+      "status": "invalid-output",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "editor",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "7eb69cb490429e52122909d88d9fbe196806f84dd34b34cd96cae42c3ceed8b5",
+        "responseDigest": "e3bab9a74508d6d2138b49e95cd31c04483762cd97c79588ca43286288a41a0f",
+        "inputTokens": 623,
+        "outputTokens": 3000,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:28:53.072Z"
+      }
+    },
+    {
+      "runId": "agent3-021",
+      "receipt": "agent3-021-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "5ed0ea80a52526b464a4bcacc5dcd93166f4a45a0f12a1b8b3be893bd250c162",
+        "responseDigest": "a9c67fdc632d049e70e76bbb26593688749597a48ef5b97d8b41b4171bea889a",
+        "inputTokens": 7590,
+        "outputTokens": 38,
+        "costUsd": 0.00031878,
+        "live": true,
+        "timestamp": "2026-11-08T22:28:42.605Z"
+      }
+    },
+    {
+      "runId": "agent4-012",
+      "receipt": "agent4-012-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "5678f800a0b05bd112f3718340485d9fa3dc0ae3e8c2280c95f0f3bb3a89daab",
+        "responseDigest": "213b6ffa84df03437f04685ee01003723f488290449df98c7a1ed9dc764fe3ee",
+        "inputTokens": 2337,
+        "outputTokens": 38,
+        "costUsd": 9.8154e-05,
+        "live": true,
+        "timestamp": "2026-11-08T22:34:03.406Z"
+      }
+    },
+    {
+      "runId": "agent4-012",
+      "receipt": "agent4-012-c1-reviewer.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "nvidia/nemotron-3.5-super-vl:free",
+        "requestDigest": "2e00b0b466302d91b74bc8acf50af59f13bd0ab97f359ca9b274ba19dc65d27d",
+        "responseDigest": "212b929cf0c0a7d95ab7a0552185e1154965ae88b32e63eb9335603d1e2bc8e4",
+        "inputTokens": 4755,
+        "outputTokens": 384,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:37:57.239Z"
+      }
+    },
+    {
+      "runId": "agent4-015",
+      "receipt": "agent4-015-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "4fd06f7c8656e1d37929869f73fe8209c4f60f781513522fdf507a497d7fb55f",
+        "responseDigest": "8f694d539614ec9ea5cddb2664aa3439ed4c9628d67cf4b28fdb5ce4f39ecd86",
+        "inputTokens": 4415,
+        "outputTokens": 38,
+        "costUsd": 0.00018543,
+        "live": true,
+        "timestamp": "2026-11-08T22:34:02.706Z"
+      }
+    },
+    {
+      "runId": "agent4-015",
+      "receipt": "agent4-015-c1-reviewer.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "nvidia/nemotron-3.5-super-vl:free",
+        "requestDigest": "d1d43738945cbdaed60fd920b317d6a652e4f051fbe285d97af0014ca33ec156",
+        "responseDigest": "14056ce8ae186f20aabbce4d1913cace64e839b37225fff1e86dfd530b5be812",
+        "inputTokens": 9953,
+        "outputTokens": 228,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:37:02.795Z"
+      }
+    },
+    {
+      "runId": "agent4-018",
+      "receipt": "agent4-018-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "8eb754b5261f2461de142cbe3eabdd9e45aff74a066d23fcebc8160ad11405e9",
+        "responseDigest": "340cf41b3127c2292de574c2bab0fcfd261cc18dabe7aa15f2b724b7461fc102",
+        "inputTokens": 4415,
+        "outputTokens": 38,
+        "costUsd": 0.00018543,
+        "live": true,
+        "timestamp": "2026-11-08T22:34:03.152Z"
+      }
+    },
+    {
+      "runId": "agent4-018",
+      "receipt": "agent4-018-c1-reviewer.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "nvidia/nemotron-3.5-super-vl:free",
+        "requestDigest": "ca93365f0914c1393a49d69b3c7bb6fefd0b928a2379dd1e202a5d44c90b90be",
+        "responseDigest": "525a27e91a03b09e4c39fdcae89e754aa664bdd9fdd110a2557059eb88cb106d",
+        "inputTokens": 9932,
+        "outputTokens": 302,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:37:26.232Z"
+      }
+    },
+    {
+      "runId": "agent4-021",
+      "receipt": "agent4-021-c1-editor.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "editor",
+        "model": "nvidia/nemotron-3.5-super-vl:free",
+        "requestDigest": "f271db108870e1ae90ecb0c520b6054c707d77303d076c4fa7b5483f9dc48bbd",
+        "responseDigest": "4a165c9672e372ef5282ed6fd42a1346c5ec5f045e805a9029882bb9f3fbae46",
+        "inputTokens": 866,
+        "outputTokens": 86,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:34:05.555Z"
+      }
+    },
+    {
+      "runId": "agent4-021",
+      "receipt": "agent4-021-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "e4a080a560bf5bc8fd8f66c8c0dc7ba5778f801fcc636a19ef8c8f016889e8ee",
+        "responseDigest": "7b6d92ce85949d522cc6bce4be5a1bac08bdae9046d0d005c6cb894451fb5682",
+        "inputTokens": 7590,
+        "outputTokens": 38,
+        "costUsd": 0.00031878,
+        "live": true,
+        "timestamp": "2026-11-08T22:34:02.976Z"
+      }
+    },
+    {
+      "runId": "agent5-021",
+      "receipt": "agent5-021-c1-editor.json",
+      "status": "invalid-output",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "editor",
+        "model": "cohere/north-mini-code:free",
+        "requestDigest": "8512138b08c9e7e7f20464f1e57e5b16a66bdbfd336d196e6dbb6920a6a44754",
+        "responseDigest": "ce770b0e1f2701e91b6cd72b03e6ef5b97ab28ee73cc15510736899b46c4693b",
+        "inputTokens": 623,
+        "outputTokens": 282,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:36:15.633Z"
+      }
+    },
+    {
+      "runId": "agent5-021",
+      "receipt": "agent5-021-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "6756e384b39726e6a7eb0b33576b517579c791fd139ec6c9d9fed0b8ee103ea1",
+        "responseDigest": "8dd8b10ea81c0efc6a53f3188168ce95f30eed9be0caa15a95e0ac770c33124d",
+        "inputTokens": 7590,
+        "outputTokens": 38,
+        "costUsd": 0.00031878,
+        "live": true,
+        "timestamp": "2026-11-08T22:36:13.428Z"
+      }
+    },
+    {
+      "runId": "agent6-021",
+      "receipt": "agent6-021-c1-editor.json",
+      "status": "failed-or-ambiguous",
+      "usage": null
+    },
+    {
+      "runId": "agent6-021",
+      "receipt": "agent6-021-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "545aecd7090828f6742b368fbc16429b9eebccfc04449c9d20b878e38c4f28e2",
+        "responseDigest": "a0c558a053bfcb4849288bc906097060864d60d9932cda372bb4c11d2056edc4",
+        "inputTokens": 7590,
+        "outputTokens": 38,
+        "costUsd": 0.00031878,
+        "live": true,
+        "timestamp": "2026-11-08T22:38:11.766Z"
+      }
+    },
+    {
+      "runId": "agent7-021",
+      "receipt": "agent7-021-c1-editor.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "editor",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "requestDigest": "762f12727932fa5ab777bc498691f717e15edfbcffaec7a734dc8d00930dfb41",
+        "responseDigest": "e9902711db60c4b62ad93220493e37cacdd23ce03342df4c7fdf2c2ccd788af1",
+        "inputTokens": 866,
+        "outputTokens": 477,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:39:49.353Z"
+      }
+    },
+    {
+      "runId": "agent7-021",
+      "receipt": "agent7-021-c1-investigator.json",
+      "status": "completed",
+      "usage": {
+        "provider": "jev",
+        "role": "investigator",
+        "model": "typesafe/jev-1.14-20261014",
+        "requestDigest": "76f227eacabf3fa4bcb47fc7ee571872156a83764966fbe6b96303fae96dd123",
+        "responseDigest": "7b6d92ce85949d522cc6bce4be5a1bac08bdae9046d0d005c6cb894451fb5682",
+        "inputTokens": 7590,
+        "outputTokens": 38,
+        "costUsd": 0.00031878,
+        "live": true,
+        "timestamp": "2026-11-08T22:39:42.103Z"
+      }
+    },
+    {
+      "runId": "agent7-021",
+      "receipt": "agent7-021-c1-reviewer.json",
+      "status": "completed",
+      "usage": {
+        "provider": "openrouter-free",
+        "role": "reviewer",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "requestDigest": "b8c4a8c25d701975d775d2fe1e7b0115196d155584ce5b4b6b7d04ef1314e829",
+        "responseDigest": "873755582778bfcc683b80bc5f57576d8f90fa9f35f0e607e6279703d325c1b8",
+        "inputTokens": 32682,
+        "outputTokens": 507,
+        "costUsd": 0,
+        "live": true,
+        "timestamp": "2026-11-08T22:47:31.084Z"
+      }
+    }
+  ],
+  "cost": {
+    "ceilingUsd": 30,
+    "knownReportedModelSpendUsd": 0.00326466,
+    "conservativeExposureUsd": 0.49426466,
+    "publicStandardRunnerComputeUsd": 0,
+    "invoiceAccessAvailable": false,
+    "limitation": "Known usage excludes the original malformed response whose usage was not retained. Conservative exposure retains unresolved reservations and artifact-storage bounds."
+  }
+}

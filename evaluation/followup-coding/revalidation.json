@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-08T22:50:10.906Z",
+  "validatorSourceCommit": "0f46a9a49f69d91cbf60c529a2fe00ef6c674ef8",
+  "validatorSourceTreeDigest": "5833d12917b127e7524eced7666664dfcd3f76ec32ef1c6e376d288d8d9a975d",
+  "controllerProvenance": [
+    {
+      "runId": "agent5-021",
+      "provenance": {
+        "schemaVersion": 1,
+        "capturedAt": "2026-11-08T22:35:23.676Z",
+        "controllerSourceCommit": "806a17a5b1221795de39c83f31c2563d46c78587",
+        "controllerSourceTreeDigest": "2a1f4f42f659238f74f09c82bb14e5623f54edbd083ec0b4e94224d517168cbf",
+        "planDigest": "6a230d8ad12e96f0cf33daf905e1ea57a0303d3dc5daeeb6a88d7aac8d846483"
+      }
+    }
+  ],
+  "originalSourceProvenance": "Original reports were collected during implementation up to the first source freeze 48b4fd5. Exact per-dispatch coordinator source was not recorded. Target workflow/test code and target commits are pinned in every run. This audit uses the current validator without new CI or model calls.",
+  "results": [
+    {
+      "runId": "agent5-021",
+      "originalOutcome": "failed",
+      "artifactsVerified": 6,
+      "observationCount": 1,
+      "pass": true,
+      "protectedChecks": [
+        {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "full-file-inventory",
+              "pass": true,
+              "reason": "Tracked files must match the frozen inventory; untracked files are denied."
+            },
+            {
+              "name": "protected-files:.github/workflows/experiment.yml",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:.github/workflows/verify.yml",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:.gitignore",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:README.md",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:ci/case.json",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:ci/execute.ts",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:ci/local.ts",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:ci/matrix.ts",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:ci/requirements.ts",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:package-lock.json",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:package.json",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:src/derive.ts",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "protected-files:tests/inventory.ts",
+              "pass": true,
+              "reason": "Protected content and file type must match the pinned baseline."
+            },
+            {
+              "name": "edit-allowlist",
+              "pass": true,
+              "reason": "Only content edits to ci/plan.json are allowed; mode changes are denied."
+            },
+            {
+              "name": "regular-plan",
+              "pass": true,
+              "reason": "CI plan must be a regular file."
+            },
+            {
+              "name": "exact-test-inventory",
+              "pass": true,
+              "reason": "Every required test must appear exactly once."
+            },
+            {
+              "name": "partition-limit",
+              "pass": true,
+              "reason": "At most 2 partitions are permitted."
+            }
+          ]
+        }
+      ],
+      "executionChecks": [
+        {
+          "status": "pass",
+          "checks": [
+            {
+              "name": "successful-workflow",
+              "pass": true,
+              "reason": "All jobs must succeed on the approved standard Linux runner."
+            },
+            {
+              "name": "single-attempt",
+              "pass": true,
+              "reason": "Reruns are excluded from paired comparisons."
+            },
+            {
+              "name": "partition-coverage",
+              "pass": true,
+              "reason": "Every planned partition must execute exactly its assigned tests."
+            },
+            {
+              "name": "exact-test-inventory",
+              "pass": true,
+              "reason": "Collected reports must contain every protected test exactly once."
+            },
+            {
+              "name": "expected-outputs",
+              "pass": true,
+              "reason": "Output digests must match independently computed protected expectations."
+            },
+            {
+              "name": "execution-identity",
+              "pass": true,
+              "reason": "Reports must identify the exact workflow run, commit, and plan."
+            },
+            {
+              "name": "cache-condition",
+              "pass": true,
+              "reason": "Cold keys must miss; warm cached candidates must hit. No cross-side keys."
+            }
+          ]
+        }
+      ],
+      "originalAcceptance": null,
+      "revalidatedAcceptance": null,
+      "outcomeUnchanged": true,
+      "originalError": "[\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"files\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"explanation\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"invalidModelJson\",\n      \"rawOutput\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized keys: \\\"invalidModelJson\\\", \\\"rawOutput\\\"\"\n  }\n]"
+    }
+  ]
+}

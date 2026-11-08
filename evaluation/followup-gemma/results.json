@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08T22:38:12.890Z",
+  "planDigest": "4cfac37ea431196561117be7c4c934730996b8d725969197521384c5bd295ce9",
+  "results": [
+    {
+      "runId": "agent6-021",
+      "fixture": "partition-heldout",
+      "heldOut": true,
+      "group": "warm",
+      "strategy": "agent",
+      "outcome": "failed",
+      "decision": null,
+      "modelCalls": [
+        {
+          "provider": "jev",
+          "role": "investigator",
+          "model": "typesafe/jev-1.14-20261014",
+          "requestDigest": "545aecd7090828f6742b368fbc16429b9eebccfc04449c9d20b878e38c4f28e2",
+          "responseDigest": "a0c558a053bfcb4849288bc906097060864d60d9932cda372bb4c11d2056edc4",
+          "inputTokens": 7590,
+          "outputTokens": 38,
+          "costUsd": 0.00031878,
+          "live": true,
+          "timestamp": "2026-11-08T22:38:11.766Z"
+        }
+      ],
+      "observations": 0,
+      "correctness": null,
+      "ciUrls": [
+        "https://github.com/schneiderl/ci-lab-target-workloads/actions/runs/42531168365"
+      ],
+      "error": "Error: OPENROUTER_HTTP: 429; response body withheld"
+    }
+  ]
+}

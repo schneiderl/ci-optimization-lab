@@ -1,6 +1,29 @@
 {
   "schemaVersion": 1,
   "ceilingUsd": 30,
+  "experiments": {
+    "agent2-006": 1,
+    "agent2-003": 1,
+    "agent2-012": 1,
+    "agent2-009": 1,
+    "agent2-015": 1,
+    "agent2-018": 1,
+    "agent2-021": 1,
+    "agent3-009": 1,
+    "agent3-006": 1,
+    "agent3-003": 1,
+    "agent3-012": 1,
+    "agent3-015": 1,
+    "agent3-018": 1,
+    "agent3-021": 1,
+    "agent4-015": 1,
+    "agent4-018": 1,
+    "agent4-021": 1,
+    "agent4-012": 1,
+    "agent5-021": 1,
+    "agent6-021": 1,
+    "agent7-021": 1
+  },
   "entries": {
     "smoke-1794169348524": {
       "reservedUsd": 0,
@@ -9,7 +32,7 @@
     },
     "smoke-1794169348529": {
       "reservedUsd": 0.02,
-      "chargedUpperBoundUsd": 0.00001722,
+      "chargedUpperBoundUsd": 1.722e-05,
       "reason": "jev typesafe/jev-1.14; no fallback"
     },
     "smoke-1794169373227": {
@@ -831,6 +854,755 @@
       "reservedUsd": 0.001,
       "chargedUpperBoundUsd": 0.001,
       "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners."
+    },
+    "github-agent2-003-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent2-003"
+    },
+    "github-agent2-012-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent2-012"
+    },
+    "github-agent2-006-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent2-006"
+    },
+    "github-agent2-009-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent2-009"
+    },
+    "agent2-012-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent2-012"
+    },
+    "agent2-003-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent2-003"
+    },
+    "agent2-006-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent2-006"
+    },
+    "agent2-009-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent2-009"
+    },
+    "github-agent2-015-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent2-015"
+    },
+    "github-agent2-018-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent2-018"
+    },
+    "github-agent2-021-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent2-021"
+    },
+    "agent2-021-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent2-021"
+    },
+    "agent2-015-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent2-015"
+    },
+    "agent2-018-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": null,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent2-018"
+    },
+    "github-agent3-009-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-006-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-006"
+    },
+    "github-agent3-012-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-012"
+    },
+    "github-agent3-003-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-003"
+    },
+    "agent3-009-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.000266952,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent3-009"
+    },
+    "agent3-012-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 9.8154e-05,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent3-012"
+    },
+    "agent3-006-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.000149562,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent3-006"
+    },
+    "agent3-009-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-012-c1-unchanged-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-012"
+    },
+    "agent3-003-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.000149562,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent3-003"
+    },
+    "github-agent3-006-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-006"
+    },
+    "github-agent3-003-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-003"
+    },
+    "github-agent3-009-c1-baseline-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-006-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-006"
+    },
+    "github-agent3-012-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-012"
+    },
+    "github-agent3-003-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-003"
+    },
+    "github-agent3-009-c1-candidate-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-006-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-006"
+    },
+    "github-agent3-012-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-012"
+    },
+    "github-agent3-003-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-003"
+    },
+    "github-agent3-009-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-006-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-006"
+    },
+    "github-agent3-012-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-012"
+    },
+    "github-agent3-003-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-003"
+    },
+    "github-agent3-009-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-006-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-006"
+    },
+    "github-agent3-012-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-012"
+    },
+    "github-agent3-003-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-003"
+    },
+    "github-agent3-009-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "agent3-006-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-006"
+    },
+    "github-agent3-012-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-012"
+    },
+    "agent3-003-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-003"
+    },
+    "github-agent3-015-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-015"
+    },
+    "github-agent3-018-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-009-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "agent3-012-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-012"
+    },
+    "agent3-015-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00018543,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent3-015"
+    },
+    "github-agent3-021-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-021"
+    },
+    "github-agent3-015-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-015"
+    },
+    "agent3-018-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00018543,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-018-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-009-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "agent3-021-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00031878,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent3-021"
+    },
+    "agent3-021-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-021"
+    },
+    "github-agent3-015-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-015"
+    },
+    "github-agent3-018-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-009-c1-candidate-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-015-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-015"
+    },
+    "github-agent3-018-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-009-c1-candidate-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-015-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-015"
+    },
+    "github-agent3-018-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-009-c1-baseline-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "github-agent3-015-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-015"
+    },
+    "github-agent3-018-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-009-c1-baseline-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "agent3-015-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-015"
+    },
+    "agent3-018-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-018"
+    },
+    "github-agent3-009-c1-candidate-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent3-009"
+    },
+    "agent3-009-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent3-009"
+    },
+    "github-agent4-015-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-015"
+    },
+    "github-agent4-018-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-018"
+    },
+    "github-agent4-021-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-021"
+    },
+    "github-agent4-012-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-012"
+    },
+    "agent4-015-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00018543,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent4-015"
+    },
+    "agent4-021-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00031878,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent4-021"
+    },
+    "agent4-018-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00018543,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent4-018"
+    },
+    "agent4-012-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 9.8154e-05,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent4-012"
+    },
+    "agent4-021-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free nvidia/nemotron-3.5-super-vl:free; no fallback",
+      "experimentId": "agent4-021"
+    },
+    "github-agent4-015-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-015"
+    },
+    "github-agent4-018-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-018"
+    },
+    "github-agent4-012-c1-unchanged-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-012"
+    },
+    "github-agent4-015-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-015"
+    },
+    "github-agent4-018-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-018"
+    },
+    "github-agent4-012-c1-unchanged-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-012"
+    },
+    "github-agent4-015-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-015"
+    },
+    "github-agent4-018-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-018"
+    },
+    "github-agent4-012-c1-unchanged-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-012"
+    },
+    "github-agent5-021-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent5-021"
+    },
+    "github-agent4-015-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-015"
+    },
+    "github-agent4-018-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-018"
+    },
+    "github-agent4-012-c1-unchanged-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-012"
+    },
+    "agent5-021-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00031878,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent5-021"
+    },
+    "agent5-021-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free cohere/north-mini-code:free; no fallback",
+      "experimentId": "agent5-021"
+    },
+    "github-agent4-015-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-015"
+    },
+    "github-agent4-018-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-018"
+    },
+    "github-agent4-012-c1-unchanged-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-012"
+    },
+    "agent4-015-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free nvidia/nemotron-3.5-super-vl:free; no fallback",
+      "experimentId": "agent4-015"
+    },
+    "agent4-018-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free nvidia/nemotron-3.5-super-vl:free; no fallback",
+      "experimentId": "agent4-018"
+    },
+    "github-agent4-012-c1-unchanged-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent4-012"
+    },
+    "github-agent6-021-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent6-021"
+    },
+    "agent4-012-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free nvidia/nemotron-3.5-super-vl:free; no fallback",
+      "experimentId": "agent4-012"
+    },
+    "agent6-021-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00031878,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent6-021"
+    },
+    "agent6-021-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": null,
+      "reason": "openrouter-free google/gemma-4-31b-it:free; no fallback",
+      "experimentId": "agent6-021"
+    },
+    "github-agent7-021-c1-profile": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "agent7-021-c1-investigator": {
+      "reservedUsd": 0.02,
+      "chargedUpperBoundUsd": 0.00031878,
+      "reason": "jev typesafe/jev-1.14; no fallback",
+      "experimentId": "agent7-021"
+    },
+    "agent7-021-c1-editor": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free nvidia/nemotron-3-ultra-550b-a55b:free; no fallback",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-baseline-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-candidate-prime": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-baseline-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-candidate-0": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-candidate-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-baseline-1": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-baseline-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-candidate-2": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-candidate-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-baseline-3": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-baseline-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "github-agent7-021-c1-candidate-4": {
+      "reservedUsd": 0.001,
+      "chargedUpperBoundUsd": 0.001,
+      "reason": "Public standard Linux compute: $0; <=100 KB compressed reports, one-day retention, conservative storage bound $0.001. No paid runners.",
+      "experimentId": "agent7-021"
+    },
+    "agent7-021-c1-reviewer": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": 0,
+      "reason": "openrouter-free nvidia/nemotron-3-ultra-550b-a55b:free; no fallback",
+      "experimentId": "agent7-021"
+    },
+    "smoke-1794178082719": {
+      "reservedUsd": 0,
+      "chargedUpperBoundUsd": null,
+      "reason": "opencode opencode/deepseek-v4.1-flash-free; no fallback"
     }
   }
 }

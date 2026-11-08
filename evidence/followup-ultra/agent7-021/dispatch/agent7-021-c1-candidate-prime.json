@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requestDigest": "aad4b29e8e4547839d25722c3a72ef7707695e3a21a1de2289afc2c61136eab2",
+  "correlation": "agent7-021-c1-candidate-prime",
+  "commit": "ec0e795d0175f86ec2741508946f9a66ed8ade95",
+  "ref": "lab/agent7-021/c1/candidate",
+  "status": "completed",
+  "createdAt": "2026-11-08T22:40:28.536Z",
+  "runId": 42531402662,
+  "cancelRequested": false
+}

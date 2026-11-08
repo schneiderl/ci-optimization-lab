@@ -1,0 +1,25 @@
+{
+  "status": "invalid-output",
+  "requestDigest": "8512138b08c9e7e7f20464f1e57e5b16a66bdbfd336d196e6dbb6920a6a44754",
+  "provider": "openrouter-free",
+  "model": "cohere/north-mini-code:free",
+  "role": "editor",
+  "output": {
+    "invalidModelJson": true,
+    "rawOutput": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"files\":[{\"path\":\"ci/plan.json\",\"content\":\"{\\\"schemaVersion\\\":1,\\\"cache\\\":true,\\\"partitions\\\":[[\\\"case-000\\\",\\\"case-002\\\",\\\"case-004\\\",\\\"case-006\\\",\\\"case-008\\\",\\\"case-010\\\",\\\"case-012\\\",\\\"case-014\\\",\\\"case-016\\\",\\\"case-018\\\",\\\"case-020\\\",\\\"case-022\\\",\\\"case-024\\\",\\\"case-026\\\",\\\"case-028\\\",\\\"case-030\\\"],[\\\"case-001\\\",\\\"case-003\\\",\\\"case-005\\\",\\\"case-007\\\",\\\"case-009\\\",\\\"case-011\\\",\\\"case-013\\\",\\\"case-015\\\",\\\"case-017\\\",\\\"case-019\\\",\\\"case-021\\\",\\\"case-023\\\",\\\"case-025\\\",\\\"case-027\\\",\\\"case-029\\\"]],\\\"evidence\\\":[\\\"pipeline-snapshot\\\"]}\"}],\"explanation\":\"The hypothesis proposes a partition of the test cases into two groups based on even and odd indices. This partition is selected with a confidence of 0.5, indicating it is a hypothesis rather than a definitive correctness claim. The plan includes a single file, ci/plan.json, which defines the new partition structure and references a pipeline snapshot as evidence. This change is intended to reorganize test execution according to the proposed grouping.\"}},\"required\":[\"files\",\"explanation\"],\"additionalProperties\":false}"
+  },
+  "usage": {
+    "provider": "openrouter-free",
+    "role": "editor",
+    "model": "cohere/north-mini-code:free",
+    "requestDigest": "8512138b08c9e7e7f20464f1e57e5b16a66bdbfd336d196e6dbb6920a6a44754",
+    "responseDigest": "ce770b0e1f2701e91b6cd72b03e6ef5b97ab28ee73cc15510736899b46c4693b",
+    "inputTokens": 623,
+    "outputTokens": 282,
+    "costUsd": 0,
+    "live": true,
+    "timestamp": "2026-11-08T22:36:15.633Z"
+  },
+  "error": "[\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"files\"\n    ],\n    \"message\": \"Invalid input: expected array, received undefined\"\n  },\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"explanation\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  },\n  {\n    \"code\": \"unrecognized_keys\",\n    \"keys\": [\n      \"invalidModelJson\",\n      \"rawOutput\"\n    ],\n    \"path\": [],\n    \"message\": \"Unrecognized keys: \\\"invalidModelJson\\\", \\\"rawOutput\\\"\"\n  }\n]",
+  "timestamp": "2026-11-08T22:36:15.725Z"
+}

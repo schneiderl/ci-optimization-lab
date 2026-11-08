@@ -1,0 +1,19 @@
+{
+  "recommendation": "reject",
+  "concerns": [
+    "Acceptance criteria failed: paired-log-t95-v1 rule rejected the change (primaryRatio=0.82, primaryUpper95=1.01, secondaryRatio=1.26, secondaryUpper95=1.61). The observed mean ratios miss at least one configured threshold.",
+    "Candidate runs are slower than baseline: candidate elapsedSeconds range 17-22s vs baseline 16-28s, but jobSeconds are higher for candidate (23-32s) vs baseline (14-26s), indicating increased test execution time.",
+    "No performance improvement demonstrated; the partition change appears to increase CI runtime rather than decrease it."
+  ],
+  "explanation": "The patch modifies ci/plan.json to split 31 test cases into two partitions (even/odd indices) for parallel execution. Validation passes (file inventory, protected files, edit allowlist, partition limit). However, acceptance testing with 5 paired warm runs shows the candidate is slower: primary ratio 0.82 (candidate/baseline) with upper 95% CI 1.01, and secondary ratio 1.26 with upper 95% CI 1.61. The rule requires both ratios to meet thresholds, which they do not. Candidate jobSeconds (23-32s) exceed baseline (14-26s), confirming regression. Since correctness passes but acceptance fails, the change must be rejected.",
+  "evidence": [
+    "acceptance.status=rejected",
+    "acceptance.reason=The observed mean ratios miss at least one configured threshold.",
+    "acceptance.primaryRatio=0.8217002251498314",
+    "acceptance.primaryUpper95=1.0119495144948052",
+    "acceptance.secondaryRatio=1.2632356074386228",
+    "acceptance.secondaryUpper95=1.605063163171065",
+    "observations: candidate jobSeconds 23-32s vs baseline 14-26s"
+  ],
+  "requestExperiment": false
+}

@@ -1,0 +1,18 @@
+{
+  "recommendation": "approve",
+  "concerns": [
+    "No patch was applied; decision is no-change based on hypothesis confidence 0.62, not measured improvement.",
+    "Only one test case (case-000) was executed, providing limited coverage.",
+    "Warm baseline runs show minor elapsed-time variance (17-29 seconds) likely from cache and queue effects."
+  ],
+  "explanation": "The exact patch review results in a no-change decision. Deterministic validation passed: all baseline and warm runs concluded successfully with identical test output hashes and plan digests. Paired measurements show no regressions. Since no change is proposed, there is no live improvement to prove, and missing or simulated evidence is not required. The evidence supports approving the no-change outcome.",
+  "evidence": [
+    "baseline run 42530828090 success, elapsedSeconds 16, test case-000 pass, output hash 3290b0a5...",
+    "warm baseline run 42530935485 success, elapsedSeconds 18, cacheHit true, identical output hash",
+    "warm baseline run 42530988027 success, elapsedSeconds 17, cacheHit true, identical output hash",
+    "warm baseline run 42531037767 success, elapsedSeconds 19, cacheHit true, identical output hash",
+    "warm baseline run 42531085410 success, elapsedSeconds 19, cacheHit true, identical output hash",
+    "warm baseline run 42531131730 success, elapsedSeconds 29, cacheHit true, identical output hash"
+  ],
+  "requestExperiment": false
+}

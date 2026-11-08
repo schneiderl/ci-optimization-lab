@@ -1,0 +1,48 @@
+diff --git c/ci/plan.json w/ci/plan.json
+index cf93ef9..248eae3 100644
+--- c/ci/plan.json
++++ w/ci/plan.json
+@@ -1 +1,41 @@
+-{"schemaVersion":1,"cache":true,"partitions":[["case-000","case-001","case-002","case-003","case-004","case-005","case-006","case-007","case-008","case-009","case-010","case-011","case-012","case-013","case-014","case-015","case-016","case-017","case-018","case-019","case-020","case-021","case-022","case-023","case-024","case-025","case-026","case-027","case-028","case-029","case-030"]]}
++{
++  "schemaVersion": 1,
++  "cache": true,
++  "partitions": [
++    [
++      "case-000",
++      "case-002",
++      "case-004",
++      "case-006",
++      "case-008",
++      "case-010",
++      "case-012",
++      "case-014",
++      "case-016",
++      "case-018",
++      "case-020",
++      "case-022",
++      "case-024",
++      "case-026",
++      "case-028",
++      "case-030"
++    ],
++    [
++      "case-001",
++      "case-003",
++      "case-005",
++      "case-007",
++      "case-009",
++      "case-011",
++      "case-013",
++      "case-015",
++      "case-017",
++      "case-019",
++      "case-021",
++      "case-023",
++      "case-025",
++      "case-027",
++      "case-029"
++    ]
++  ]
++}
+\ No newline at end of file

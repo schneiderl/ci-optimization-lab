@@ -1,0 +1,9 @@
+{
+  "completedAt": "2026-11-08T22:48:05.063Z",
+  "completed": false,
+  "diagnostic": "Error: npm: 1: Error: opencode: 1: {\"type\":\"step_start\",\"timestamp\":1794178084876,\"sessionID\":\"ses_e42a715adfferCK8Jg4Wt52NsL\",\"part\":{\"id\":\"prt_1bd58f00c0016RuM2nAS6LuYKt\",\"sessionID\":\"ses_e42a715adfferCK8Jg4Wt52NsL\",\"messageID\":\"msg_1bd58ef570015U4ftVAvHyKPuh\",\"type\":\"step-start\"}}\n{\"type\":\"error\",\"timestamp\":1794178084918,\"sessionID\":\"ses_e42a715adfferCK8Jg4Wt52NsL\",\"error\":{\"type\":\"provider.free-limit\",\"message\":\"Free usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.\",\"status\":429,\"response\":{\"body\":\"{\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"FreeUsageLimitError\\\",\\\"message\\\":\\\"Free usage limit reached. Free models work in OpenCode (https://opencode.ai); subscribe to OpenCode Go to keep going: https://opencode.ai/go\\\"}}\"},\"retryAfterMs\":4316000}}\n\n",
+  "receipts": [
+    "smoke-1794178082719.json"
+  ],
+  "noPaidFallback": true
+}

@@ -22,9 +22,25 @@
     }
   ],
   "remainingScope": [
-    "Complete a new live three-role evaluation once an authorized key can be captured without prompts.",
-    "Real secure key capture/keyring path remains unverified; synthetic cache/refresh/concurrency tests pass.",
-    "No measured candidate established the frozen improvement thresholds."
+    "Fresh independent review of continuation source and evidence.",
+    "A complete live cache edit is unverified; all live cache investigators chose no-change.",
+    "No candidate satisfied all frozen improvement and non-regression gates.",
+    "The original malformed-output call lacks recoverable raw output and usage."
   ],
-  "independentReview": "passed final scoped review"
+  "independentReview": "passed final scoped review",
+  "continuation": {
+    "completedAt": "2026-11-08T22:50:16.744971+00:00",
+    "firstPlanFrozenAt": "2026-11-08T22:21:49.641717+00:00",
+    "newTrials": 21,
+    "outcomes": {
+      "failed": 14,
+      "no-change": 5,
+      "rejected": 2
+    },
+    "validatedObservations": 87,
+    "controllerSourceFreeze": "f039815e248dc5c6863d89677171ad39d83a56fb",
+    "sourceReview": "pending fresh independent review",
+    "promptTuning": false,
+    "fixtureOrThresholdChanges": false
+  }
 }

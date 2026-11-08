@@ -1,0 +1,16 @@
+{
+  "recommendation": "approve",
+  "concerns": [],
+  "explanation": "The hypothesis decision is no-change with low confidence (0.19), and no patch was applied. Deterministic validation passed across all observed runs: identical commit, plan digest, test outputs, and dependency checks. All runs concluded success with consistent elapsed times (16-18 seconds). No live improvement evidence is required because no change was proposed or tested.",
+  "evidence": [
+    "baselineEvidence run 42530827458 success",
+    "observation run 42530880796 success",
+    "observation run 42530929326 success",
+    "observation run 42530980493 success",
+    "observation run 42531030092 success",
+    "observation run 42531076678 success",
+    "all test outputs identical across runs",
+    "noChange flag true"
+  ],
+  "requestExperiment": false
+}

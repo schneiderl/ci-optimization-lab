@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-11-08T22:38:33.648Z",
+  "url": "https://openrouter.ai/api/v1/key",
+  "quota": {
+    "is_free_tier": false,
+    "allowanceAvailableForBoundedRequest": true
+  },
+  "privacy": "Only account tier and allowance-available flag retained; key identity, label, limits, and unrelated account usage omitted."
+}

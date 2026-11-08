@@ -6,7 +6,7 @@ Install Node 24+, Git, npm, GitHub CLI, and optional OpenCode and 1Password CLI.
 
 `npm run lab -- init <id> <fixture> <provider> <runner> <cold|warm>` writes a strict v1 config. Run it with `npm run lab -- run <config>`. The fixture is `cache`, `partition`, `no-change`, `cache-heldout`, or `partition-heldout`. Run IDs are immutable. Run data defaults to the sibling `../ci-lab-runs`, outside target worktrees. Configure paths before the first run; resume rejects changed configs or manifests.
 
-`status <run-dir>` prints the current phase. `resume <run-dir>` reuses verified artifacts and reconciles remote submissions. `cancel <run-dir>` creates a cancellation marker; a running coordinator watches it and requests cancellation of its current GitHub run. SIGINT/SIGTERM in the CLI also cancel through the supplied signal. For an interrupted evaluator process, resume with `npm run evaluate -- --live`; completed calls and known workflows remain durable.
+`status <run-dir>` prints the current phase. `resume <run-dir>` reuses verified artifacts and reconciles remote submissions. `cancel <run-dir>` creates a cancellation marker; a running coordinator watches it and requests cancellation of its current GitHub run. SIGINT/SIGTERM in the CLI also cancel through the supplied signal. For an interrupted evaluator process, resume with the same `--plan=` selector and recorded controller source; completed calls and known workflows remain durable. Preserve the archived original matrix.
 
 `report <run-dir>` regenerates the full report and patch from persisted records. JSON includes raw observations and exact evidence references. The default terminal summary remains short. Experimental target branches are never merged automatically.
 
@@ -30,6 +30,13 @@ See [providers](providers.md). `npm run lab -- credentials` checks availability 
 
 ## Separate follow-up evaluation
 
-The original 21 trials are immutable. Run the frozen seven-entry addendum with `npm run evaluate -- --plan=evaluation/followup/live-plan.json --live`; resume with the same command. Results stay in `evaluation/followup/` and `evidence/followup/`. Use `npx tsx scripts/revalidate.ts --plan=evaluation/followup/live-plan.json` for a read-only audit. Both matrices share the original data root and cumulative $30 ledger.
+The [continuation index](../evaluation/CONTINUATION.md) links every frozen plan and trial, including failures. The original 21 trials are immutable. A plan selector keeps its results beside the selected plan and copies evidence into the matching `evidence/` subdirectory:
 
-Commit controller changes before live evaluation. Each new run records the executing source commit, controller file digest, and plan digest in `controller-provenance.json` before any model call or dispatch. Resume requires identical controller files and plan. Evidence publication copies this receipt alongside the report. A failed call stays in its trial; any changed implementation or provider requires a new frozen plan and run identity.
+```sh
+npm run evaluate -- --plan=evaluation/followup-ultra/live-plan.json --live
+npx tsx scripts/revalidate.ts --plan=evaluation/followup-ultra/live-plan.json
+```
+
+Use the source recorded in each trial's `controller-provenance.json` when resuming it; changed controller files or plan digests fail closed. Completed terminal runs replay their verified artifacts. A new source or model choice needs a new frozen plan and run ID. Both matrices and all follow-ups share the original run-data root and cumulative $30 ledger.
+
+Commit controller changes before live evaluation. Each new trial records the executing source commit, controller file digest, and plan digest before model calls or dispatch. Evidence publication copies this receipt with the report. A failed call remains in its trial; replay does not hide it or silently select another provider.

@@ -1,1 +1,3 @@
 2026-11-08 — Published the CI optimization lab and independent target workloads. Final source c7f9d1f passed 33 tests, GitHub CI, and independent scoped review. The 21-entry matrix and 131-observation audit found no accepted speedup: 8 no-change, 6 rejected, 7 live-agent failures. Known model spend $0.000166656; conservative exposure $0.264166656. Real credential capture and a complete live three-agent evaluation remain blocked; evidence and limits are in docs/handover.md.
+
+2026-11-08: Verified persistent environment credential capture and published 21 live-agent follow-ups with preserved failures. Both partition variants completed and were rejected; a live cache-agent edit and fresh independent review remain unverified.
