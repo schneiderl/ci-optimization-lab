@@ -8,15 +8,18 @@ import { JevModel, OpenCodeModel, OpenRouterFreeModel, roleSchemas, invokeModel 
 import { validateCheckout } from '../blocks/validator/index.js';
 import { report } from '../blocks/reporter/index.js';
 import { atomic, json, readJson } from '../util.js';
-import { openRouterCredential, refreshCredential, removeCredential } from '../adapters/models/credentials.js';
+import { openRouterCredential, refreshCredential, removeCredential, importEnvironmentCredential } from '../adapters/models/credentials.js';
 import { block } from './block.js';
 
 const [verb, ...args] = process.argv.slice(2);
 const abort = new AbortController(); process.on('SIGINT', () => abort.abort()); process.on('SIGTERM', () => abort.abort());
 try {
   if (verb === 'credentials') {
-    if (args[0] === 'remove') await removeCredential(); else if (args[0] === 'refresh') await refreshCredential(); else await openRouterCredential();
-    console.log(args[0] === 'remove' ? 'Local OpenRouter credential cache removed.' : 'OpenRouter credential cached outside repositories; value withheld.');
+    if (args[0] === 'remove') { await removeCredential(); console.log('Local OpenRouter credential cache removed.'); }
+    else if (args[0] === 'import-env') { await importEnvironmentCredential(); console.log('OpenRouter environment credential persisted and read back; value withheld.'); }
+    else if (args[0] === 'refresh') { await refreshCredential(); console.log('OpenRouter credential cache refreshed; value withheld.'); }
+    else if (!args[0]) { await openRouterCredential(); console.log('OpenRouter credential available; environment lookup alone does not persist it.'); }
+    else throw new Error('Usage: credentials [import-env|refresh|remove]');
   } else if (verb === 'init') {
     const [id = 'demo', fixture = 'cache', provider = 'recorded', runner = 'recorded', group = 'warm'] = args;
     const config = Config.parse({ schemaVersion: 1, runId: id, targetPath: path.resolve('../ci-lab-target-workloads'), manifestPath: path.resolve(`manifests/${fixture}.json`), dataRoot: path.resolve('../ci-lab-runs'), strategy: 'agent', provider, model: 'opencode/deepseek-v4.1-flash-free', runner, group, maxCycles: 1, timeoutSeconds: 1200, objective: defaultObjective, cumulativeBudgetUsd: 30, perCallLimitUsd: 0, perExperimentLimitUsd: 1, maxConcurrency: 2 });

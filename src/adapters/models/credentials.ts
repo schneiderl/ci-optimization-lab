@@ -16,6 +16,9 @@ async function unlockedKeyring() {
 }
 export async function cachedCredential(directory = credentialDirectory, useKeyring = true): Promise<string | null> {
   const environment = process.env.OPENROUTER_API_KEY?.trim(); if (environment) return environment;
+  return persistedCredential(directory, useKeyring);
+}
+async function persistedCredential(directory: string, useKeyring: boolean): Promise<string | null> {
   const file = path.join(directory, 'openrouter');
   try {
     const stat = await lstat(file);
@@ -29,17 +32,21 @@ export async function cachedCredential(directory = credentialDirectory, useKeyri
 }
 export async function persistCredential(key: string, directory = credentialDirectory, useKeyring = true) {
   if (!key.trim() || /\s/.test(key.trim())) throw new Error('CREDENTIAL_FORMAT: empty or malformed credential');
-  await mkdir(directory, { recursive: true, mode: 0o700 });
-  const stat = await lstat(directory); if (stat.isSymbolicLink() || !stat.isDirectory() || stat.uid !== process.getuid?.()) throw new Error('CREDENTIAL_PERMISSIONS: unsafe cache directory');
-  await chmod(directory, 0o700);
+  await prepareDirectory(directory);
   if (useKeyring && await unlockedKeyring()) {
     try { await command('secret-tool', ['store', '--label=CI optimization lab OpenRouter', 'service', service, 'account', account], { input: key.trim(), timeout: 2000 }); await rm(path.join(directory, 'openrouter'), { force: true }); return 'keyring'; } catch {}
   }
   await atomic(path.join(directory, 'openrouter'), key.trim() + '\n'); await chmod(path.join(directory, 'openrouter'), 0o600);
   return 'file';
 }
+async function prepareDirectory(directory: string) {
+  await mkdir(directory, { recursive: true, mode: 0o700 });
+  const stat = await lstat(directory);
+  if (stat.isSymbolicLink() || !stat.isDirectory() || stat.uid !== process.getuid?.()) throw new Error('CREDENTIAL_PERMISSIONS: unsafe cache directory');
+  await chmod(directory, 0o700);
+}
 async function credentialLock<T>(directory: string, action: () => Promise<T>) {
-  await mkdir(directory, { recursive: true, mode: 0o700 }); await chmod(directory, 0o700);
+  await prepareDirectory(directory);
   const lock = path.join(directory, '.lock');
   for (let tries = 0; ; tries++) {
     try { await mkdir(lock); await atomic(path.join(lock, 'pid'), String(process.pid)); break; }
@@ -60,6 +67,16 @@ export async function openRouterCredential(directory = credentialDirectory, useK
     catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
     try { const key = (await fetchFromOp()).trim(); await persistCredential(key, directory, useKeyring); return key; }
     catch { await atomic(path.join(directory, 'op-failed'), 'Credential lookup failed; no secret retained.\n'); throw new Error('AUTH_BLOCKED: 1Password credential unavailable; no repeated automatic lookup'); }
+  });
+}
+export async function importEnvironmentCredential(directory = credentialDirectory, useKeyring = true) {
+  const key = process.env.OPENROUTER_API_KEY?.trim();
+  if (!key || /\s/.test(key)) throw new Error('CREDENTIAL_FORMAT: OPENROUTER_API_KEY is empty or malformed');
+  return credentialLock(directory, async () => {
+    const storage = await persistCredential(key, directory, useKeyring);
+    if (await persistedCredential(directory, useKeyring) !== key) throw new Error('CREDENTIAL_VERIFY: persisted credential readback failed');
+    await rm(path.join(directory, 'op-failed'), { force: true });
+    return storage;
   });
 }
 export async function refreshCredential(directory = credentialDirectory, useKeyring = true, fetchFromOp: () => Promise<string> = fromOp) {

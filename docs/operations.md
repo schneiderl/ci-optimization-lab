@@ -26,4 +26,10 @@ The evaluator limits four concurrent experiments; the GitHub adapter also coordi
 
 ## Credential lifecycle
 
-See [providers](providers.md). `npm run lab -- credentials` performs one cache-or-capture operation without printing the value. `credentials refresh` captures and validates a replacement under the shared lock, then atomically replaces the cache. A failed capture preserves the old key; the failed-lookup marker clears only after success. `credentials remove` removes this app's cached key and marker. Revoke or rotate the underlying API key in OpenRouter separately. Never commit credential files or include shell traces of credential commands in evidence.
+See [providers](providers.md). `npm run lab -- credentials` checks availability without printing the value; an environment lookup alone does not persist it. `credentials import-env` stores the environment key and verifies persisted readback without invoking 1Password. `credentials refresh` captures and validates a replacement under the shared lock, then atomically replaces the cache. A failed capture preserves the old key; the failed-lookup marker clears only after success. `credentials remove` removes this app's cached key and marker. Revoke or rotate the underlying API key in OpenRouter separately. Never commit credential files or include shell traces of credential commands in evidence.
+
+## Separate follow-up evaluation
+
+The original 21 trials are immutable. Run the frozen seven-entry addendum with `npm run evaluate -- --plan=evaluation/followup/live-plan.json --live`; resume with the same command. Results stay in `evaluation/followup/` and `evidence/followup/`. Use `npx tsx scripts/revalidate.ts --plan=evaluation/followup/live-plan.json` for a read-only audit. Both matrices share the original data root and cumulative $30 ledger.
+
+Commit controller changes before live evaluation. Each new run records the executing source commit, controller file digest, and plan digest in `controller-provenance.json` before any model call or dispatch. Resume requires identical controller files and plan. Evidence publication copies this receipt alongside the report. A failed call stays in its trial; any changed implementation or provider requires a new frozen plan and run identity.

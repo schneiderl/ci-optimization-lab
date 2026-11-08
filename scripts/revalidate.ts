@@ -7,7 +7,9 @@ import { validateCheckout, validateExecution } from '../src/blocks/validator/ind
 import { pairedLogT95 } from '../src/objectives/index.js';
 import { atomic, command, digest, json, now, readJson } from '../src/util.js';
 
-const plan = await readJson('evaluation/live-plan.json') as any;
+const bundle = path.resolve(process.argv.find(arg => arg.startsWith('--plan='))?.slice(7) ?? 'evaluation/live-plan.json');
+const output = path.join(path.dirname(bundle), 'revalidation.json');
+const plan = await readJson(bundle) as any;
 const source = (await command('git', ['rev-parse', 'HEAD'])).trim(), results = [];
 for (const entry of plan.entries) {
   const config = Config.parse(entry.config), store = new Store(path.join(config.dataRoot, config.runId));
@@ -33,6 +35,6 @@ for (const entry of plan.entries) {
   const pass = protectedChecks.every(check => check.status === 'pass') && checks.every(check => check.status === 'pass') && stable;
   results.push({ runId: config.runId, originalOutcome: state.status, artifactsVerified: Object.keys(artifacts).length, observationCount: checks.length, pass, protectedChecks, executionChecks: checks, originalAcceptance: original, revalidatedAcceptance: decision, outcomeUnchanged: stable, originalError: state.error });
 }
-await atomic('evaluation/revalidation.json', json({ schemaVersion: 1, checkedAt: now(), validatorSourceCommit: source, validatorSourceTreeDigest: digest((await Promise.all(['src/adapters/github/index.ts', 'src/objectives/index.ts', 'src/blocks/validator/index.ts'].map(file => readFile(file)))).map(digest).join('\n')), originalSourceProvenance: 'Original reports were collected during implementation up to the first source freeze 48b4fd5. Exact per-dispatch coordinator source was not recorded. Target workflow/test code and target commits are pinned in every run. This audit uses the current validator without new CI or model calls.', results }));
+await atomic(output, json({ schemaVersion: 1, checkedAt: now(), validatorSourceCommit: source, validatorSourceTreeDigest: digest((await Promise.all(['src/adapters/github/index.ts', 'src/objectives/index.ts', 'src/blocks/validator/index.ts'].map(file => readFile(file)))).map(digest).join('\n')), controllerProvenance: await Promise.all(plan.entries.map(async (entry: any) => ({ runId: entry.config.runId, provenance: await readJson(path.join(entry.config.dataRoot, entry.config.runId, 'controller-provenance.json')).catch((error: NodeJS.ErrnoException) => { if (error.code === 'ENOENT') return null; throw error; }) }))), originalSourceProvenance: 'Original reports were collected during implementation up to the first source freeze 48b4fd5. Exact per-dispatch coordinator source was not recorded. Target workflow/test code and target commits are pinned in every run. This audit uses the current validator without new CI or model calls.', results }));
 if (results.some(result => !result.pass)) { console.error('Revalidation found a mismatch; see evaluation/revalidation.json.'); process.exitCode = 1; }
 else console.log(`Revalidated ${results.length} runs and ${results.reduce((sum, result) => sum + result.observationCount, 0)} observations; all protected checks pass and outcomes are unchanged. No dispatches or model calls.`);
